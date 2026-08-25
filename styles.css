@@ -1,115 +1,2617 @@
-/* =====================================================
-   TESTIMONIOS · PREMIUM
-===================================================== */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.testimonials-intro {
-  max-width: 560px;
-  margin-top: 25px;
-  color: rgba(255,255,255,.58);
-  font-size: 13px;
-  line-height: 1.9;
-}
+  <title>Método de Volver a Elegirte</title>
 
-.testimonial-tag,
-.mini-tag {
-  margin-top: 24px;
+  <meta
+    name="description"
+    content="De reaccionar a elegir. De complacer a poner límites. De regalar tu capacidad a construir con ella."
+  >
 
-  display: inline-block;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  color: var(--pink);
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
+  <style>
 
-.testimonial-content blockquote {
-  max-width: 650px;
-}
+    :root {
+      --cream: #faf7f3;
+      --cream-2: #f4eee9;
+      --white: #ffffff;
 
-.testimonial-context {
-  margin-top: 12px;
+      --purple: #30203d;
+      --purple-2: #4d315d;
+      --purple-3: #72537d;
 
-  color: rgba(255,255,255,.28);
+      --rose: #e8b9bd;
+      --rose-light: #f5dfe0;
+      --rose-dark: #b66d78;
 
-  font-size: 8px;
-  letter-spacing: .05em;
-}
+      --gold: #c6a46a;
+      --gold-light: #e7d5ad;
 
-.mini-testimonial {
-  position: relative;
-}
+      --text: #302c31;
+      --muted: #716b70;
 
-.mini-testimonial .mini-tag {
-  display: block;
-  margin-top: 22px;
-}
+      --green: #58715d;
 
-.mini-testimonial blockquote {
-  margin-top: 18px;
-}
+      --shadow:
+        0 25px 70px rgba(48, 32, 61, .10);
 
-.mini-testimonial .testimonial-context {
-  margin-top: 15px;
-}
+      --radius: 26px;
+    }
 
-.testimonial-bottom {
-  padding-top: 80px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  text-align: center;
+    html {
+      scroll-behavior: smooth;
+    }
 
-  border-top: 1px solid rgba(255,255,255,.12);
-}
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-.testimonial-bottom-stars {
-  color: var(--gold);
-  font-size: 15px;
-  letter-spacing: 5px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.testimonial-bottom p {
-  margin-top: 18px;
+    button,
+    a {
+      font-family: inherit;
+    }
 
-  font-family: var(--serif);
-  font-size: 32px;
-  line-height: 1;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.testimonial-bottom span {
-  display: block;
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-  margin-top: 10px;
+    .serif {
+      font-family: "Playfair Display", serif;
+    }
 
-  color: rgba(255,255,255,.42);
+    /* =========================
+       ANNOUNCEMENT
+    ========================== */
 
-  font-size: 8px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
+    .announcement {
+      background: var(--purple);
+      color: white;
+      text-align: center;
+      padding: 11px 15px;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .announcement strong {
+      color: var(--gold-light);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(232,185,189,.30),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #fbf8f5 0%,
+          #f8f1ed 52%,
+          #f1e4e4 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgba(198,164,106,.20);
+      border-radius: 50%;
+      right: -160px;
+      top: 90px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(114,83,125,.12);
+      border-radius: 50%;
+      left: -160px;
+      bottom: -120px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--purple-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "✦";
+      color: var(--gold);
+      font-size: 17px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      color: var(--purple);
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: -.035em;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--rose-dark);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 30px;
+    }
+
+    .hero-bullets {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hero-bullet {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: #4e494d;
+    }
+
+    .hero-bullet i {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--rose-light);
+      color: var(--rose-dark);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-style: normal;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 62px;
+      padding: 0 32px;
+      border-radius: 999px;
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #8d5365,
+          #6d3f5c
+        );
+      box-shadow:
+        0 16px 30px rgba(109,63,92,.22);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+      animation: ctaPulse 3s infinite;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -110%;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+      );
+      transform: skewX(-20deg);
+      animation: shine 4s infinite;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 20px 40px rgba(109,63,92,.30);
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% {
+        box-shadow:
+          0 16px 30px rgba(109,63,92,.22);
+      }
+      50% {
+        box-shadow:
+          0 16px 40px rgba(109,63,92,.38);
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        left: -110%;
+      }
+      35%, 100% {
+        left: 140%;
+      }
+    }
+
+    .cta-arrow {
+      font-size: 19px;
+    }
+
+    .microcopy {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #81797e;
+    }
+
+    /* =========================
+       HERO IMAGE
+    ========================== */
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .image-frame {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #eadbdd;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 5;
+    }
+
+    .image-frame::before {
+      content: "SUBE AQUÍ LA IMAGEN PRINCIPAL";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #8e747e;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-align: center;
+      padding: 30px;
+      z-index: 0;
+    }
+
+    .image-frame img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-frame img[src=""] {
+      display: none;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -30px;
+      bottom: 35px;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      padding: 19px 22px;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(48,32,61,.15);
+      max-width: 240px;
+      z-index: 3;
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--rose-dark);
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .floating-card strong {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    /* =========================
+       SOCIAL PROOF
+    ========================== */
+
+    .proof {
+      background: var(--white);
+      border-bottom: 1px solid #eee7e4;
+      border-top: 1px solid #eee7e4;
+      padding: 25px 0;
+    }
+
+    .proof-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .stars {
+      color: #c89c55;
+      letter-spacing: 3px;
+      font-size: 16px;
+    }
+
+    .proof-text {
+      color: #5f585e;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SECTION GENERAL
+    ========================== */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-kicker {
+      text-align: center;
+      color: var(--rose-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 5vw, 53px);
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 50px;
+    }
+
+    /* =========================
+       PROBLEM
+    ========================== */
+
+    .problem {
+      background: var(--cream);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .problem-card {
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(114,83,125,.10);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .problem-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .problem-card h3 {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .problem-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       MECHANISM
+    ========================== */
+
+    .mechanism {
+      background: var(--purple);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mechanism::before {
+      content: "✦";
+      position: absolute;
+      font-size: 400px;
+      color: rgba(255,255,255,.025);
+      right: -80px;
+      top: -120px;
+      font-family: serif;
+    }
+
+    .mechanism .section-kicker {
+      color: var(--gold-light);
+    }
+
+    .mechanism .section-title {
+      color: white;
+    }
+
+    .mechanism .section-subtitle {
+      color: rgba(255,255,255,.68);
+    }
+
+    .method-name {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 44px);
+      color: var(--gold-light);
+      margin: 15px 0 55px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    .step {
+      padding: 38px 30px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .step-number {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      color: rgba(255,255,255,.67);
+      font-size: 14px;
+    }
+
+    /* =========================
+       TRANSFORMATION
+    ========================== */
+
+    .transformation {
+      background: #fff;
+    }
+
+    .transformation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .comparison {
+      display: grid;
+      gap: 14px;
+    }
+
+    .comparison-row {
+      padding: 22px 24px;
+      border-radius: 17px;
+      border: 1px solid #eee7e4;
+      background: var(--cream);
+    }
+
+    .comparison-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .comparison-row strong {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+    }
+
+    .comparison-row.after {
+      background: #f4e6e7;
+      border-color: #e8c9cb;
+    }
+
+    .transformation-copy h2 {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.08;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .transformation-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    .content {
+      background: var(--cream-2);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 22px;
+      padding: 27px;
+      border: 1px solid #eee4df;
+      display: flex;
+      gap: 17px;
+    }
+
+    .content-check {
+      width: 30px;
+      height: 30px;
+      background: var(--rose-light);
+      color: var(--rose-dark);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 800;
+    }
+
+    .content-card h3 {
+      color: var(--purple);
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       OBJECTIONS / BONUSES
+    ========================== */
+
+    .bonuses {
+      background: white;
+    }
+
+    .bonus-list {
+      display: grid;
+      gap: 18px;
+      max-width: 900px;
+      margin: 45px auto 0;
+    }
+
+    .bonus {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 25px;
+      padding: 25px;
+      border: 1px solid #eee4df;
+      border-radius: 24px;
+      background: linear-gradient(
+        135deg,
+        #fff,
+        #fbf6f4
+      );
+      box-shadow: 0 10px 30px rgba(48,32,61,.045);
+    }
+
+    .bonus-image {
+      border-radius: 16px;
+      background: var(--rose-light);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      color: var(--rose-dark);
+      font-size: 11px;
+      font-weight: 800;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .bonus small {
+      color: var(--rose-dark);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .bonus h3 {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      margin: 5px 0 7px;
+    }
+
+    .bonus p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================== */
+
+    .testimonials {
+      background:
+        radial-gradient(
+          circle at 15% 30%,
+          rgba(232,185,189,.18),
+          transparent 30%
+        ),
+        var(--cream);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+
+    .testimonial {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 14px 35px rgba(48,32,61,.055);
+      border: 1px solid #eee6e2;
+    }
+
+    .testimonial-stars {
+      color: #c89c55;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-quote {
+      color: #4b454a;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .testimonial-objection {
+      display: inline-block;
+      padding: 6px 9px;
+      background: #f8ecec;
+      color: var(--rose-dark);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 17px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), var(--purple-3));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    .author-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--purple);
+    }
+
+    .author-country {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       OFFER
+    ========================== */
+
+    .offer {
+      background: var(--purple);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(231,213,173,.13);
+      border-radius: 50%;
+      right: -200px;
+      top: -200px;
+    }
+
+    .offer-box {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .offer .section-kicker {
+      color: var(--gold-light);
+    }
+
+    .offer h2 {
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .offer-subtitle {
+      color: rgba(255,255,255,.70);
+      max-width: 620px;
+      margin: 0 auto 40px;
+    }
+
+    .price-card {
+      background: white;
+      color: var(--text);
+      border-radius: 30px;
+      padding: 35px;
+      max-width: 570px;
+      margin: 0 auto;
+      box-shadow: 0 30px 70px rgba(0,0,0,.20);
+    }
+
+    .price-label {
+      color: var(--rose-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .old-price {
+      margin-top: 10px;
+      color: #9a9297;
+      text-decoration: line-through;
+      font-size: 18px;
+    }
+
+    .price {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: 68px;
+      line-height: 1;
+      font-weight: 600;
+      margin: 4px 0 12px;
+    }
+
+    .discount {
+      display: inline-block;
+      background: var(--rose-light);
+      color: var(--rose-dark);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .price-card .cta {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .secure {
+      color: #81797e;
+      font-size: 11px;
+    }
+
+    /* =========================
+       TIMER
+    ========================== */
+
+    .timer-wrap {
+      margin: 30px auto;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .timer-label {
+      color: rgba(255,255,255,.65);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      margin-bottom: 8px;
+    }
+
+    .timer {
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    /* =========================
+       GUARANTEE
+    ========================== */
+
+    .guarantee {
+      background: var(--cream);
+    }
+
+    .guarantee-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      text-align: center;
+      border: 1px solid #eee3df;
+      box-shadow: var(--shadow);
+    }
+
+    .guarantee-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #edf3ed;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+    }
+
+    .guarantee-box h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--purple);
+      font-size: 42px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .guarantee-box p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .faq {
+      background: white;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 45px auto 0;
+    }
+
+    details {
+      border-bottom: 1px solid #eae2df;
+      padding: 22px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      color: var(--purple);
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      color: var(--rose-dark);
+      font-size: 22px;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: 14px;
+      padding-top: 15px;
+      max-width: 680px;
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================== */
+
+    .final-cta {
+      background:
+        linear-gradient(
+          135deg,
+          #f1dddd,
+          #f8efeb
+        );
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: var(--purple);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.08;
+      font-weight: 500;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: var(--purple);
+      color: rgba(255,255,255,.60);
+      padding: 30px 0 90px;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    /* =========================
+       MOBILE CTA
+    ========================== */
+
+    .mobile-cta {
+      display: none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .container {
+        width: min(100% - 30px, 680px);
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 65px 0 80px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 12vw, 61px);
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .hero-visual {
+        max-width: 540px;
+        margin: auto;
+        width: 100%;
+      }
+
+      .floating-card {
+        left: 12px;
+        bottom: 20px;
+      }
+
+      .problem-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .transformation-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus {
+        grid-template-columns: 85px 1fr;
+        gap: 18px;
+      }
+
+      .mobile-cta {
+        position: fixed;
+        display: block;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 12px;
+        background: rgba(48,32,61,.95);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255,255,255,.10);
+      }
+
+      .mobile-cta .cta {
+        width: 100%;
+        min-height: 54px;
+      }
+
+      footer {
+        padding-bottom: 95px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .announcement {
+        font-size: 10px;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .cta {
+        width: 100%;
+        min-height: 58px;
+        padding: 0 20px;
+        font-size: 14px;
+      }
+
+      .image-frame {
+        border-radius: 24px;
+      }
+
+      .floating-card {
+        left: 8px;
+        right: 8px;
+        bottom: 12px;
+        max-width: none;
+      }
+
+      .section-title {
+        font-size: 38px;
+      }
+
+      .problem-card {
+        padding: 25px;
+      }
+
+      .bonus {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus-image {
+        width: 90px;
+      }
+
+      .price-card {
+        padding: 25px 18px;
+      }
+
+      .price {
+        font-size: 60px;
+      }
+
+      .guarantee-box {
+        padding: 35px 22px;
+      }
+
+      .guarantee-box h2 {
+        font-size: 34px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       BARRA SUPERIOR
+  ========================================== -->
+
+  <div class="announcement">
+    ✦ <strong>Acceso inmediato</strong> · Oferta especial disponible por tiempo limitado
+  </div>
 
 
-@media(max-width:650px) {
+  <!-- =========================================
+       HERO
+       CAMBIA SOLO EL SRC DE LA IMAGEN
+  ========================================== -->
 
-  .testimonials-intro {
-    font-size: 12px;
-  }
+  <header class="hero">
 
-  .featured-testimonial {
-    margin-top: 60px;
-  }
+    <div class="container hero-grid">
 
-  .testimonial-content blockquote {
-    font-size: 31px;
-  }
+      <div class="hero-copy">
 
-  .testimonial-bottom {
-    padding-top: 60px;
-  }
+        <div class="eyebrow">
+          MÉTODO DE VOLVER A ELEGIRTE
+        </div>
 
-  .testimonial-bottom p {
-    font-size: 27px;
-  }
+        <h1>
+          Dejá de regalar tu tiempo,
+          tu energía y todo lo que
+          <span>sabés hacer.</span>
+        </h1>
 
-}
+        <p class="hero-subtitle">
+          Recuperá claridad, aprendé a poner límites sin culpa
+          y empezá a construir algo propio con la capacidad
+          que ya tenés.
+        </p>
+
+        <div class="hero-bullets">
+
+          <div class="hero-bullet">
+            <i>✓</i>
+            <span>De reaccionar desde el agotamiento a tomar decisiones con más claridad.</span>
+          </div>
+
+          <div class="hero-bullet">
+            <i>✓</i>
+            <span>De complacer a los demás a aprender a poner límites sin sentirte una mala persona.</span>
+          </div>
+
+          <div class="hero-bullet">
+            <i>✓</i>
+            <span>De regalar tu capacidad a empezar a convertirla en algo que también te beneficie.</span>
+          </div>
+
+        </div>
+
+        <a href="#oferta" class="cta">
+          QUIERO EMPEZAR A ELEGIRME
+          <span class="cta-arrow">→</span>
+        </a>
+
+        <div class="microcopy">
+          Acceso inmediato · Pago único · Garantía de 15 días
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual">
+
+        <!--
+          IMAGEN PRINCIPAL
+          REEMPLAZA:
+          images/hero-antes-despues.jpg
+
+          Mantiene aquí el espacio para tu imagen
+          original de "antes y después".
+        -->
+
+        <div class="image-frame">
+
+          <img
+            src="images/hero-antes-despues.jpg"
+            alt="Transformación personal"
+          >
+
+        </div>
+
+        <div class="floating-card">
+          <small>Tu nuevo punto de partida</small>
+          <strong>
+            De reaccionar a elegir.
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       PRUEBA SOCIAL
+  ========================================== -->
+
+  <section class="proof">
+
+    <div class="container proof-inner">
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <div class="proof-text">
+        <strong>4.9/5</strong> · Más de <strong>5.287</strong> descargas y ejemplares vendidos
+      </div>
+
+      <div class="proof-text">
+        Miles de mujeres ya están recorriendo este proceso.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PROBLEMA
+  ========================================== -->
+
+  <section class="problem">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Tal vez esto te resulte familiar
+      </div>
+
+      <h2 class="section-title">
+        No necesitas convertirte en otra persona.
+        Necesitas dejar de abandonarte a ti misma.
+      </h2>
+
+      <p class="section-subtitle">
+        Muchas mujeres pasan años siendo fuertes para todos,
+        mientras postergan lo que necesitan para ellas.
+      </p>
+
+
+      <div class="problem-grid">
+
+        <article class="problem-card">
+
+          <div class="problem-icon">🧠</div>
+
+          <h3>
+            Tu cabeza no se apaga
+          </h3>
+
+          <p>
+            Piensas demasiado, reaccionas rápido y después
+            te preguntas si podrías haber respondido de otra manera.
+          </p>
+
+        </article>
+
+
+        <article class="problem-card">
+
+          <div class="problem-icon">🚧</div>
+
+          <h3>
+            Dices que sí cuando quieres decir no
+          </h3>
+
+          <p>
+            Terminas cargando responsabilidades que no te corresponden
+            porque poner límites te hace sentir culpable.
+          </p>
+
+        </article>
+
+
+        <article class="problem-card">
+
+          <div class="problem-icon">✦</div>
+
+          <h3>
+            Sabes hacer mucho, pero no lo aprovechas
+          </h3>
+
+          <p>
+            Tienes experiencia, conocimientos o habilidades,
+            pero todavía no encuentras cómo convertirlos en algo propio.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MECANISMO
+  ========================================== -->
+
+  <section class="mechanism">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        El proceso
+      </div>
+
+      <h2 class="section-title">
+        No se trata de hacer más.
+        Se trata de volver a elegirte.
+      </h2>
+
+      <p class="section-subtitle">
+        El Método de Volver a Elegirte reúne un proceso práctico
+        para trabajar tres movimientos que se necesitan entre sí.
+      </p>
+
+      <div class="method-name">
+        ✦ Método de Volver a Elegirte
+      </div>
+
+
+      <div class="steps">
+
+        <article class="step">
+
+          <div class="step-number">
+            01 · CLARIDAD
+          </div>
+
+          <h3>
+            De reaccionar a elegir
+          </h3>
+
+          <p>
+            Aprende a crear un espacio entre lo que ocurre
+            y la manera en que decides responder.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <div class="step-number">
+            02 · LÍMITES
+          </div>
+
+          <h3>
+            De complacer a poner límites
+          </h3>
+
+          <p>
+            Empieza a comunicar lo que necesitas sin convertir
+            cada límite en una pelea contigo misma.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <div class="step-number">
+            03 · PROPÓSITO
+          </div>
+
+          <h3>
+            De regalar a construir
+          </h3>
+
+          <p>
+            Identifica aquello que ya sabes hacer y descubre
+            cómo empezar a darle una dirección propia.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       TRANSFORMACIÓN
+  ========================================== -->
+
+  <section class="transformation">
+
+    <div class="container transformation-grid">
+
+      <div class="comparison">
+
+        <div class="comparison-row">
+
+          <span>Antes</span>
+
+          <strong>
+            "Tengo que poder con todo."
+          </strong>
+
+        </div>
+
+        <div class="comparison-row after">
+
+          <span>Después</span>
+
+          <strong>
+            "Puedo decidir qué merece mi energía."
+          </strong>
+
+        </div>
+
+
+        <div class="comparison-row">
+
+          <span>Antes</span>
+
+          <strong>
+            "Si digo que no, voy a decepcionar."
+          </strong>
+
+        </div>
+
+        <div class="comparison-row after">
+
+          <span>Después</span>
+
+          <strong>
+            "Poner un límite también es cuidarme."
+          </strong>
+
+        </div>
+
+
+        <div class="comparison-row">
+
+          <span>Antes</span>
+
+          <strong>
+            "No sé si puedo ganar dinero con esto."
+          </strong>
+
+        </div>
+
+        <div class="comparison-row after">
+
+          <span>Después</span>
+
+          <strong>
+            "Puedo empezar con lo que ya sé."
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="transformation-copy">
+
+        <div class="section-kicker" style="text-align:left;">
+          Lo que realmente estás construyendo
+        </div>
+
+        <h2>
+          Una vida en la que tu capacidad también trabaja para ti.
+        </h2>
+
+        <p>
+          No necesitas tener todo resuelto antes de empezar.
+        </p>
+
+        <p>
+          Primero necesitas recuperar suficiente claridad para
+          reconocer qué quieres, qué ya no quieres sostener
+          y qué tienes hoy en tus manos.
+        </p>
+
+        <p>
+          Desde ahí, puedes empezar a tomar decisiones diferentes.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       QUÉ INCLUYE
+  ========================================== -->
+
+  <section class="content">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Lo que vas a recorrer
+      </div>
+
+      <h2 class="section-title">
+        Un proceso diseñado para avanzar
+        incluso si tienes poco tiempo.
+      </h2>
+
+      <p class="section-subtitle">
+        No necesitas pasar horas estudiando.
+        La propuesta está pensada para trabajar en pequeños movimientos.
+      </p>
+
+
+      <div class="content-grid">
+
+        <article class="content-card">
+
+          <div class="content-check">✓</div>
+
+          <div>
+            <h3>
+              40 días de práctica
+            </h3>
+
+            <p>
+              Una estructura sencilla para avanzar un día a la vez
+              sin sentir que tienes que cambiar toda tu vida de golpe.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="content-card">
+
+          <div class="content-check">✓</div>
+
+          <div>
+            <h3>
+              40 tareas prácticas
+            </h3>
+
+            <p>
+              Ejercicios concretos para pasar de entender algo
+              a empezar a aplicarlo.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="content-card">
+
+          <div class="content-check">✓</div>
+
+          <div>
+            <h3>
+              40 oraciones de enfoque
+            </h3>
+
+            <p>
+              Frases para acompañar el proceso y ayudarte
+              a volver al punto que quieres trabajar.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="content-card">
+
+          <div class="content-check">✓</div>
+
+          <div>
+            <h3>
+              Trabajo sobre mentalidad e ingresos
+            </h3>
+
+            <p>
+              Para empezar a mirar tus conocimientos y capacidades
+              desde una perspectiva más práctica.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="content-card">
+
+          <div class="content-check">✓</div>
+
+          <div>
+            <h3>
+              Acceso inmediato
+            </h3>
+
+            <p>
+              Empieza cuando quieras y avanza a tu propio ritmo.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="content-card">
+
+          <div class="content-check">✓</div>
+
+          <div>
+            <h3>
+              Acceso de por vida
+            </h3>
+
+            <p>
+              Puedes volver al material cuando lo necesites.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       BONOS
+       CADA BONO ATACA UNA OBJECIÓN
+  ========================================== -->
+
+  <section class="bonuses">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Además recibes
+      </div>
+
+      <h2 class="section-title">
+        Bonos pensados para los momentos
+        en los que normalmente vuelves a postergarte.
+      </h2>
+
+      <p class="section-subtitle">
+        No son extras para llenar una oferta.
+        Cada uno está pensado para resolver una barrera concreta.
+      </p>
+
+
+      <div class="bonus-list">
+
+
+        <!-- BONO 1 -->
+
+        <article class="bonus">
+
+          <div class="bonus-image">
+            IMAGEN<br>BONO 01
+          </div>
+
+          <div>
+
+            <small>
+              BONO #01 · OBJECIÓN: "NO SÉ POR DÓNDE EMPEZAR"
+            </small>
+
+            <h3>
+              Mapa para volver a tomar el control
+            </h3>
+
+            <p>
+              Una guía rápida para identificar qué está consumiendo
+              tu energía, qué puedes dejar de sostener y cuál debería
+              ser tu primer movimiento.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- BONO 2 -->
+
+        <article class="bonus">
+
+          <div class="bonus-image">
+            IMAGEN<br>BONO 02
+          </div>
+
+          <div>
+
+            <small>
+              BONO #02 · OBJECIÓN: "ME CUESTA DECIR QUE NO"
+            </small>
+
+            <h3>
+              Guía práctica para poner límites
+            </h3>
+
+            <p>
+              Frases y situaciones cotidianas para aprender a expresar
+              tus límites con claridad sin entrar en explicaciones interminables.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- BONO 3 -->
+
+        <article class="bonus">
+
+          <div class="bonus-image">
+            IMAGEN<br>BONO 03
+          </div>
+
+          <div>
+
+            <small>
+              BONO #03 · OBJECIÓN: "NO TENGO TIEMPO"
+            </small>
+
+            <h3>
+              Rutina de 15 minutos
+            </h3>
+
+            <p>
+              Una estructura sencilla para avanzar incluso cuando tienes
+              trabajo, familia, responsabilidades y poco espacio mental.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- BONO 4 -->
+
+        <article class="bonus">
+
+          <div class="bonus-image">
+            IMAGEN<br>BONO 04
+          </div>
+
+          <div>
+
+            <small>
+              BONO #04 · OBJECIÓN: "NO CREO QUE PUEDA COBRAR POR LO QUE SÉ"
+            </small>
+
+            <h3>
+              Inventario de capacidades monetizables
+            </h3>
+
+            <p>
+              Un ejercicio para dejar de pensar únicamente en títulos
+              o profesiones y empezar a detectar habilidades que otras
+              personas podrían valorar y pagar.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- BONO 5 -->
+
+        <article class="bonus">
+
+          <div class="bonus-image">
+            IMAGEN<br>BONO 05
+          </div>
+
+          <div>
+
+            <small>
+              BONO #05 · OBJECIÓN: "ME DA MIEDO EMPEZAR"
+            </small>
+
+            <h3>
+              Primer paso hacia algo propio
+            </h3>
+
+            <p>
+              Una hoja de ruta para convertir una capacidad en una
+              primera idea concreta sin esperar a sentirte completamente preparada.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       TESTIMONIOS
+       MOCKUPS — SUSTITUIR POR TESTIMONIOS REALES
+  ========================================== -->
+
+  <section class="testimonials">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Historias reales
+      </div>
+
+      <h2 class="section-title">
+        A veces el primer cambio no se ve por fuera.
+        Se siente por dentro.
+      </h2>
+
+      <p class="section-subtitle">
+        Estas tarjetas están preparadas para representar las principales
+        objeciones del avatar. Sustituye el contenido por testimonios
+        reales y verificables antes de publicar.
+      </p>
+
+
+      <div class="testimonial-grid">
+
+
+        <!-- TESTIMONIO 1 -->
+
+        <article class="testimonial">
+
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+
+          <div class="testimonial-objection">
+            "No tengo tiempo"
+          </div>
+
+          <p class="testimonial-quote">
+            "Pensé que iba a necesitar horas al día y por eso lo estaba
+            postergando. Cuando vi que podía avanzar en pequeños momentos,
+            por fin pude mantener el proceso."
+          </p>
+
+          <div class="testimonial-author">
+
+            <div class="avatar">
+              M
+            </div>
+
+            <div>
+              <div class="author-name">
+                María Fernanda
+              </div>
+
+              <div class="author-country">
+                Bogotá, Colombia
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- TESTIMONIO 2 -->
+
+        <article class="testimonial">
+
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+
+          <div class="testimonial-objection">
+            "Me cuesta poner límites"
+          </div>
+
+          <p class="testimonial-quote">
+            "Lo que más me sorprendió fue darme cuenta de cuánto explicaba
+            cada vez que quería decir que no. Empecé a ser más clara y,
+            sobre todo, dejé de sentir que tenía que justificarme por todo."
+          </p>
+
+          <div class="testimonial-author">
+
+            <div class="avatar">
+              C
+            </div>
+
+            <div>
+              <div class="author-name">
+                Carolina
+              </div>
+
+              <div class="author-country">
+                Ciudad de México, México
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- TESTIMONIO 3 -->
+
+        <article class="testimonial">
+
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+
+          <div class="testimonial-objection">
+            "No sé qué podría vender"
+          </div>
+
+          <p class="testimonial-quote">
+            "Yo siempre pensaba que no tenía nada especial para ofrecer.
+            El ejercicio de identificar mis habilidades me hizo ver cosas
+            que llevaba años haciendo sin darles ningún valor."
+          </p>
+
+          <div class="testimonial-author">
+
+            <div class="avatar">
+            L
+            </div>
+
+            <div>
+              <div class="author-name">
+                Lucía
+              </div>
+
+              <div class="author-country">
+                Madrid, España
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- TESTIMONIO 4 -->
+
+        <article class="testimonial">
+
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+
+          <div class="testimonial-objection">
+            "Me da culpa elegirme"
+          </div>
+
+          <p class="testimonial-quote">
+            "Siempre decía que primero estaban todos los demás.
+            Empecé a cuestionar esa costumbre y a reservar pequeños espacios
+            para mí. Parece algo pequeño, pero para mí fue enorme."
+          </p>
+
+          <div class="testimonial-author">
+
+            <div class="avatar">
+              V
+            </div>
+
+            <div>
+              <div class="author-name">
+                Valentina
+              </div>
+
+              <div class="author-country">
+                Santiago, Chile
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- TESTIMONIO 5 -->
+
+        <article class="testimonial">
+
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+
+          <div class="testimonial-objection">
+            "No sé si esto funciona para mí"
+          </div>
+
+          <p class="testimonial-quote">
+            "No esperaba sentir que todo iba a cambiar de un día para otro.
+            Lo que sí necesitaba era una estructura que pudiera seguir.
+            Eso fue lo que finalmente me ayudó a avanzar."
+          </p>
+
+          <div class="testimonial-author">
+
+            <div class="avatar">
+              A
+            </div>
+
+            <div>
+              <div class="author-name">
+                Andrea
+              </div>
+
+              <div class="author-country">
+                Lima, Perú
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- TESTIMONIO 6 -->
+
+        <article class="testimonial">
+
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+
+          <div class="testimonial-objection">
+            "Me da miedo empezar algo propio"
+          </div>
+
+          <p class="testimonial-quote">
+            "Me pasé mucho tiempo esperando a estar lista. Lo que cambió
+            fue entender que no tenía que tener un negocio perfecto,
+            solamente encontrar un primer paso que tuviera sentido para mí."
+          </p>
+
+          <div class="testimonial-author">
+
+            <div class="avatar">
+              P
+            </div>
+
+            <div>
+              <div class="author-name">
+                Paula
+              </div>
+
+              <div class="author-country">
+                Buenos Aires, Argentina
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       OFERTA
+  ========================================== -->
+
+  <section class="offer" id="oferta">
+
+    <div class="container">
+
+      <div class="offer-box">
+
+        <div class="section-kicker">
+          Hoy puedes empezar
+        </div>
+
+        <h2>
+          Tu vida no cambia cuando
+          encuentras más tiempo.
+          Cambia cuando empiezas a elegir diferente.
+        </h2>
+
+        <p class="offer-subtitle">
+          Empieza hoy con el Método de Volver a Elegirte
+          y recorre el proceso a tu propio ritmo.
+        </p>
+
+
+        <!-- TEMPORIZADOR -->
+
+        <div class="timer-wrap">
+
+          <div class="timer-label">
+            Esta oferta se actualiza en
+          </div>
+
+          <div
+            class="timer"
+            id="countdown"
+          >
+            15:00
+          </div>
+
+        </div>
+
+
+        <!-- PRECIO -->
+
+        <div class="price-card">
+
+          <div class="price-label">
+            Acceso completo
+          </div>
+
+          <div class="old-price">
+            Valor regular: US$32
+          </div>
+
+          <div class="price">
+            US$16
+          </div>
+
+          <div class="discount">
+            50% DE DESCUENTO
+          </div>
+
+          <a href="#" class="cta">
+            QUIERO VOLVER A ELEGIRME
+            <span class="cta-arrow">→</span>
+          </a>
+
+          <div class="secure">
+            🔒 Pago seguro · Pago único · Acceso inmediato
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       GARANTÍA 15 DÍAS
+  ========================================== -->
+
+  <section class="guarantee">
+
+    <div class="container">
+
+      <div class="guarantee-box">
+
+        <div class="guarantee-icon">
+          ✓
+        </div>
+
+        <div class="section-kicker">
+          Tu decisión no tiene que sentirse como un salto al vacío
+        </div>
+
+        <h2>
+          Garantía de 15 días
+        </h2>
+
+        <p>
+          Tienes 15 días completos para probar el Método de Volver a Elegirte.
+          Úsalo, avanza a tu ritmo y pon en práctica las herramientas.
+          Si después de probarlo consideras que no es para ti,
+          puedes solicitar tu devolución según los términos de la garantía.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       FAQ
+  ========================================== -->
+
+  <section class="faq">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        Preguntas frecuentes
+      </div>
+
+      <h2 class="section-title">
+        Antes de empezar, probablemente quieras saber esto.
+      </h2>
+
+
+      <div class="faq-list">
+
+        <details>
+
+          <summary>
+            ¿Cuánto tiempo necesito cada día?
+          </summary>
+
+          <p>
+            La estructura está pensada para sesiones cortas,
+            aproximadamente 15 minutos al día. Puedes avanzar
+            según tu disponibilidad.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Necesito tener un negocio para hacerlo?
+          </summary>
+
+          <p>
+            No. El objetivo es ayudarte a identificar capacidades,
+            conocimientos y experiencias que ya tienes y empezar
+            a pensar cómo podrían convertirse en algo propio.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Y si no sé exactamente qué quiero hacer?
+          </summary>
+
+          <p>
+            Precisamente por eso comienza con claridad. No necesitas
+            llegar con una idea de negocio perfectamente definida.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Tengo que hacerlo durante 40 días seguidos?
+          </summary>
+
+          <p>
+            No necesitas perfección. El proceso está organizado en 40 días,
+            pero puedes adaptarlo a tu ritmo y volver al material cuando quieras.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Cómo recibo el acceso?
+          </summary>
+
+          <p>
+            Después de completar tu compra recibirás las instrucciones
+            de acceso al material de forma digital.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Qué pasa si compro y descubro que no es para mí?
+          </summary>
+
+          <p>
+            Cuentas con una garantía de 15 días. Consulta los términos
+            de la garantía para conocer el proceso de solicitud de devolución.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CIERRE
+  ========================================== -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <div class="section-kicker">
+        El primer paso puede ser pequeño
+      </div>
+
+      <h2>
+        De reaccionar a elegir.
+        De complacer a poner límites.
+        De regalar tu capacidad a construir con ella.
+      </h2>
+
+      <p>
+        No tienes que saber exactamente cómo será el resultado.
+        Solo necesitas decidir que ya no quieres seguir dejando
+        todo lo tuyo para después.
+      </p>
+
+      <a href="#oferta" class="cta">
+        QUIERO EMPEZAR HOY
+        <span class="cta-arrow">→</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 · Método de Volver a Elegirte
+      </p>
+
+      <p style="margin-top:8px;">
+        Todos los derechos reservados.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       CTA FIJO MOBILE
+  ========================================== -->
+
+  <div class="mobile-cta">
+
+    <a href="#oferta" class="cta">
+      EMPEZAR POR US$16
+      <span class="cta-arrow">→</span>
+    </a>
+
+  </div>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+       TEMPORIZADOR 15 MINUTOS
+       SE REINICIA AL RECARGAR
+  ========================================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const timer = document.getElementById("countdown");
+
+      let duration = 15 * 60;
+
+      function updateTimer() {
+
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+
+        timer.textContent =
+          String(minutes).padStart(2, "0") +
+          ":" +
+          String(seconds).padStart(2, "0");
+
+        if (duration <= 0) {
+
+          duration = 15 * 60;
+
+        } else {
+
+          duration--;
+
+        }
+
+      }
+
+      updateTimer();
+
+      setInterval(updateTimer, 1000);
+
+    });
+
+
+    /*
+      ==========================================
+      ANIMACIÓN SUAVE AL HACER CLICK EN CTA
+      ==========================================
+    */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+
+      anchor.addEventListener("click", function(e) {
+
+        const targetId = this.getAttribute("href");
+
+        if (
+          targetId &&
+          targetId !== "#" &&
+          document.querySelector(targetId)
+        ) {
+
+          e.preventDefault();
+
+          document
+            .querySelector(targetId)
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
