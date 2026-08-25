@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <style>
@@ -195,13 +195,30 @@
     .hero-steps span {
       color: var(--cta);
     }
-    /* HERO CHIPS */
-    .hero-chips {
+    /* HERO CHIPS — franja continua estilo "ticker" */
+    .hero-chips-marquee {
       margin-top: 28px;
+      width: 100%;
+      max-width: 100vw;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .hero-chips {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
       gap: 9px;
+      width: max-content;
+      animation: chipsMarquee 24s linear infinite;
+    }
+    .hero-chips-marquee:hover .hero-chips {
+      animation-play-state: paused;
+    }
+    @keyframes chipsMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
     .hero-chip {
       display: inline-flex;
@@ -242,6 +259,17 @@
       .hero-chip {
         opacity: 1;
         animation: none;
+      }
+      .hero-chips {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+      }
+      .hero-chips-marquee {
+        overflow: visible;
+        -webkit-mask-image: none;
+        mask-image: none;
       }
     }
     /* HERO IMAGE */
@@ -383,49 +411,87 @@
       margin-bottom: 30px;
     }
     .press-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px 56px;
+      background: none;
+      border: none;
     }
     .press-item {
-      display: block;
-      padding: 26px 24px;
-      text-align: left;
-      background: var(--cream-2);
-      transition: background .3s ease;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 0;
+      background: none;
+      opacity: .8;
+      transition: opacity .3s ease;
     }
     .press-item:hover {
-      background: var(--cream);
+      opacity: 1;
+      background: none;
     }
-    .press-topic {
-      display: block;
-      color: var(--cta);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+    /* Solo se ve el nombre — el rubro y la cita quedan para lectores de pantalla (sr-only) */
+    .press-topic,
+    .press-headline {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
     .press-outlet {
       display: block;
-      margin-top: 6px;
       font-family: var(--serif);
       font-size: 19px;
       font-weight: 600;
       color: var(--wine);
     }
-    .press-headline {
-      display: block;
-      margin-top: 8px;
-      color: var(--brown);
-      font-size: 10px;
+    /* Tratamiento tipográfico por medio — la letra más parecida posible al isotipo real de cada marca, sin reproducir el logo en sí */
+    .press-outlet.outlet-infobae {
+      font-family: Arial, 'Helvetica Neue', sans-serif;
+      font-weight: 800;
+      text-transform: lowercase;
+      letter-spacing: -.015em;
+      font-size: 24px;
+      color: var(--wine);
+    }
+    .press-outlet.outlet-lanacion {
+      font-family: Georgia, 'Times New Roman', var(--serif), serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      font-size: 21px;
+      color: var(--wine);
+    }
+    .press-outlet.outlet-psychtoday {
+      font-family: Arial, 'Helvetica Neue', sans-serif;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      font-size: 20px;
+      color: var(--wine);
+    }
+    .press-outlet.outlet-psychtoday em {
+      font-family: Georgia, 'Times New Roman', serif;
       font-style: italic;
-      line-height: 1.5;
+      font-weight: 400;
+      color: var(--wine);
+      margin-left: 4px;
+    }
+    .press-outlet.outlet-forbes {
+      font-family: Georgia, 'Times New Roman', var(--serif), serif;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-size: 25px;
+      color: var(--wine);
     }
     @media(max-width: 650px) {
       .press-grid {
-        grid-template-columns: 1fr;
+        gap: 18px 32px;
       }
     }
     /* MANIFESTO */
@@ -1402,9 +1468,12 @@
         max-width: 300px;
         margin-top: 32px;
       }
-      .hero-chips {
+      .hero-chips-marquee {
         margin-top: 20px;
+      }
+      .hero-chips {
         gap: 7px;
+        animation-duration: 18s;
       }
       .hero-chip {
         padding: 7px 12px;
@@ -1544,12 +1613,19 @@
             <span>construir la tuya.</span>
           </div>
         </div>
-        <div class="hero-chips">
-          <span class="hero-chip">⏱ 15 minutos al día</span>
-          <span class="hero-chip">⚡ Acceso inmediato y de por vida</span>
-          <span class="hero-chip">💬 Dejar de reaccionar</span>
-          <span class="hero-chip">🛡 Poner límites sin culpa</span>
-          <span class="hero-chip">🎯 Construir algo propio</span>
+        <div class="hero-chips-marquee">
+          <div class="hero-chips">
+            <span class="hero-chip">⏱ 15 minutos al día</span>
+            <span class="hero-chip">⚡ Acceso inmediato y de por vida</span>
+            <span class="hero-chip">💬 Dejar de reaccionar</span>
+            <span class="hero-chip">🛡 Poner límites sin culpa</span>
+            <span class="hero-chip">🎯 Construir algo propio</span>
+            <span class="hero-chip" aria-hidden="true">⏱ 15 minutos al día</span>
+            <span class="hero-chip" aria-hidden="true">⚡ Acceso inmediato y de por vida</span>
+            <span class="hero-chip" aria-hidden="true">💬 Dejar de reaccionar</span>
+            <span class="hero-chip" aria-hidden="true">🛡 Poner límites sin culpa</span>
+            <span class="hero-chip" aria-hidden="true">🎯 Construir algo propio</span>
+          </div>
         </div>
       </div>
       <!-- IMAGEN HERO ORIGINAL -->
@@ -1635,22 +1711,22 @@
       <div class="press-grid">
         <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
           <span class="press-topic">Carga mental</span>
-          <span class="press-outlet">infobae</span>
+          <span class="press-outlet outlet-infobae">infobae</span>
           <span class="press-headline">"Las mamás asumen el 70% de la 'carga mental' para las tareas domésticas, según un estudio"</span>
         </a>
         <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener">
           <span class="press-topic">Carga mental</span>
-          <span class="press-outlet">LA NACION</span>
+          <span class="press-outlet outlet-lanacion">La Nación</span>
           <span class="press-headline">"Qué es la carga mental y por qué el estrés también tiene sesgo de género"</span>
         </a>
         <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener">
           <span class="press-topic">Límites sin culpa</span>
-          <span class="press-outlet">Psychology Today</span>
+          <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
           <span class="press-headline">"6 Ways to Set Boundaries Without Guilt"</span>
         </a>
         <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener">
           <span class="press-topic">Monetizar tu capacidad</span>
-          <span class="press-outlet">Forbes</span>
+          <span class="press-outlet outlet-forbes">Forbes</span>
           <span class="press-headline">"Cómo monetizar los talentos únicos que podrían hacerte rico"</span>
         </a>
       </div>
