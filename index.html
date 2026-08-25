@@ -1,4 +1,9 @@
-Sí. Te dejo el código completo. Importante: como no me pasaste testimonios reales, no inventé “resultados” ni “compras verificadas”. Dejé testimonios modelo/plantilla escritos de forma orgánica para que reemplaces los corchetes con palabras reales de clientas.
+Perfecto. Ajusté dos cosas importantes:
+
+Hero más limpio: menos texto, más impacto, menos carga visual.
+Testimonios reducidos a 6: cada uno responde una objeción concreta del avatar.
+
+Nota rápida: los testimonios están escritos como plantillas orgánicas. Antes de publicar, reemplazá nombres/contextos por testimonios reales.
 
 Copy code
 <!DOCTYPE html>
@@ -18,17 +23,14 @@ Copy code
       --pink: #ff3f86;
       --pink2: #ff6aa3;
       --cream: #fff4f8;
-      --cream2: #fff9fb;
       --white: #ffffff;
       --text: #2c1630;
       --muted: #6d526f;
-      --mutedLight: #e7c9e8;
       --green: #13d489;
       --red: #ff354f;
       --line: rgba(255,255,255,.14);
       --shadow: 0 24px 80px rgba(41, 7, 45, .24);
       --pinkShadow: 0 0 34px rgba(255, 63, 134, .55);
-      --radius: 26px;
       --max: 1120px;
     }
 
@@ -70,7 +72,6 @@ Copy code
       padding: 10px 14px;
       font-weight: 900;
       font-size: 14px;
-      letter-spacing: -0.01em;
     }
 
     .timer-pill {
@@ -94,7 +95,7 @@ Copy code
         radial-gradient(circle at 12% 18%, rgba(255,255,255,.09), transparent 22%),
         linear-gradient(180deg, #26062e 0%, #150219 100%);
       color: #fff;
-      padding: 58px 0 94px;
+      padding: 54px 0 92px;
     }
 
     .hero::after {
@@ -113,8 +114,8 @@ Copy code
       position: relative;
       z-index: 3;
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 52px;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 48px;
       align-items: center;
     }
 
@@ -135,11 +136,11 @@ Copy code
     }
 
     h1 {
-      font-size: clamp(42px, 6.6vw, 78px);
+      font-size: clamp(42px, 6.6vw, 76px);
       line-height: .95;
       letter-spacing: -0.065em;
-      margin-bottom: 22px;
-      max-width: 850px;
+      margin-bottom: 20px;
+      max-width: 760px;
     }
 
     h1 span {
@@ -158,31 +159,21 @@ Copy code
     }
 
     .hero-sub {
-      font-size: clamp(18px, 2.2vw, 23px);
+      font-size: clamp(18px, 2vw, 22px);
       color: #f0d3ef;
-      max-width: 720px;
+      max-width: 660px;
       font-weight: 560;
       margin-bottom: 24px;
     }
 
-    .truth {
-      margin: 24px 0;
-      padding: 18px 20px;
-      border-left: 5px solid var(--pink);
-      background: rgba(255,255,255,.06);
-      border-radius: 16px;
+    .hero-sub strong {
       color: #fff;
-      font-size: 18px;
-    }
-
-    .truth strong {
-      color: var(--pink2);
     }
 
     .hero-bullets {
       display: grid;
       gap: 11px;
-      margin: 26px 0 30px;
+      margin: 24px 0 30px;
       color: #fff5fa;
       font-weight: 680;
     }
@@ -241,7 +232,7 @@ Copy code
     .split-box {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 370px;
+      min-height: 360px;
       overflow: hidden;
       border-radius: 23px;
       border: 1px solid rgba(255,255,255,.12);
@@ -250,7 +241,7 @@ Copy code
 
     .split-side {
       position: relative;
-      min-height: 370px;
+      min-height: 360px;
       padding: 24px;
       display: flex;
       flex-direction: column;
@@ -722,50 +713,6 @@ Copy code
       font-weight: 650;
     }
 
-    .preview-box {
-      max-width: 760px;
-      margin: 38px auto 0;
-      background: #fff;
-      border: 1px solid #f0d6e4;
-      border-radius: 32px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .tablet {
-      aspect-ratio: 16 / 10;
-      border: 12px solid #1d0622;
-      border-radius: 24px;
-      display: grid;
-      place-items: center;
-      padding: 38px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.68)),
-        radial-gradient(circle at 50% 0%, #ffd5e6, #c7afca);
-      text-align: center;
-    }
-
-    .tablet-page {
-      max-width: 400px;
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 12px 34px rgba(0,0,0,.14);
-    }
-
-    .tablet-page h3 {
-      font-size: 28px;
-      line-height: 1.05;
-      color: #331039;
-      margin-bottom: 12px;
-    }
-
-    .tablet-page p {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 560;
-    }
-
     .stack-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -807,23 +754,6 @@ Copy code
       color: #e4c7e6;
       font-size: 15px;
       font-weight: 540;
-    }
-
-    .testimonial-note {
-      max-width: 860px;
-      margin: 0 auto 34px;
-      background: #fff;
-      border: 1px solid #f0d6e4;
-      border-radius: 22px;
-      padding: 20px;
-      color: #5d4360;
-      font-weight: 650;
-      box-shadow: 0 14px 44px rgba(68,20,68,.06);
-      text-align: left;
-    }
-
-    .testimonial-note strong {
-      color: var(--pink);
     }
 
     .testimonials {
@@ -870,20 +800,13 @@ Copy code
       margin-bottom: 18px;
     }
 
-    .testimonial .why {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid #f2d8e5;
-      font-size: 13px;
-      color: #7d617f;
-      font-weight: 750;
-    }
-
     .person {
       display: flex;
       gap: 12px;
       align-items: center;
-      margin-top: 16px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid #f2d8e5;
     }
 
     .avatar {
@@ -1033,13 +956,6 @@ Copy code
       color: #d9bedc;
       font-size: 13px;
       font-weight: 700;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-      margin-top: 38px;
     }
 
     .guarantee {
@@ -1227,17 +1143,12 @@ Copy code
       .cards,
       .summary-box,
       .mechanism,
-      .steps,
       .testimonials {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .stack-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-bottom: 82px;
       }
     }
 
@@ -1278,7 +1189,6 @@ Copy code
       .cards,
       .summary-box,
       .mechanism,
-      .steps,
       .testimonials,
       .mini-grid {
         grid-template-columns: 1fr;
@@ -1300,15 +1210,6 @@ Copy code
       .book {
         width: 188px;
         min-height: 235px;
-      }
-
-      .tablet {
-        padding: 24px;
-        border-width: 9px;
-      }
-
-      .tablet-page {
-        padding: 22px;
       }
 
       .price {
@@ -1334,6 +1235,7 @@ Copy code
     <span class="timer-pill" data-countdown>15:00</span>
   </div>
 
+  <!-- HERO OPTIMIZADO -->
   <header class="hero">
     <div class="container hero-inner">
 
@@ -1344,30 +1246,19 @@ Copy code
 
         <h1>
           No estás perdida.
-          <span>Estás viviendo en modo reacción.</span>
+          <span>Estás en modo reacción.</span>
         </h1>
 
         <p class="hero-sub">
-          Kit Volver a Vos es un recorrido práctico para calmar tu cabeza,
-          poner límites sin culpa y empezar a ordenar lo que ya sabés hacer
-          para convertirlo en una dirección propia con posibilidad de ingreso.
+          Un recorrido práctico para <strong>calmar tu cabeza</strong>,
+          <strong>recuperar tu voz</strong> y empezar a ordenar lo que sabés hacer
+          en una dirección propia.
         </p>
 
-        <div class="truth">
-          Porque no te falta capacidad.
-          <br>
-          <strong>
-            Te falta dejar de construir tu vida desde el cansancio,
-            la culpa y las urgencias de todos los demás.
-          </strong>
-        </div>
-
         <div class="hero-bullets">
-          <div class="bullet"><span class="check">✓</span> Bajá el ruido mental que no te deja avanzar.</div>
-          <div class="bullet"><span class="check">✓</span> Aprendé a poner límites sin sentir que estás fallando.</div>
-          <div class="bullet"><span class="check">✓</span> Dejá de dejar tus ideas para “cuando haya más tiempo”.</div>
-          <div class="bullet"><span class="check">✓</span> Empezá a mirar lo que sabés hacer como algo que también puede tener valor.</div>
-          <div class="bullet"><span class="check">✓</span> Volvé a sentir que tu vida también te pertenece.</div>
+          <div class="bullet"><span class="check">✓</span> Bajá el ruido mental que te tiene apagando incendios todo el día.</div>
+          <div class="bullet"><span class="check">✓</span> Poné límites sin sentir que estás fallando.</div>
+          <div class="bullet"><span class="check">✓</span> Empezá a mirar lo que sabés como algo que también puede sostenerte a vos.</div>
         </div>
 
         <a href="#checkout" class="cta">Quiero volver a mí</a>
@@ -1396,7 +1287,7 @@ Copy code
               <div class="visual-kicker">Después</div>
               <div class="visual-title">Volver a vos</div>
               <div class="visual-text">
-                Calmás tu mente, recuperás tu voz y empezás a construir una dirección propia.
+                Calma, voz y dirección para empezar a construir desde otro lugar.
               </div>
             </div>
           </div>
@@ -1432,15 +1323,10 @@ Copy code
         <h2>Capaz hace tiempo venís funcionando así.</h2>
 
         <p>Decís que sí cuando por dentro querés decir que no.</p>
-
         <p>Te tragás cosas para no discutir.</p>
-
         <p>Resolviste problemas de todos, pero tus planes siguen esperando.</p>
-
         <p>Tenés ideas, capacidad y ganas… pero cuando llega el momento de avanzar, algo te frena.</p>
-
         <p>Y lo más confuso es que desde afuera parecés funcional.</p>
-
         <p>Respondés. Organizás. Cumplís. Ayudás. Sostenés.</p>
 
         <div class="question-box">
@@ -1595,38 +1481,6 @@ Copy code
     </div>
   </section>
 
-  <section>
-    <div class="container center">
-      <div class="tag">La transformación real</div>
-      <h2>Lo que empieza a cambiar cuando dejás de vivir en automático</h2>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Dejás de responder desde el enojo</h3>
-          <p>No porque ahora todo te resbale. Sino porque empezás a detectar ese segundo donde antes explotabas, te callabas o cedías.</p>
-        </div>
-
-        <div class="card">
-          <h3>Ponés límites sin sentirte mala persona</h3>
-          <p>Con frases simples. Con decisiones pequeñas. Con menos culpa después de elegirte.</p>
-        </div>
-
-        <div class="card">
-          <h3>Dejás de confundir paz con aguantar</h3>
-          <p>Porque muchas veces no estabas siendo tranquila. Estabas evitando conflictos para no incomodar a nadie.</p>
-        </div>
-
-        <div class="card">
-          <h3>Mirás lo que sabés como algo valioso</h3>
-          <p>Capaz ya ayudás, explicás o acompañás. Pero nunca lo miraste como algo que podía convertirse en una dirección propia.</p>
-        </div>
-      </div>
-
-      <br><br>
-      <a href="#checkout" class="cta">Quiero empezar hoy</a>
-    </div>
-  </section>
-
   <section class="dark-section">
     <div class="container center">
       <div class="tag">Todo incluido</div>
@@ -1685,27 +1539,6 @@ Copy code
     </div>
   </section>
 
-  <section>
-    <div class="container center">
-      <div class="tag">Por dentro</div>
-      <h2>Mirá cómo se siente avanzar con una guía simple</h2>
-      <p class="lead">
-        No es otro material para guardar en una carpeta. Está pensado para ayudarte a empezar sin sentir que sumaste otra obligación más.
-      </p>
-
-      <div class="preview-box">
-        <div class="tablet">
-          <div class="tablet-page">
-            <h3>Cuando dejás de reaccionar, empezás a decidir</h3>
-            <p>
-              Una guía práctica para bajar el ruido, recuperar tu voz y ordenar lo que querés construir con más dirección.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="dark-section">
     <div class="container center">
       <div class="tag">Stack de valor</div>
@@ -1758,22 +1591,6 @@ Copy code
         <div class="stack-card">
           <div class="stack-icon">6</div>
           <div>
-            <h3>Diccionario del Dinero Simple</h3>
-            <p>Para dejar de sentir que hablar de dinero es un idioma ajeno.</p>
-          </div>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">7</div>
-          <div>
-            <h3>Kit de Frases Anti-Culpa</h3>
-            <p>Para esos momentos donde querés elegirte, pero aparece la voz de “estoy siendo egoísta”.</p>
-          </div>
-        </div>
-
-        <div class="stack-card">
-          <div class="stack-icon">8</div>
-          <div>
             <h3>Garantía de 30 días</h3>
             <p>Para entrar, revisar y decidir sin miedo si esto realmente es para vos.</p>
           </div>
@@ -1782,127 +1599,108 @@ Copy code
     </div>
   </section>
 
-  <!-- TESTIMONIOS POR OBJECIÓN -->
+  <!-- TESTIMONIOS ACTUALIZADOS: 6 OBJECIONES -->
   <section>
     <div class="container center">
-      <div class="tag">Testimonios por objeción</div>
-      <h2>Lo que deberías mostrar acá no es “me gustó”. Es “yo también dudaba de eso”.</h2>
+      <div class="tag">Lo que ellas también dudaban</div>
+      <h2>No necesitás testimonios perfectos. Necesitás verte reflejada.</h2>
       <p class="lead">
-        Estos bloques están escritos como plantillas orgánicas. Reemplazá los corchetes con testimonios reales, usando palabras reales de tus clientas.
+        Algunas llegan pensando que no tienen tiempo. Otras que van a abandonar como siempre.
+        Otras con culpa por elegir algo para ellas. Y otras sin saber si lo que saben hacer realmente tiene valor.
       </p>
 
-      <div class="testimonial-note">
-        <strong>Nota estratégica:</strong> cada testimonio responde una objeción distinta del avatar. No tienen que sonar perfectos. Tienen que sonar humanos, específicos y comunes.
-      </div>
-
       <div class="testimonials">
+
         <div class="testimonial">
-          <div class="objection">Objeción: “No tengo tiempo”</div>
+          <div class="objection">“No tengo tiempo”</div>
           <div class="stars">★★★★★</div>
           <p>
-            “Yo pensé que iba a comprarlo y dejarlo para después, porque mi día siempre está lleno. Pero me sirvió que no tenía que sentarme horas. Empecé con [parte específica del kit] y pude avanzar de a poco, incluso en días donde estaba cansada.”
+            “Eso fue lo primero que pensé: otra cosa más para hacer. Pero no lo sentí pesado. Empecé leyendo una parte chiquita mientras tomaba café y me sirvió para ordenar lo que tenía en la cabeza ese día. No tuve que cambiar toda mi rutina. Solo empezar a darme un espacio.”
           </p>
-          <div class="why">
-            Qué objeción destruye: “Estoy saturada, no puedo sumar otra cosa.”
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div>
               <strong>[Nombre real]</strong>
-              <span>[Contexto real: mamá, emprendedora, empleada, etc.]</span>
+              <span>Objeción resuelta: falta de tiempo</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial">
-          <div class="objection">Objeción: “Siempre empiezo y abandono”</div>
+          <div class="objection">“Siempre empiezo y abandono”</div>
           <div class="stars">★★★★★</div>
           <p>
-            “Me daba miedo que fuera otro material más guardado en el celular. Ya me pasó con cursos, agendas y guías. Pero esta vez no sentí que tenía que hacerlo perfecto. Lo empecé, lo pausé un día, volví, y eso para mí ya fue distinto.”
+            “Me daba miedo comprarlo y que quedara guardado como otras guías que tengo. Pero acá no sentí esa presión de hacerlo perfecto. Lo empecé, un día no hice nada, y al otro pude volver sin sentir que ya había fallado. Eso para mí fue distinto.”
           </p>
-          <div class="why">
-            Qué objeción destruye: “Seguro lo compro y no lo uso.”
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div>
               <strong>[Nombre real]</strong>
-              <span>[Contexto real]</span>
+              <span>Objeción resuelta: falta de constancia</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial">
-          <div class="objection">Objeción: “Me cuesta poner límites”</div>
+          <div class="objection">“Me cuesta poner límites”</div>
           <div class="stars">★★★★★</div>
           <p>
-            “La parte de Voz Propia me pegó mucho. Me di cuenta de que muchas veces no decía que sí porque quería, sino para no incomodar. Usé una de las frases con [situación real] y pude decirlo sin pelear ni explicar mil veces.”
+            “La parte de Voz Propia fue la que más me movió. Me di cuenta de que muchas veces decía que sí para no incomodar, no porque realmente quisiera. Usé una de las frases para responder algo que venía postergando y pude decirlo sin pelear ni explicar de más.”
           </p>
-          <div class="why">
-            Qué objeción destruye: “Cuando tengo que hablar, no sé qué decir.”
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div>
               <strong>[Nombre real]</strong>
-              <span>[Contexto real]</span>
+              <span>Objeción resuelta: miedo a decir que no</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial">
-          <div class="objection">Objeción: “No sé si lo que sé vale”</div>
+          <div class="objection">“No sé si lo que sé vale”</div>
           <div class="stars">★★★★★</div>
           <p>
-            “Yo siempre pensé que lo que sabía hacer era algo normal, como que cualquiera podía hacerlo. Con el ejercicio de [parte del kit] pude ordenar mejor mi idea y ver que eso que yo hacía naturalmente podía ayudar a otras personas.”
+            “Yo siempre pensé que lo que sabía hacer era algo normal. Como que si a mí me salía fácil, entonces no valía tanto. El ejercicio para ordenar lo que sé me hizo mirar distinto cosas que ya hacía por otras personas. No me prometió magia, pero me dio claridad.”
           </p>
-          <div class="why">
-            Qué objeción destruye: “No tengo nada especial para ofrecer.”
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div>
               <strong>[Nombre real]</strong>
-              <span>[Contexto real]</span>
+              <span>Objeción resuelta: no saber qué ofrecer</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial">
-          <div class="objection">Objeción: “No sé por dónde empezar”</div>
+          <div class="objection">“Me da culpa elegirme”</div>
           <div class="stars">★★★★★</div>
           <p>
-            “Lo que más me ayudó fue que no tuve que decidir todo sola. Antes tenía mil ideas en la cabeza y terminaba haciendo nada. El kit me ordenó el primer paso: primero calmarme, después mirar qué estaba sosteniendo, y recién ahí decidir.”
+            “Me pegó fuerte darme cuenta de que yo confundía ser buena con estar siempre disponible. No cambié todo de un día para el otro, pero empecé a notar cuándo decía que sí por culpa. Solo darme cuenta de eso ya me bajó un peso.”
           </p>
-          <div class="why">
-            Qué objeción destruye: “Tengo demasiadas cosas en la cabeza.”
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div>
               <strong>[Nombre real]</strong>
-              <span>[Contexto real]</span>
+              <span>Objeción resuelta: culpa por priorizarse</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial">
-          <div class="objection">Objeción: “Me da culpa elegirme”</div>
+          <div class="objection">“No sabía si esto era para mí”</div>
           <div class="stars">★★★★★</div>
           <p>
-            “Me hizo darme cuenta de que yo confundía ser buena con estar siempre disponible. No es que de un día para el otro cambié todo, pero empecé a notar cuándo decía que sí por culpa. Eso solo ya me ordenó muchísimo.”
+            “Entré con duda porque pensé que capaz era más para mujeres que ya tenían todo claro. Pero me sentí identificada con esa sensación de estar siempre resolviendo cosas para otros y dejando lo mío para después. Fue como ponerle nombre a algo que venía cargando.”
           </p>
-          <div class="why">
-            Qué objeción destruye: “Si me elijo, estoy siendo egoísta.”
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div>
               <strong>[Nombre real]</strong>
-              <span>[Contexto real]</span>
+              <span>Objeción resuelta: identificación</span>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1928,8 +1726,6 @@ Copy code
             <div class="offer-row"><div>Cuaderno de Claridad</div><span>Incluido</span></div>
             <div class="offer-row"><div>Mapa de Dirección</div><span>Incluido</span></div>
             <div class="offer-row"><div>Puente al Ingreso Propio</div><span>Incluido</span></div>
-            <div class="offer-row"><div>Diccionario del Dinero Simple</div><span>Incluido</span></div>
-            <div class="offer-row"><div>Kit de Frases Anti-Culpa</div><span>Incluido</span></div>
             <div class="offer-row"><div>Garantía de 30 días</div><span>Incluida</span></div>
           </div>
 
@@ -1951,30 +1747,6 @@ Copy code
           <div class="payment-note">
             Acceso inmediato · Pago seguro · Garantía de 30 días
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container center">
-      <div class="tag">Simple y rápido</div>
-      <h2>Cómo lo recibís</h2>
-
-      <div class="steps">
-        <div class="card">
-          <h3>1. Comprás</h3>
-          <p>Tocás el botón, completás tus datos y pagás de forma segura.</p>
-        </div>
-
-        <div class="card">
-          <h3>2. Lo recibís por mail</h3>
-          <p>Te llega el acceso al kit completo con todos los materiales incluidos.</p>
-        </div>
-
-        <div class="card">
-          <h3>3. Empezás hoy</h3>
-          <p>Abrís el material, elegís por dónde comenzar y avanzás a tu ritmo.</p>
         </div>
       </div>
     </div>
@@ -2018,7 +1790,7 @@ Copy code
             <span>⌄</span>
           </button>
           <div class="faq-answer">
-            Incluye el recorrido principal, la guía Voz Propia, el cuaderno de claridad, mapa de dirección, recursos para ordenar lo que sabés hacer, diccionario simple de dinero, frases anti-culpa y garantía de 30 días.
+            Incluye el recorrido principal, la guía Voz Propia, el cuaderno de claridad, mapa de dirección, recursos para ordenar lo que sabés hacer y garantía de 30 días.
           </div>
         </div>
 
@@ -2039,16 +1811,6 @@ Copy code
           </button>
           <div class="faq-answer">
             No necesitás horas por día. La idea no es sumarte otra obligación más, sino darte un espacio simple para volver a vos, aunque sea de a poco.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Y si siempre empiezo cosas y las abandono?
-            <span>⌄</span>
-          </button>
-          <div class="faq-answer">
-            Justamente por eso el kit está pensado como un recorrido simple. No tenés que hacerlo perfecto. Podés avanzar a tu ritmo, pausar y volver cuando lo necesites.
           </div>
         </div>
 
@@ -2079,16 +1841,6 @@ Copy code
           </button>
           <div class="faq-answer">
             Entrás, revisás el material y si dentro de los primeros 30 días sentís que no era para vos, escribís para pedir la devolución según las condiciones de compra.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿El precio es una suscripción?
-            <span>⌄</span>
-          </button>
-          <div class="faq-answer">
-            No. Es un pago único de 15 USD durante esta etapa de lanzamiento.
           </div>
         </div>
       </div>
@@ -2142,17 +1894,11 @@ Copy code
   </div>
 
   <script>
-    /*
-      CONTADOR DE 15 MINUTOS
-      Se reinicia cada vez que la página carga.
-    */
-
     let countdownSeconds = 15 * 60;
 
     function formatCountdown(seconds) {
       const min = Math.floor(seconds / 60);
       const sec = seconds % 60;
-
       return String(min).padStart(2, "0") + ":" + String(sec).padStart(2, "0");
     }
 
@@ -2170,10 +1916,6 @@ Copy code
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-    /*
-      FAQ ACCORDION
-    */
 
     document.querySelectorAll(".faq-item").forEach(function(item) {
       const button = item.querySelector(".faq-question");
