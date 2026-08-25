@@ -490,9 +490,33 @@
       color: var(--wine);
     }
     @media(max-width: 650px) {
-      .press-grid {
-        gap: 18px 32px;
+      .press-label {
+        padding: 0 10px;
       }
+      .press-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 26px 10px;
+      }
+      .press-item {
+        justify-content: center;
+        width: 100%;
+      }
+      .press-outlet.outlet-infobae { font-size: 19px; }
+      .press-outlet.outlet-lanacion { font-size: 15px; letter-spacing: .005em; }
+      .press-outlet.outlet-psychtoday { font-size: 16px; }
+      .press-outlet.outlet-forbes { font-size: 20px; }
+    }
+    @media(max-width: 380px) {
+      .press-grid {
+        gap: 22px 6px;
+      }
+      .press-outlet.outlet-infobae { font-size: 17px; }
+      .press-outlet.outlet-lanacion { font-size: 13px; }
+      .press-outlet.outlet-psychtoday { font-size: 14px; }
+      .press-outlet.outlet-forbes { font-size: 18px; }
     }
     /* MANIFESTO */
     .manifesto {
