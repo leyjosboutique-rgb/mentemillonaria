@@ -1,264 +1,2631 @@
-<!-- =====================================================
-     TESTIMONIOS
-     
-     COPYS DE MUESTRA — REEMPLAZAR POR TESTIMONIOS
-     REALES ANTES DE PUBLICAR COMO EXPERIENCIAS DE CLIENTAS.
-===================================================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
-<section class="testimonials">
+  <meta charset="UTF-8">
 
-  <div class="container">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <div class="eyebrow">
-      Historias de mujeres que decidieron empezar
-    </div>
+  <meta
+    name="description"
+    content="Método de Volver a Elegirte. De reaccionar a elegir. De complacer a poner límites. De regalar tu capacidad a construir con ella."
+  >
 
-    <h2 class="testimonials-title">
-      No necesitas tener
-      <em>todo resuelto.</em>
-    </h2>
-
-    <p class="testimonials-intro">
-      A veces el primer cambio no se nota por fuera.
-      Empieza cuando dejas de reaccionar automáticamente
-      y comienzas a tomar decisiones diferentes.
-    </p>
+  <title>
+    Método de Volver a Elegirte
+  </title>
 
 
-    <!-- TESTIMONIO DESTACADO -->
+  <!-- ==================================================
+       TIPOGRAFÍAS
+  =================================================== -->
 
-    <div class="featured-testimonial">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-      <div class="testimonial-photo">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <!-- images/testimonial-01.jpg -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet"
+  >
 
-        <img
-          src="images/testimonial-01.jpg"
-          alt="Fotografía testimonial"
-        >
+
+  <!-- ==================================================
+       ESTILOS
+  =================================================== -->
+
+  <style>
+
+    :root {
+
+      --cream: #F7F1EB;
+      --cream-dark: #EEE4DB;
+
+      --white: #FFFDFC;
+
+      --wine: #3A202C;
+      --wine-dark: #24141C;
+
+      --rose: #D95776;
+      --rose-light: #E98298;
+
+      --dusty: #D8B9BC;
+
+      --gold: #B89561;
+
+      --text: #30262A;
+      --muted: #766B6D;
+
+      --border: rgba(58,32,44,.12);
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --shadow:
+        0 25px 70px rgba(58,32,44,.10);
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      background: var(--cream);
+
+      color: var(--text);
+
+      font-family: var(--sans);
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+
+    img {
+
+      display: block;
+
+      width: 100%;
+
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    .container {
+
+      width: min(1120px, calc(100% - 40px));
+
+      margin: 0 auto;
+
+    }
+
+
+    /* ==================================================
+       HEADER
+    =================================================== */
+
+    .topbar {
+
+      padding: 13px 20px;
+
+      background: var(--wine);
+
+      color: rgba(255,255,255,.85);
+
+      text-align: center;
+
+      font-size: 10px;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .topbar strong {
+
+      color: #fff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* ==================================================
+       HERO
+    =================================================== */
+
+    .hero {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 75px 0 95px;
+
+      background:
+
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(216,185,188,.38),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 10% 70%,
+          rgba(184,149,97,.10),
+          transparent 25%
+        ),
+
+        var(--cream);
+
+    }
+
+
+    .hero-grid {
+
+      display: grid;
+
+      grid-template-columns: 1.03fr .97fr;
+
+      align-items: center;
+
+      gap: 70px;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--rose);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 27px;
+
+      height: 1px;
+
+      background: var(--rose);
+
+    }
+
+
+    .hero h1 {
+
+      max-width: 700px;
+
+      margin-top: 23px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(42px, 5.4vw, 72px);
+
+      font-weight: 500;
+
+      line-height: .99;
+
+      letter-spacing: -.035em;
+
+    }
+
+
+    .hero h1 em {
+
+      color: var(--rose);
+
+      font-style: italic;
+
+    }
+
+
+    .hero-subtitle {
+
+      max-width: 600px;
+
+      margin-top: 27px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+
+      line-height: 1.75;
+
+    }
+
+
+    .hero-subtitle strong {
+
+      color: var(--wine);
+
+    }
+
+
+    /* ==================================================
+       CTA
+    =================================================== */
+
+    .cta-wrap {
+
+      margin-top: 35px;
+
+    }
+
+
+    .cta {
+
+      position: relative;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 64px;
+
+      padding: 0 35px;
+
+      overflow: hidden;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #D95776 0%,
+          #E8738B 48%,
+          #D95776 100%
+        );
+
+      color: #fff;
+
+      font-family: var(--sans);
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      box-shadow:
+
+        0 15px 30px rgba(217,87,118,.25),
+
+        0 5px 12px rgba(58,32,44,.10);
+
+      transition:
+
+        transform .25s ease,
+
+        box-shadow .25s ease;
+
+      animation:
+        ctaPulse 3.8s ease-in-out infinite;
+
+    }
+
+
+    .cta::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: -130%;
+
+      width: 65%;
+
+      height: 100%;
+
+      transform: skewX(-20deg);
+
+      background:
+
+        linear-gradient(
+          105deg,
+          transparent,
+          rgba(255,255,255,.08),
+          rgba(255,255,255,.55),
+          rgba(255,255,255,.08),
+          transparent
+        );
+
+      animation:
+        ctaShine 4.5s ease-in-out infinite;
+
+    }
+
+
+    .cta::after {
+
+      content: "→";
+
+      margin-left: 13px;
+
+      font-size: 17px;
+
+      transition: transform .25s ease;
+
+    }
+
+
+    .cta:hover {
+
+      transform: translateY(-4px);
+
+      box-shadow:
+
+        0 22px 42px rgba(217,87,118,.35),
+
+        0 8px 18px rgba(58,32,44,.12);
+
+    }
+
+
+    .cta:hover::after {
+
+      transform: translateX(5px);
+
+    }
+
+
+    @keyframes ctaPulse {
+
+      0%,
+      70%,
+      100% {
+
+        box-shadow:
+
+          0 15px 30px rgba(217,87,118,.25),
+
+          0 5px 12px rgba(58,32,44,.10);
+
+      }
+
+      76% {
+
+        box-shadow:
+
+          0 18px 36px rgba(217,87,118,.38),
+
+          0 0 0 7px rgba(217,87,118,.07);
+
+      }
+
+      84% {
+
+        box-shadow:
+
+          0 18px 36px rgba(217,87,118,.30),
+
+          0 0 0 14px rgba(217,87,118,0);
+
+      }
+
+    }
+
+
+    @keyframes ctaShine {
+
+      0% {
+        left: -130%;
+      }
+
+      28%,
+      100% {
+        left: 140%;
+      }
+
+    }
+
+
+    .microcopy {
+
+      margin-top: 13px;
+
+      color: rgba(48,38,42,.52);
+
+      font-size: 9px;
+
+    }
+
+
+    /* ==================================================
+       HERO IMAGE
+    =================================================== */
+
+    .hero-visual {
+
+      position: relative;
+
+    }
+
+
+    .hero-image-frame {
+
+      position: relative;
+
+      overflow: hidden;
+
+      aspect-ratio: 4 / 5;
+
+      background: #E4D6CF;
+
+      box-shadow: var(--shadow);
+
+    }
+
+
+    .hero-image-frame::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 65%,
+          rgba(36,20,28,.16)
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    .hero-image-frame img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    .image-placeholder {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 100%;
+
+      height: 100%;
+
+      padding: 30px;
+
+      color: rgba(58,32,44,.45);
+
+      font-size: 10px;
+
+      line-height: 1.6;
+
+      text-align: center;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .floating-note {
+
+      position: absolute;
+
+      right: -28px;
+
+      bottom: 30px;
+
+      width: 180px;
+
+      padding: 20px;
+
+      background: rgba(255,253,252,.94);
+
+      box-shadow: 0 18px 40px rgba(58,32,44,.14);
+
+    }
+
+
+    .floating-note small {
+
+      display: block;
+
+      color: var(--rose);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .floating-note strong {
+
+      display: block;
+
+      margin-top: 7px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 20px;
+
+      line-height: 1.1;
+
+    }
+
+
+    /* ==================================================
+       SOCIAL PROOF
+    =================================================== */
+
+    .proof {
+
+      padding: 23px 0;
+
+      background: var(--wine);
+
+      color: white;
+
+    }
+
+
+    .proof-inner {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+
+      text-align: center;
+
+    }
+
+
+    .stars {
+
+      color: #DABF83;
+
+      letter-spacing: 3px;
+
+      font-size: 13px;
+
+    }
+
+
+    .proof strong {
+
+      font-size: 12px;
+
+    }
+
+
+    .proof span {
+
+      color: rgba(255,255,255,.55);
+
+      font-size: 10px;
+
+    }
+
+
+    /* ==================================================
+       TRANSFORMATION
+    =================================================== */
+
+    .transformation {
+
+      padding: 110px 0;
+
+      background: var(--white);
+
+    }
+
+
+    .section-intro {
+
+      max-width: 680px;
+
+    }
+
+
+    .section-intro h2 {
+
+      margin-top: 20px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(37px, 4.8vw, 62px);
+
+      font-weight: 500;
+
+      line-height: 1.02;
+
+      letter-spacing: -.03em;
+
+    }
+
+
+    .section-intro h2 em {
+
+      color: var(--rose);
+
+    }
+
+
+    .section-intro p {
+
+      margin-top: 24px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .three-columns {
+
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 1px;
+
+      margin-top: 70px;
+
+      background: var(--border);
+
+      border: 1px solid var(--border);
+
+    }
+
+
+    .transform-card {
+
+      padding: 42px 35px;
+
+      background: var(--white);
+
+    }
+
+
+    .transform-number {
+
+      color: var(--rose);
+
+      font-family: var(--serif);
+
+      font-size: 38px;
+
+      font-style: italic;
+
+    }
+
+
+    .transform-card h3 {
+
+      margin-top: 18px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 28px;
+
+      font-weight: 500;
+
+    }
+
+
+    .transform-card p {
+
+      margin-top: 13px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==================================================
+       MECANISMO
+    =================================================== */
+
+    .mechanism {
+
+      padding: 110px 0;
+
+      background: var(--cream);
+
+    }
+
+
+    .mechanism-grid {
+
+      display: grid;
+
+      grid-template-columns: .8fr 1.2fr;
+
+      gap: 80px;
+
+      align-items: start;
+
+    }
+
+
+    .mechanism-sticky h2 {
+
+      margin-top: 20px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(40px, 5vw, 64px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+    }
+
+
+    .mechanism-sticky h2 em {
+
+      color: var(--rose);
+
+    }
+
+
+    .mechanism-sticky p {
+
+      margin-top: 25px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .mechanism-items {
+
+      display: grid;
+
+      gap: 18px;
+
+    }
+
+
+    .mechanism-item {
+
+      display: grid;
+
+      grid-template-columns: 48px 1fr;
+
+      gap: 22px;
+
+      padding: 30px;
+
+      background: rgba(255,253,252,.62);
+
+      border: 1px solid var(--border);
+
+    }
+
+
+    .mechanism-icon {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 48px;
+
+      height: 48px;
+
+      border-radius: 50%;
+
+      background: var(--wine);
+
+      color: #fff;
+
+      font-family: var(--serif);
+
+      font-size: 19px;
+
+    }
+
+
+    .mechanism-item h3 {
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 24px;
+
+      font-weight: 500;
+
+    }
+
+
+    .mechanism-item p {
+
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.75;
+
+    }
+
+
+    /* ==================================================
+       40 DÍAS
+    =================================================== */
+
+    .journey {
+
+      padding: 110px 0;
+
+      background: var(--wine);
+
+      color: white;
+
+    }
+
+
+    .journey-header {
+
+      max-width: 700px;
+
+    }
+
+
+    .journey-header .eyebrow {
+
+      color: #E98298;
+
+    }
+
+
+    .journey-header h2 {
+
+      margin-top: 20px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(40px,5vw,62px);
+
+      font-weight: 500;
+
+      line-height: 1.02;
+
+    }
+
+
+    .journey-header h2 em {
+
+      color: #E98298;
+
+    }
+
+
+    .journey-header p {
+
+      margin-top: 23px;
+
+      color: rgba(255,255,255,.58);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .days-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(4,1fr);
+
+      gap: 1px;
+
+      margin-top: 65px;
+
+      background: rgba(255,255,255,.1);
+
+    }
+
+
+    .day-card {
+
+      min-height: 190px;
+
+      padding: 28px;
+
+      background: rgba(255,255,255,.035);
+
+    }
+
+
+    .day-card span {
+
+      color: #E98298;
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .18em;
+
+    }
+
+
+    .day-card h3 {
+
+      margin-top: 17px;
+
+      font-family: var(--serif);
+
+      font-size: 23px;
+
+      font-weight: 500;
+
+    }
+
+
+    .day-card p {
+
+      margin-top: 10px;
+
+      color: rgba(255,255,255,.48);
+
+      font-size: 10px;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* ==================================================
+       OBJECIONES
+    =================================================== */
+
+    .objections {
+
+      padding: 110px 0;
+
+      background: var(--white);
+
+    }
+
+
+    .objection-heading {
+
+      max-width: 700px;
+
+    }
+
+
+    .objection-heading h2 {
+
+      margin-top: 20px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(40px,5vw,62px);
+
+      line-height: 1;
+
+      font-weight: 500;
+
+    }
+
+
+    .objection-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2,1fr);
+
+      gap: 20px;
+
+      margin-top: 65px;
+
+    }
+
+
+    .objection-card {
+
+      padding: 35px;
+
+      background: var(--cream);
+
+      border: 1px solid var(--border);
+
+    }
+
+
+    .objection-card .question {
+
+      color: var(--rose);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: .13em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .objection-card h3 {
+
+      margin-top: 14px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 26px;
+
+      font-weight: 500;
+
+    }
+
+
+    .objection-card p {
+
+      margin-top: 12px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==================================================
+       BONOS
+    =================================================== */
+
+    .bonuses {
+
+      padding: 110px 0;
+
+      background: #F0E5DF;
+
+    }
+
+
+    .bonuses-header {
+
+      max-width: 700px;
+
+    }
+
+
+    .bonuses-header h2 {
+
+      margin-top: 20px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(40px,5vw,62px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+    }
+
+
+    .bonuses-header p {
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .bonus-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2,1fr);
+
+      gap: 20px;
+
+      margin-top: 60px;
+
+    }
+
+
+    .bonus {
+
+      position: relative;
+
+      padding: 35px;
+
+      background: rgba(255,253,252,.75);
+
+      border: 1px solid var(--border);
+
+    }
+
+
+    .bonus-number {
+
+      color: var(--rose);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: .18em;
+
+    }
+
+
+    .bonus h3 {
+
+      margin-top: 13px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 27px;
+
+      font-weight: 500;
+
+    }
+
+
+    .bonus p {
+
+      margin-top: 11px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .bonus small {
+
+      display: block;
+
+      margin-top: 20px;
+
+      color: var(--gold);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* ==================================================
+       TESTIMONIOS
+    =================================================== */
+
+    .testimonials {
+
+      padding: 110px 0;
+
+      background: var(--white);
+
+    }
+
+
+    .testimonials-heading {
+
+      max-width: 700px;
+
+    }
+
+
+    .testimonials-heading h2 {
+
+      margin-top: 20px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(40px,5vw,62px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+    }
+
+
+    .testimonials-heading h2 em {
+
+      color: var(--rose);
+
+    }
+
+
+    .testimonials-heading p {
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .featured-testimonial {
+
+      display: grid;
+
+      grid-template-columns: .75fr 1.25fr;
+
+      margin-top: 65px;
+
+      background: var(--wine);
+
+      color: white;
+
+    }
+
+
+    .testimonial-photo {
+
+      min-height: 500px;
+
+      background: #D7C2BD;
+
+    }
+
+
+    .testimonial-photo img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    .testimonial-copy {
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      padding: 60px;
+
+    }
+
+
+    .testimonial-copy .stars {
+
+      font-size: 15px;
+
+    }
+
+
+    .testimonial-tag {
+
+      margin-top: 25px;
+
+      color: #E98298;
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .15em;
+
+    }
+
+
+    blockquote {
+
+      margin-top: 20px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(25px,3vw,38px);
+
+      line-height: 1.25;
+
+      font-weight: 500;
+
+    }
+
+
+    .author {
+
+      margin-top: 28px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .sample-label {
+
+      margin-top: 9px;
+
+      color: rgba(255,255,255,.32);
+
+      font-size: 8px;
+
+    }
+
+
+    .testimonial-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2,1fr);
+
+      gap: 20px;
+
+      margin-top: 20px;
+
+    }
+
+
+    .mini-testimonial {
+
+      padding: 35px;
+
+      background: var(--cream);
+
+      border: 1px solid var(--border);
+
+    }
+
+
+    .mini-testimonial blockquote {
+
+      color: var(--wine);
+
+      font-size: 22px;
+
+      line-height: 1.4;
+
+    }
+
+
+    .mini-testimonial .testimonial-tag {
+
+      color: var(--rose);
+
+    }
+
+
+    .mini-testimonial .author {
+
+      color: var(--wine);
+
+    }
+
+
+    .mini-testimonial .sample-label {
+
+      color: rgba(48,38,42,.35);
+
+    }
+
+
+    .testimonial-bottom {
+
+      margin-top: 65px;
+
+      padding-top: 45px;
+
+      border-top: 1px solid var(--border);
+
+      text-align: center;
+
+    }
+
+
+    .testimonial-bottom p {
+
+      margin-top: 12px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 28px;
+
+    }
+
+
+    .testimonial-bottom span {
+
+      display: block;
+
+      margin-top: 9px;
+
+      color: var(--muted);
+
+      font-size: 9px;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* ==================================================
+       OFERTA
+    =================================================== */
+
+    .offer {
+
+      padding: 120px 0;
+
+      background:
+
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(216,185,188,.38),
+          transparent 30%
+        ),
+
+        var(--cream);
+
+    }
+
+
+    .offer-grid {
+
+      display: grid;
+
+      grid-template-columns: 1fr .8fr;
+
+      gap: 80px;
+
+      align-items: center;
+
+    }
+
+
+    .offer-copy h2 {
+
+      margin-top: 20px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(44px,5vw,68px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+    }
+
+
+    .offer-copy h2 em {
+
+      color: var(--rose);
+
+    }
+
+
+    .offer-copy p {
+
+      max-width: 540px;
+
+      margin-top: 25px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.85;
+
+    }
+
+
+    .offer-card {
+
+      padding: 42px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow);
+
+    }
+
+
+    .offer-label {
+
+      color: var(--rose);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .offer-name {
+
+      margin-top: 10px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 30px;
+
+      font-weight: 500;
+
+    }
+
+
+    .offer-list {
+
+      display: grid;
+
+      gap: 10px;
+
+      margin-top: 28px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid var(--border);
+
+    }
+
+
+    .offer-list div {
+
+      position: relative;
+
+      padding-left: 19px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+    }
+
+
+    .offer-list div::before {
+
+      content: "✓";
+
+      position: absolute;
+
+      left: 0;
+
+      color: var(--rose);
+
+      font-weight: 700;
+
+    }
+
+
+    /* ==================================================
+       TIMER
+    =================================================== */
+
+    .timer-box {
+
+      margin-top: 30px;
+
+      padding: 22px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #F7E9E9,
+          #EFE7EF
+        );
+
+      border: 1px solid rgba(58,32,44,.08);
+
+      text-align: center;
+
+    }
+
+
+    .timer-label {
+
+      color: var(--wine);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .timer {
+
+      margin-top: 7px;
+
+      color: var(--rose);
+
+      font-family: var(--serif);
+
+      font-size: 57px;
+
+      line-height: .95;
+
+      letter-spacing: .02em;
+
+    }
+
+
+    .timer-subtext {
+
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+
+    }
+
+
+    /* ==================================================
+       PRECIO
+    =================================================== */
+
+    .price-wrapper {
+
+      margin-top: 28px;
+
+      text-align: center;
+
+    }
+
+
+    .old-price {
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+      text-decoration: line-through;
+
+    }
+
+
+    .price {
+
+      margin-top: 2px;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 52px;
+
+      line-height: 1;
+
+    }
+
+
+    .payment {
+
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+
+      letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .offer-card .cta {
+
+      width: 100%;
+
+      margin-top: 25px;
+
+    }
+
+
+    .security {
+
+      margin-top: 12px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+
+      text-align: center;
+
+    }
+
+
+    /* ==================================================
+       GARANTÍA
+    =================================================== */
+
+    .guarantee {
+
+      padding: 85px 0;
+
+      background: var(--wine);
+
+      color: white;
+
+    }
+
+
+    .guarantee-box {
+
+      max-width: 720px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+    }
+
+
+    .guarantee-icon {
+
+      color: #DABF83;
+
+      font-size: 35px;
+
+    }
+
+
+    .guarantee h2 {
+
+      margin-top: 18px;
+
+      font-family: var(--serif);
+
+      font-size: 42px;
+
+      font-weight: 500;
+
+    }
+
+
+    .guarantee p {
+
+      margin-top: 18px;
+
+      color: rgba(255,255,255,.57);
+
+      font-size: 12px;
+
+      line-height: 1.85;
+
+    }
+
+
+    /* ==================================================
+       FAQ
+    =================================================== */
+
+    .faq {
+
+      padding: 110px 0;
+
+      background: var(--white);
+
+    }
+
+
+    .faq-title {
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(40px,5vw,58px);
+
+      font-weight: 500;
+
+    }
+
+
+    .faq-list {
+
+      max-width: 800px;
+
+      margin-top: 50px;
+
+    }
+
+
+    details {
+
+      border-top: 1px solid var(--border);
+
+    }
+
+
+    details:last-child {
+
+      border-bottom: 1px solid var(--border);
+
+    }
+
+
+    summary {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 25px 0;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      list-style: none;
+
+    }
+
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+
+    summary::after {
+
+      content: "+";
+
+      color: var(--rose);
+
+      font-family: var(--sans);
+
+      font-size: 22px;
+
+    }
+
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+
+    details p {
+
+      max-width: 700px;
+
+      padding-bottom: 25px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==================================================
+       CTA FINAL
+    =================================================== */
+
+    .final-cta {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 120px 0;
+
+      background: var(--cream);
+
+      text-align: center;
+
+    }
+
+
+    .final-cta::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+
+      height: 500px;
+
+      top: -250px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      background: rgba(216,185,188,.25);
+
+      filter: blur(5px);
+
+    }
+
+
+    .final-content {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .final-content h2 {
+
+      max-width: 800px;
+
+      margin: 20px auto 0;
+
+      color: var(--wine);
+
+      font-family: var(--serif);
+
+      font-size: clamp(43px,5.5vw,72px);
+
+      font-weight: 500;
+
+      line-height: 1;
+
+    }
+
+
+    .final-content h2 em {
+
+      color: var(--rose);
+
+    }
+
+
+    .final-content p {
+
+      max-width: 560px;
+
+      margin: 24px auto 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .final-content .cta {
+
+      margin-top: 35px;
+
+    }
+
+
+    /* ==================================================
+       FOOTER
+    =================================================== */
+
+    footer {
+
+      padding: 30px 20px;
+
+      background: var(--wine-dark);
+
+      color: rgba(255,255,255,.35);
+
+      font-size: 8px;
+
+      line-height: 1.7;
+
+      text-align: center;
+
+    }
+
+
+    /* ==================================================
+       MOBILE
+    =================================================== */
+
+    @media(max-width: 850px) {
+
+      .hero-grid,
+      .mechanism-grid,
+      .offer-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .hero {
+
+        padding: 55px 0 70px;
+
+      }
+
+
+      .hero-grid {
+
+        gap: 45px;
+
+      }
+
+
+      .floating-note {
+
+        right: 15px;
+
+      }
+
+
+      .three-columns {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .days-grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+      }
+
+
+      .featured-testimonial {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .testimonial-photo {
+
+        min-height: 400px;
+
+      }
+
+
+      .testimonial-copy {
+
+        padding: 40px 30px;
+
+      }
+
+
+      .offer-grid {
+
+        gap: 50px;
+
+      }
+
+    }
+
+
+    @media(max-width: 600px) {
+
+      .container {
+
+        width: min(100% - 28px, 1120px);
+
+      }
+
+
+      .topbar {
+
+        font-size: 8px;
+
+        line-height: 1.5;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 43px;
+
+      }
+
+
+      .hero-subtitle {
+
+        font-size: 14px;
+
+      }
+
+
+      .cta {
+
+        width: 100%;
+
+        min-height: 64px;
+
+        padding: 0 18px;
+
+        font-size: 9px;
+
+      }
+
+
+      .floating-note {
+
+        right: 10px;
+
+        bottom: 15px;
+
+        width: 150px;
+
+        padding: 15px;
+
+      }
+
+
+      .floating-note strong {
+
+        font-size: 17px;
+
+      }
+
+
+      .transformation,
+      .mechanism,
+      .journey,
+      .objections,
+      .bonuses,
+      .testimonials,
+      .offer,
+      .faq {
+
+        padding: 80px 0;
+
+      }
+
+
+      .mechanism-grid {
+
+        gap: 50px;
+
+      }
+
+
+      .mechanism-item {
+
+        grid-template-columns: 40px 1fr;
+
+        gap: 15px;
+
+        padding: 23px;
+
+      }
+
+
+      .mechanism-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+      }
+
+
+      .days-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .day-card {
+
+        min-height: auto;
+
+      }
+
+
+      .objection-grid,
+      .bonus-grid,
+      .testimonial-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .featured-testimonial {
+
+        margin-top: 45px;
+
+      }
+
+
+      .testimonial-photo {
+
+        min-height: 350px;
+
+      }
+
+
+      .testimonial-copy {
+
+        padding: 35px 24px;
+
+      }
+
+
+      .testimonial-copy blockquote {
+
+        font-size: 28px;
+
+      }
+
+
+      .mini-testimonial {
+
+        padding: 27px;
+
+      }
+
+
+      .mini-testimonial blockquote {
+
+        font-size: 20px;
+
+      }
+
+
+      .offer-card {
+
+        padding: 28px 20px;
+
+      }
+
+
+      .timer {
+
+        font-size: 52px;
+
+      }
+
+
+      .guarantee h2 {
+
+        font-size: 36px;
+
+      }
+
+
+      .final-cta {
+
+        padding: 90px 0;
+
+      }
+
+    }
+
+
+    /* ==================================================
+       REDUCE MOTION
+    =================================================== */
+
+    @media(prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       TOP BAR
+  =================================================== -->
+
+  <div class="topbar">
+
+    <strong>Acceso inmediato</strong>
+    · Pago único
+    · Garantía de 7 días
+
+  </div>
+
+
+  <!-- ==================================================
+       HERO
+  =================================================== -->
+
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Método de Volver a Elegirte
+        </div>
+
+
+        <h1>
+
+          Dejá de regalar tu tiempo,
+          tu energía y todo lo que
+          <em>sabés hacer.</em>
+
+          <br><br>
+
+          Empezá a construir
+          algo propio.
+
+        </h1>
+
+
+        <p class="hero-subtitle">
+
+          Un proceso de 40 días para dejar de vivir
+          reaccionando, recuperar claridad, aprender
+          a poner límites y comenzar a reconocer el
+          valor de todo eso que ya sabés hacer.
+
+        </p>
+
+
+        <div class="cta-wrap">
+
+          <a
+            href="#oferta"
+            class="cta"
+          >
+            QUIERO EMPEZAR AHORA
+          </a>
+
+          <div class="microcopy">
+
+            15 minutos al día · Acceso de por vida
+
+          </div>
+
+        </div>
 
       </div>
 
 
-      <div class="testimonial-content">
+      <!-- IMAGEN PRINCIPAL -->
 
-        <div class="stars">
-          ★★★★★
+      <div class="hero-visual">
+
+        <div class="hero-image-frame">
+
+          <!--
+            =================================================
+            IMAGEN PRINCIPAL
+
+            Sube aquí tu imagen original de ANTES Y DESPUÉS.
+
+            Ejemplo:
+            images/antes-despues.jpg
+          =================================================
+          -->
+
+          <img
+            src="images/antes-despues.jpg"
+            alt="Antes y después del proceso"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-placeholder\'>SUBE AQUÍ TU IMAGEN ORIGINAL<br><br>images/antes-despues.jpg</div>';"
+          >
+
         </div>
 
-        <div class="testimonial-tag">
-          OBJECIÓN · “NO TENGO TIEMPO”
-        </div>
 
-        <blockquote>
+        <div class="floating-note">
 
-          “Yo pensaba que para hacer un proceso así tenía
-          que sacar una hora todos los días y, siendo sincera,
-          no me daba la vida. Cuando vi que podía hacerlo
-          en unos 15 minutos, me animé. Lo que más me gustó
-          fue que no sentí que estaba agregando otra tarea
-          interminable a mi día.”
+          <small>
+            Una decisión diferente
+          </small>
 
-        </blockquote>
+          <strong>
+            puede cambiar
+            la forma en que
+            ves tu vida.
+          </strong>
 
-        <div class="testimonial-author">
-          Mariana · Bogotá, Colombia
-        </div>
-
-        <div class="testimonial-context">
-          Muestra de copy · sustituir por testimonio real
         </div>
 
       </div>
 
-    </div>
-
-
-    <!-- TESTIMONIOS SECUNDARIOS -->
-
-    <div class="testimonial-grid">
-
-
-      <!-- 02 · CULPA -->
-
-      <article class="mini-testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="mini-tag">
-          OBJECIÓN · “ME SIENTO CULPABLE”
-        </div>
-
-        <blockquote>
-
-          “Lo que más me costaba era decir que no.
-          Siempre terminaba pensando que estaba siendo
-          egoísta. Empecé a entender que poner un límite
-          no significa dejar de querer a los demás.
-          Esa idea me hizo muchísimo clic.”
-
-        </blockquote>
-
-        <div class="author">
-          Daniela · Ciudad de México, México
-        </div>
-
-        <div class="testimonial-context">
-          Muestra de copy · sustituir por testimonio real
-        </div>
-
-      </article>
-
-
-      <!-- 03 · NO TENGO NADA ESPECIAL -->
-
-      <article class="mini-testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="mini-tag">
-          OBJECIÓN · “NO TENGO NADA QUE OFRECER”
-        </div>
-
-        <blockquote>
-
-          “Yo decía: ‘¿pero qué voy a vender si no sé hacer
-          nada extraordinario?’. Después me puse a mirar
-          todo lo que hacía casi sin pensarlo y entendí que
-          había cosas que para mí eran normales, pero que
-          podían ser útiles para otra persona.”
-
-        </blockquote>
-
-        <div class="author">
-          Camila · Medellín, Colombia
-        </div>
-
-        <div class="testimonial-context">
-          Muestra de copy · sustituir por testimonio real
-        </div>
-
-      </article>
-
-
-      <!-- 04 · MONETIZAR -->
-
-      <article class="mini-testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="mini-tag">
-          OBJECIÓN · “NO SÉ CÓMO COBRAR”
-        </div>
-
-        <blockquote>
-
-          “Siempre había pensado que una cosa era saber hacer
-          algo y otra muy distinta ganar plata con eso.
-          El ejercicio de mirar qué problema podía ayudar
-          a resolver me cambió la forma de verlo. Dejé de
-          pensar solamente en mi habilidad.”
-
-        </blockquote>
-
-        <div class="author">
-          Valentina · Buenos Aires, Argentina
-        </div>
-
-        <div class="testimonial-context">
-          Muestra de copy · sustituir por testimonio real
-        </div>
-
-      </article>
-
-
-      <!-- 05 · MIEDO -->
-
-      <article class="mini-testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="mini-tag">
-          OBJECIÓN · “ME DA MIEDO EMPEZAR”
-        </div>
-
-        <blockquote>
-
-          “Yo quería hacer algo mío, pero me daba miedo
-          dejar la seguridad que ya tenía. Lo que me gustó
-          fue que nunca sentí que tenía que renunciar a todo
-          de un día para otro. Pude empezar pequeño y eso
-          hizo que me animara.”
-
-        </blockquote>
-
-        <div class="author">
-          Laura · Santiago, Chile
-        </div>
-
-        <div class="testimonial-context">
-          Muestra de copy · sustituir por testimonio real
-        </div>
-
-      </article>
-
-
-      <!-- 06 · CONSTANCIA -->
-
-      <article class="mini-testimonial">
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="mini-tag">
-          OBJECIÓN · “NUNCA TERMINO NADA”
-        </div>
-
-        <blockquote>
-
-          “He comprado cursos antes y siempre me pasa lo mismo:
-          empiezo con toda la emoción y después los dejo.
-          Tener una tarea concreta cada día me resultó
-          completamente distinto. No tenía que pensar qué
-          hacer; solamente abrir y continuar.”
-
-        </blockquote>
-
-        <div class="author">
-          Andrea · Lima, Perú
-        </div>
-
-        <div class="testimonial-context">
-          Muestra de copy · sustituir por testimonio real
-        </div>
-
-      </article>
-
 
     </div>
 
+  </header>
 
-    <!-- CIERRE DE PRUEBA SOCIAL -->
 
-    <div class="testimonial-bottom">
+  <!-- ==================================================
+       SOCIAL PROOF
+  =================================================== -->
 
-      <div class="testimonial-bottom-stars">
+  <section class="proof">
+
+    <div class="container proof-inner">
+
+      <div class="stars">
         ★★★★★
       </div>
 
-      <p>
+      <strong>
         Miles de mujeres ya están recorriendo este proceso.
-      </p>
+      </strong>
 
       <span>
         4,9 / 5 · 5.287 ejemplares vendidos
@@ -266,6 +2633,1501 @@
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+
+  <!-- ==================================================
+       TRANSFORMACIÓN
+  =================================================== -->
+
+  <section class="transformation">
+
+    <div class="container">
+
+      <div class="section-intro">
+
+        <div class="eyebrow">
+          La transformación
+        </div>
+
+
+        <h2>
+
+          No se trata de convertirte
+          en otra persona.
+
+          <br>
+
+          Se trata de volver a
+          <em>elegirte.</em>
+
+        </h2>
+
+
+        <p>
+
+          Durante mucho tiempo quizá aprendiste a
+          responder a las necesidades de todos antes
+          de preguntarte qué necesitabas tú.
+
+          <br><br>
+
+          Este proceso empieza en otro lugar:
+          recuperar claridad para decidir desde dónde
+          quieres vivir y qué quieres construir.
+
+        </p>
+
+      </div>
+
+
+      <div class="three-columns">
+
+
+        <article class="transform-card">
+
+          <div class="transform-number">
+            01
+          </div>
+
+          <h3>
+            De reaccionar a elegir.
+          </h3>
+
+          <p>
+            Aprende a crear un espacio entre lo que sucede
+            y la respuesta que eliges dar.
+          </p>
+
+        </article>
+
+
+        <article class="transform-card">
+
+          <div class="transform-number">
+            02
+          </div>
+
+          <h3>
+            De complacer a poner límites.
+          </h3>
+
+          <p>
+            Empieza a cuidar tu tiempo y tu energía sin
+            convertir cada límite en una explicación interminable.
+          </p>
+
+        </article>
+
+
+        <article class="transform-card">
+
+          <div class="transform-number">
+            03
+          </div>
+
+          <h3>
+            De regalar tu capacidad a construir con ella.
+          </h3>
+
+          <p>
+            Identifica lo que ya sabes hacer y comienza a
+            pensar cómo puede convertirse en algo propio.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       MECANISMO
+  =================================================== -->
+
+  <section class="mechanism">
+
+    <div class="container mechanism-grid">
+
+
+      <div class="mechanism-sticky">
+
+        <div class="eyebrow">
+          El método
+        </div>
+
+        <h2>
+
+          Método de
+          <em>Volver a Elegirte</em>
+
+        </h2>
+
+        <p>
+
+          Un recorrido dividido en pequeñas acciones
+          para que no tengas que intentar cambiar toda
+          tu vida de una vez.
+
+        </p>
+
+      </div>
+
+
+      <div class="mechanism-items">
+
+
+        <article class="mechanism-item">
+
+          <div class="mechanism-icon">
+            1
+          </div>
+
+          <div>
+
+            <h3>
+              Recupera claridad.
+            </h3>
+
+            <p>
+              Observa qué te está haciendo reaccionar
+              constantemente y empieza a tomar decisiones
+              con mayor intención.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="mechanism-item">
+
+          <div class="mechanism-icon">
+            2
+          </div>
+
+          <div>
+
+            <h3>
+              Aprende a elegirte.
+            </h3>
+
+            <p>
+              Reconoce dónde estás entregando tiempo,
+              energía y atención que también necesitas
+              para ti.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="mechanism-item">
+
+          <div class="mechanism-icon">
+            3
+          </div>
+
+          <div>
+
+            <h3>
+              Pon límites sin perderte en la culpa.
+            </h3>
+
+            <p>
+              Practica nuevas formas de responder,
+              comunicar lo que necesitas y proteger
+              lo que es importante para ti.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="mechanism-item">
+
+          <div class="mechanism-icon">
+            4
+          </div>
+
+          <div>
+
+            <h3>
+              Reconoce lo que ya sabes hacer.
+            </h3>
+
+            <p>
+              Mira tus capacidades desde una perspectiva
+              diferente: no solamente como algo que haces,
+              sino como algo que puede aportar valor.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="mechanism-item">
+
+          <div class="mechanism-icon">
+            5
+          </div>
+
+          <div>
+
+            <h3>
+              Empieza a construir.
+            </h3>
+
+            <p>
+              Convierte claridad en pequeñas acciones
+              concretas que te acerquen a algo propio.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       40 DÍAS
+  =================================================== -->
+
+  <section class="journey">
+
+    <div class="container">
+
+
+      <div class="journey-header">
+
+        <div class="eyebrow">
+          40 días
+        </div>
+
+
+        <h2>
+
+          Una tarea.
+          Una reflexión.
+          <em>Un paso.</em>
+
+        </h2>
+
+
+        <p>
+
+          No necesitas dedicar horas.
+          El proceso está diseñado para avanzar
+          aproximadamente 15 minutos al día.
+
+        </p>
+
+      </div>
+
+
+      <div class="days-grid">
+
+
+        <article class="day-card">
+
+          <span>
+            DÍAS 01 — 10
+          </span>
+
+          <h3>
+            Claridad
+          </h3>
+
+          <p>
+            Reconoce patrones, reacciones y aquello
+            que realmente quieres cambiar.
+          </p>
+
+        </article>
+
+
+        <article class="day-card">
+
+          <span>
+            DÍAS 11 — 20
+          </span>
+
+          <h3>
+            Límites
+          </h3>
+
+          <p>
+            Aprende a proteger tu energía y expresar
+            lo que necesitas.
+          </p>
+
+        </article>
+
+
+        <article class="day-card">
+
+          <span>
+            DÍAS 21 — 30
+          </span>
+
+          <h3>
+            Capacidad
+          </h3>
+
+          <p>
+            Identifica habilidades, conocimientos y
+            experiencias que ya forman parte de ti.
+          </p>
+
+        </article>
+
+
+        <article class="day-card">
+
+          <span>
+            DÍAS 31 — 40
+          </span>
+
+          <h3>
+            Construcción
+          </h3>
+
+          <p>
+            Empieza a transformar aquello que sabes
+            hacer en una posibilidad propia.
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="cta-wrap">
+
+        <a
+          href="#oferta"
+          class="cta"
+        >
+          QUIERO HACER EL PROCESO
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       OBJECIONES
+  =================================================== -->
+
+  <section class="objections">
+
+    <div class="container">
+
+
+      <div class="objection-heading">
+
+        <div class="eyebrow">
+          Quizá estás pensando...
+        </div>
+
+
+        <h2>
+          Y justamente por eso
+          <em>lo hicimos así.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="objection-grid">
+
+
+        <article class="objection-card">
+
+          <div class="question">
+            “No tengo tiempo.”
+          </div>
+
+          <h3>
+            No necesitas otra actividad
+            que te consuma el día.
+          </h3>
+
+          <p>
+            El recorrido está pensado para avanzar
+            con aproximadamente 15 minutos diarios.
+            La idea no es añadir más ruido, sino ayudarte
+            a crear un pequeño espacio para ti.
+          </p>
+
+        </article>
+
+
+        <article class="objection-card">
+
+          <div class="question">
+            “Me siento mal cuando digo que no.”
+          </div>
+
+          <h3>
+            Un límite no necesita convertirse
+            en una pelea.
+          </h3>
+
+          <p>
+            El proceso te ayuda a observar qué hay detrás
+            de esa culpa y a practicar nuevas formas de
+            expresar lo que necesitas.
+          </p>
+
+        </article>
+
+
+        <article class="objection-card">
+
+          <div class="question">
+            “No tengo nada especial.”
+          </div>
+
+          <h3>
+            Probablemente estás
+            subestimando lo que ya sabes.
+          </h3>
+
+          <p>
+            Muchas capacidades parecen “normales” para
+            quien las posee. El proceso te ayuda a mirarlas
+            desde el valor que pueden aportar a otros.
+          </p>
+
+        </article>
+
+
+        <article class="objection-card">
+
+          <div class="question">
+            “No sé cómo empezar.”
+          </div>
+
+          <h3>
+            No necesitas tener todo
+            el camino resuelto.
+          </h3>
+
+          <p>
+            Solo necesitas saber cuál es el siguiente paso.
+            Por eso el método divide el proceso en acciones
+            pequeñas y concretas.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       BONOS
+  =================================================== -->
+
+  <section class="bonuses">
+
+    <div class="container">
+
+
+      <div class="bonuses-header">
+
+        <div class="eyebrow">
+          Además recibes
+        </div>
+
+
+        <h2>
+          Herramientas para
+          los momentos en que
+          <em>más las necesitas.</em>
+        </h2>
+
+
+        <p>
+          No queremos llenarte de contenido.
+          Cada recurso tiene una función concreta:
+          ayudarte a superar una de las dificultades
+          que normalmente hacen que una persona abandone.
+        </p>
+
+      </div>
+
+
+      <div class="bonus-grid">
+
+
+        <article class="bonus">
+
+          <div class="bonus-number">
+            BONO 01
+          </div>
+
+          <h3>
+            Guía para decir NO sin culpa
+          </h3>
+
+          <p>
+            Una colección de situaciones cotidianas
+            y estructuras de respuesta para cuando
+            sabes que necesitas poner un límite,
+            pero no sabes cómo expresarlo.
+          </p>
+
+          <small>
+            Objeción: “No sé cómo decir que no.”
+          </small>
+
+        </article>
+
+
+        <article class="bonus">
+
+          <div class="bonus-number">
+            BONO 02
+          </div>
+
+          <h3>
+            Mapa de tus capacidades
+          </h3>
+
+          <p>
+            Una herramienta para identificar conocimientos,
+            experiencias y habilidades que quizá estás
+            dando por sentado y comenzar a relacionarlos
+            con problemas que puedes ayudar a resolver.
+          </p>
+
+          <small>
+            Objeción: “No tengo nada que ofrecer.”
+          </small>
+
+        </article>
+
+
+        <article class="bonus">
+
+          <div class="bonus-number">
+            BONO 03
+          </div>
+
+          <h3>
+            Ritual de 15 minutos
+          </h3>
+
+          <p>
+            Una estructura sencilla para crear el hábito
+            de avanzar incluso durante semanas en las
+            que tienes poco tiempo o poca energía.
+          </p>
+
+          <small>
+            Objeción: “No tengo tiempo.”
+          </small>
+
+        </article>
+
+
+        <article class="bonus">
+
+          <div class="bonus-number">
+            BONO 04
+          </div>
+
+          <h3>
+            Cuaderno de decisiones
+          </h3>
+
+          <p>
+            Un espacio guiado para dejar de tomar decisiones
+            únicamente desde la presión del momento y
+            empezar a observar qué quieres elegir realmente.
+          </p>
+
+          <small>
+            Objeción: “Siempre termino reaccionando.”
+          </small>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       TESTIMONIOS
+       
+       IMPORTANTE:
+       Estos textos son COPYS DEMOSTRATIVOS.
+       Sustituir por testimonios reales antes de
+       presentarlos como experiencias de clientas.
+  =================================================== -->
+
+  <section class="testimonials">
+
+    <div class="container">
+
+
+      <div class="testimonials-heading">
+
+        <div class="eyebrow">
+          Experiencias
+        </div>
+
+
+        <h2>
+          Diferentes mujeres.
+          <em>Una decisión parecida.</em>
+        </h2>
+
+
+        <p>
+          No todas llegan por la misma razón.
+          Algunas quieren recuperar su calma.
+          Otras necesitan aprender a poner límites.
+          Y otras llevan tiempo pensando que podrían
+          hacer algo propio.
+        </p>
+
+      </div>
+
+
+      <!-- TESTIMONIO DESTACADO -->
+
+      <div class="featured-testimonial">
+
+
+        <div class="testimonial-photo">
+
+          <img
+            src="images/testimonio-01.jpg"
+            alt="Testimonio"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-placeholder\'>IMAGEN TESTIMONIO 01</div>';"
+          >
+
+        </div>
+
+
+        <div class="testimonial-copy">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “NO TENGO TIEMPO”
+          </div>
+
+
+          <blockquote>
+
+            “Yo pensaba que para hacer un proceso así
+            necesitaba sacar una hora todos los días.
+            Cuando vi que podía avanzar con 15 minutos,
+            sentí que por fin era algo que podía encajar
+            en mi rutina.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Mariana · Bogotá, Colombia
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="testimonial-grid">
+
+
+        <article class="mini-testimonial">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “ME SIENTO CULPABLE”
+          </div>
+
+
+          <blockquote>
+
+            “Siempre decía que sí y después terminaba
+            agotada. Lo que más me ayudó fue entender
+            que poner un límite no significa dejar de
+            querer a alguien.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Daniela · Ciudad de México, México
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </article>
+
+
+        <article class="mini-testimonial">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “NO TENGO NADA ESPECIAL”
+          </div>
+
+
+          <blockquote>
+
+            “Yo decía: ‘¿qué voy a ofrecer si no sé hacer
+            nada extraordinario?’. Empezar a mirar mis
+            habilidades desde otra perspectiva me hizo
+            darme cuenta de que estaba minimizando
+            cosas que para mí eran normales.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Camila · Medellín, Colombia
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </article>
+
+
+        <article class="mini-testimonial">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “NO SÉ CÓMO COBRAR”
+          </div>
+
+
+          <blockquote>
+
+            “Siempre había pensado que una cosa era saber
+            hacer algo y otra muy distinta ganar plata con
+            eso. Empecé a pensar primero en qué problema
+            podía ayudar a resolver y cambió mi perspectiva.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Valentina · Buenos Aires, Argentina
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </article>
+
+
+        <article class="mini-testimonial">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “ME DA MIEDO EMPEZAR”
+          </div>
+
+
+          <blockquote>
+
+            “Quería hacer algo mío, pero me daba miedo
+            dejar la seguridad que ya tenía. Poder empezar
+            pequeño hizo que la idea dejara de sentirse
+            tan enorme.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Laura · Santiago, Chile
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </article>
+
+
+        <article class="mini-testimonial">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “SIEMPRE ABANDONO”
+          </div>
+
+
+          <blockquote>
+
+            “He comprado otros cursos y muchas veces
+            los termino dejando. Tener una acción concreta
+            para cada día hizo que no tuviera que pensar
+            qué hacer después.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Andrea · Lima, Perú
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </article>
+
+
+        <article class="mini-testimonial">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+
+          <div class="testimonial-tag">
+            OBJECIÓN · “YA HE INTENTADO CAMBIAR”
+          </div>
+
+
+          <blockquote>
+
+            “Lo diferente para mí fue que no sentí que tenía
+            que cambiar toda mi vida de golpe. Era simplemente
+            una decisión pequeña cada día.”
+
+          </blockquote>
+
+
+          <div class="author">
+            Sofía · Monterrey, México
+          </div>
+
+
+          <div class="sample-label">
+            TEXTO DE EJEMPLO · REEMPLAZAR POR TESTIMONIO REAL
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="testimonial-bottom">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+
+        <p>
+          Miles de mujeres ya están recorriendo este proceso.
+        </p>
+
+
+        <span>
+          4,9 / 5 · 5.287 ejemplares vendidos
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       OFERTA
+  =================================================== -->
+
+  <section
+    class="offer"
+    id="oferta"
+  >
+
+    <div class="container offer-grid">
+
+
+      <div class="offer-copy">
+
+        <div class="eyebrow">
+          Tu siguiente paso
+        </div>
+
+
+        <h2>
+
+          No necesitas tener
+          todo resuelto.
+
+          <br><br>
+
+          Solo necesitas
+          <em>empezar.</em>
+
+        </h2>
+
+
+        <p>
+
+          Durante los próximos 40 días tendrás una
+          estructura sencilla para recuperar claridad,
+          trabajar tus límites y empezar a mirar tus
+          capacidades desde una perspectiva diferente.
+
+          <br><br>
+
+          <strong>
+            15 minutos al día.
+          </strong>
+
+          Una acción cada vez.
+
+        </p>
+
+
+        <div class="cta-wrap">
+
+          <a
+            href="#checkout"
+            class="cta"
+          >
+            QUIERO EMPEZAR AHORA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TARJETA DE COMPRA -->
+
+      <div
+        class="offer-card"
+        id="checkout"
+      >
+
+
+        <div class="offer-label">
+          Acceso completo
+        </div>
+
+
+        <h3 class="offer-name">
+          Método de Volver a Elegirte
+        </h3>
+
+
+        <div class="offer-list">
+
+          <div>
+            40 días de recorrido
+          </div>
+
+          <div>
+            40 tareas prácticas
+          </div>
+
+          <div>
+            40 reflexiones
+          </div>
+
+          <div>
+            Aproximadamente 15 minutos al día
+          </div>
+
+          <div>
+            Guía para poner límites
+          </div>
+
+          <div>
+            Mapa de tus capacidades
+          </div>
+
+          <div>
+            Ritual de 15 minutos
+          </div>
+
+          <div>
+            Cuaderno de decisiones
+          </div>
+
+          <div>
+            Acceso inmediato
+          </div>
+
+          <div>
+            Acceso de por vida
+          </div>
+
+        </div>
+
+
+        <!-- TEMPORIZADOR -->
+
+        <div class="timer-box">
+
+          <div class="timer-label">
+            TU ACCESO ACTUAL ESTÁ RESERVADO POR
+          </div>
+
+
+          <div
+            class="timer"
+            id="countdown"
+          >
+            15:00
+          </div>
+
+
+          <div class="timer-subtext">
+            La cuenta comienza nuevamente al cargar esta página.
+          </div>
+
+        </div>
+
+
+        <!-- PRECIO -->
+
+        <div class="price-wrapper">
+
+          <!-- CAMBIA ESTOS VALORES -->
+
+          <div class="old-price">
+            Valor total: $XXX
+          </div>
+
+
+          <div class="price">
+            $XX
+          </div>
+
+
+          <div class="payment">
+            Pago único · Acceso inmediato
+          </div>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <!--
+          IMPORTANTE:
+          Reemplaza TU_LINK_DE_CHECKOUT por tu URL real.
+        -->
+
+        <a
+          href="TU_LINK_DE_CHECKOUT"
+          class="cta"
+        >
+          QUIERO EMPEZAR AHORA
+        </a>
+
+
+        <div class="security">
+
+          🔒 Pago seguro · Acceso inmediato · Garantía de 7 días
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       GARANTÍA
+  =================================================== -->
+
+  <section class="guarantee">
+
+    <div class="container guarantee-box">
+
+
+      <div class="guarantee-icon">
+        ✦
+      </div>
+
+
+      <h2>
+        7 días para comprobarlo por ti misma.
+      </h2>
+
+
+      <p>
+
+        Queremos que puedas conocer el método,
+        comenzar el proceso y decidir con tranquilidad
+        si es adecuado para ti.
+
+        <br><br>
+
+        Si dentro del período de garantía consideras
+        que no es para ti, podrás solicitar el reembolso
+        de acuerdo con las condiciones de compra.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       FAQ
+  =================================================== -->
+
+  <section class="faq">
+
+    <div class="container">
+
+
+      <div class="eyebrow">
+        Preguntas frecuentes
+      </div>
+
+
+      <h2 class="faq-title">
+        Antes de empezar...
+      </h2>
+
+
+      <div class="faq-list">
+
+
+        <details>
+
+          <summary>
+            ¿Cuánto tiempo necesito cada día?
+          </summary>
+
+          <p>
+            El recorrido está diseñado para realizarse
+            en aproximadamente 15 minutos diarios.
+            Puedes adaptar el ritmo a tu situación.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Necesito experiencia para empezar?
+          </summary>
+
+          <p>
+            No. El método parte de lo que ya existe en tu
+            vida: tus experiencias, capacidades, conocimientos
+            y situaciones cotidianas.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Tengo que dejar mi trabajo?
+          </summary>
+
+          <p>
+            No. El objetivo no es que tomes decisiones
+            drásticas. Se trata de empezar a construir
+            nuevas posibilidades de manera progresiva.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Y si no sé qué podría ofrecer?
+          </summary>
+
+          <p>
+            Precisamente uno de los recorridos está pensado
+            para ayudarte a identificar capacidades y
+            conocimientos que quizá actualmente estás
+            subestimando.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Cuándo recibo el acceso?
+          </summary>
+
+          <p>
+            El acceso es inmediato después de completar
+            correctamente la compra.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            ¿Existe una garantía?
+          </summary>
+
+          <p>
+            Sí. La oferta incluye una garantía de 7 días,
+            sujeta a las condiciones indicadas durante
+            el proceso de compra.
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       CTA FINAL
+  =================================================== -->
+
+  <section class="final-cta">
+
+    <div class="container final-content">
+
+
+      <div class="eyebrow">
+        El siguiente paso puede ser pequeño
+      </div>
+
+
+      <h2>
+
+        Dejá de regalar tu tiempo,
+        tu energía y todo lo que
+        <em>sabés hacer.</em>
+
+        <br><br>
+
+        Empezá a construir
+        algo propio.
+
+      </h2>
+
+
+      <p>
+
+        40 días · 15 minutos al día ·
+        acceso de por vida.
+
+        <br>
+
+        Empieza hoy con una sola decisión.
+
+      </p>
+
+
+      <a
+        href="TU_LINK_DE_CHECKOUT"
+        class="cta"
+      >
+        QUIERO VOLVER A ELEGIRME
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       FOOTER
+  =================================================== -->
+
+  <footer>
+
+    © 2026 · Método de Volver a Elegirte
+
+    <br><br>
+
+    Este contenido tiene fines educativos y de desarrollo
+    personal. Los resultados pueden variar según la persona,
+    su situación y la aplicación del material.
+
+  </footer>
+
+
+  <!-- ==================================================
+       JAVASCRIPT
+       TEMPORIZADOR 15 MINUTOS
+       
+       Se reinicia cada vez que la página se carga.
+  =================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        const timer =
+          document.getElementById("countdown");
+
+
+        if (!timer) return;
+
+
+        /*
+          15 minutos
+          = 900 segundos
+
+          Al cargar/re cargar la página:
+          vuelve automáticamente a 15:00.
+        */
+
+        let totalSeconds = 15 * 60;
+
+
+        function updateTimer() {
+
+
+          const minutes =
+            Math.floor(totalSeconds / 60);
+
+
+          const seconds =
+            totalSeconds % 60;
+
+
+          timer.textContent =
+
+            String(minutes).padStart(2, "0")
+
+            +
+
+            ":"
+
+            +
+
+            String(seconds).padStart(2, "0");
+
+
+          if (totalSeconds <= 0) {
+
+            /*
+              Cuando llega a cero,
+              vuelve a iniciar el ciclo.
+            */
+
+            totalSeconds = 15 * 60;
+
+          } else {
+
+            totalSeconds--;
+
+          }
+
+        }
+
+
+        updateTimer();
+
+
+        setInterval(
+          updateTimer,
+          1000
+        );
+
+
+      }
+
+    );
+
+  </script>
+
+
+</body>
+</html>
