@@ -1,62 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Combo Mente & Propósito | Recupera el control y construye algo propio</title>
-
-  <meta
-    name="description"
-    content="Un recorrido práctico para recuperar el control, aprender a poner límites y descubrir cómo convertir lo que ya sabes hacer en una oportunidad."
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combo Mente & Propósito</title>
 
   <style>
-
-    /* =====================================================
-       VARIABLES
-    ===================================================== */
-
     :root {
-      --bg: #110d18;
-      --bg-2: #1b1124;
-      --card: #21172c;
-      --card-light: #2b1d38;
-
-      --pink: #e95cae;
-      --pink-light: #ff8bc9;
-      --purple: #8b5cf6;
-
+      --bg-dark: #220627;
+      --bg-darker: #140318;
+      --purple: #35103d;
+      --purple-soft: #4b1555;
+      --pink: #ff3f86;
+      --pink-light: #ff6aa3;
+      --cream: #fff5f8;
       --white: #ffffff;
-      --text: #f7f2f8;
-      --muted: #c8bacd;
-
-      --green: #62d59a;
-      --gold: #f2c66d;
-
-      --max: 1120px;
-
+      --muted: #d7b9d8;
+      --text: #2a162c;
+      --green: #00d084;
+      --border: rgba(255,255,255,0.12);
+      --shadow-pink: 0 0 28px rgba(255, 63, 134, 0.55);
       --radius: 22px;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --max: 1120px;
     }
 
-
-    /* =====================================================
-       RESET
-    ===================================================== */
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -64,14 +35,16 @@
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
-      background:
-        radial-gradient(circle at 50% -10%, rgba(139,92,246,.22), transparent 35%),
-        var(--bg);
-
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
       color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+      line-height: 1.55;
+      padding-bottom: 86px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     img {
@@ -79,147 +52,126 @@
       display: block;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-
-    /* =====================================================
-       GENERAL
-    ===================================================== */
-
     .container {
-      width: min(92%, var(--max));
-      margin: auto;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    section {
-      padding: 90px 0;
+    .top-alert {
+      background: linear-gradient(90deg, #91225c, #ff3f86, #91225c);
+      color: white;
+      text-align: center;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 16px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .countdown-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-left: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(255,63,134,0.26), transparent 34%),
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(180deg, #26072d 0%, #19031e 100%);
+      color: white;
+      padding: 42px 0 92px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: -70px;
+      height: 150px;
+      background: var(--cream);
+      transform: rotate(-2deg);
+      z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 52px;
+      align-items: center;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-
-      padding: 7px 14px;
-
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,0.09);
+      color: #ffe4ef;
+      border: 1px solid var(--border);
       border-radius: 999px;
-
-      background: rgba(255,255,255,.05);
-
-      color: var(--pink-light);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .5px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
       text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: "Playfair Display", serif;
-      line-height: 1.08;
-    }
-
-    h2 {
-      font-size: clamp(36px, 5vw, 58px);
-      margin-bottom: 22px;
-    }
-
-    .section-intro {
-      max-width: 720px;
-      margin: 0 auto 50px;
-      text-align: center;
-    }
-
-    .section-intro p {
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .highlight {
-      color: var(--pink-light);
-    }
-
-
-    /* =====================================================
-       TOP BAR
-    ===================================================== */
-
-    .top-bar {
-      position: relative;
-      z-index: 20;
-
-      background:
-        linear-gradient(90deg, #8b2d68, #5f267b, #8b2d68);
-
-      padding: 10px 15px;
-
-      text-align: center;
-
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .top-bar span {
-      color: #fff;
-    }
-
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-      position: relative;
-      padding: 70px 0 100px;
-
-      background:
-        radial-gradient(circle at 80% 20%, rgba(233,92,174,.18), transparent 28%),
-        radial-gradient(circle at 15% 50%, rgba(139,92,246,.14), transparent 30%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: center;
-      gap: 70px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(46px, 6vw, 76px);
-      letter-spacing: -2px;
-      margin: 22px 0;
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      max-width: 780px;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
       color: var(--pink-light);
     }
 
-    .hero-subtitle {
-      color: var(--muted);
-      font-size: 19px;
+    .hero-sub {
+      font-size: clamp(18px, 2.2vw, 23px);
+      color: #f1d5ef;
       max-width: 650px;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
+      font-weight: 560;
     }
 
-    .hero-list {
-      list-style: none;
-      margin-bottom: 30px;
+    .truth-line {
+      color: white;
+      font-size: 18px;
+      margin: 22px 0;
+      padding-left: 18px;
+      border-left: 4px solid var(--pink);
     }
 
-    .hero-list li {
+    .truth-line strong {
+      color: var(--pink-light);
+    }
+
+    .hero-bullets {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0 28px;
+      color: #fff4f8;
+      font-weight: 650;
+    }
+
+    .hero-bullets div {
       display: flex;
       gap: 10px;
-      margin: 10px 0;
-      font-weight: 600;
+      align-items: flex-start;
     }
 
     .check {
@@ -227,2055 +179,1788 @@
       font-weight: 900;
     }
 
-
-    /* =====================================================
-       BUTTONS
-    ===================================================== */
-
-    .btn {
+    .cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       min-height: 58px;
-      padding: 0 30px;
-
-      border: 0;
+      padding: 0 34px;
+      background: linear-gradient(180deg, var(--pink-light), var(--pink));
+      color: white;
       border-radius: 999px;
-
-      background:
-        linear-gradient(135deg, var(--pink-light), var(--pink));
-
-      color: #240f1d;
-
-      font-weight: 800;
-      font-size: 16px;
-
-      box-shadow:
-        0 12px 30px rgba(233,92,174,.28);
-
-      transition: .25s ease;
-
+      font-weight: 950;
+      letter-spacing: .01em;
+      box-shadow: var(--shadow-pink);
+      border: 0;
       cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 18px 38px rgba(233,92,174,.38);
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 38px rgba(255, 63, 134, 0.78);
     }
 
-    .btn-large {
-      min-height: 64px;
-      padding: 0 38px;
-      font-size: 17px;
+    .microcopy {
+      margin-top: 12px;
+      color: #e7cbe9;
+      font-size: 13px;
+      font-weight: 650;
     }
 
-    .security {
+    .hero-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+
+    .split-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      min-height: 340px;
+      background: #0e0611;
+    }
+
+    .visual-side {
+      position: relative;
+      padding: 24px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 340px;
+    }
 
-      margin-top: 18px;
+    .visual-side.bad {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.65)),
+        radial-gradient(circle at 50% 30%, #5a315e, #18051c);
+    }
 
-      color: #aa9aad;
+    .visual-side.good {
+      background:
+        linear-gradient(180deg, rgba(255,63,134,0.05), rgba(0,0,0,0.50)),
+        radial-gradient(circle at 50% 30%, #7e3b61, #24072a);
+    }
+
+    .visual-icon {
+      position: absolute;
+      top: 18px;
+      font-size: 44px;
+      font-weight: 1000;
+      line-height: 1;
+    }
+
+    .bad .visual-icon {
+      color: #ff3333;
+      left: 20px;
+    }
+
+    .good .visual-icon {
+      color: #00e68a;
+      right: 20px;
+    }
+
+    .visual-title {
+      font-size: 18px;
+      line-height: 1.08;
+      font-weight: 950;
+      text-transform: uppercase;
+      max-width: 190px;
+    }
+
+    .visual-small {
+      margin-top: 8px;
+      color: #f0d8ef;
       font-size: 13px;
     }
 
-
-    /* =====================================================
-       HERO MOCKUP
-    ===================================================== */
-
-    .hero-visual {
-      position: relative;
+    .mini-proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .mockup {
-      position: relative;
-
-      padding: 14px;
-
-      border-radius: 30px;
-
-      background:
-        linear-gradient(145deg, #382249, #17101e);
-
-      box-shadow: var(--shadow);
-
-      transform: rotate(2deg);
+    .mini-proof div {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 12px;
+      border-radius: 16px;
+      text-align: center;
     }
 
-    .mockup-inner {
-      min-height: 520px;
+    .mini-proof strong {
+      display: block;
+      color: white;
+      font-size: 15px;
+    }
 
-      padding: 38px 30px;
+    .mini-proof span {
+      font-size: 11px;
+      color: #e4c7e7;
+    }
 
+    .stats-band {
+      position: relative;
+      z-index: 4;
+      margin-top: -36px;
+    }
+
+    .stats-box {
+      background: #3a1044;
+      color: white;
       border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 18px 60px rgba(30,0,35,.22);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
 
+    .stats-box strong {
+      display: block;
+      font-size: 18px;
+      color: var(--pink-light);
+    }
+
+    .stats-box span {
+      font-size: 13px;
+      color: #e9cdeb;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 74px 0;
+    }
+
+    .section-dark {
       background:
-        radial-gradient(circle at 50% 0%, rgba(233,92,174,.3), transparent 40%),
-        linear-gradient(160deg, #2d173a, #140e19);
+        radial-gradient(circle at 50% 0%, rgba(255,63,134,0.14), transparent 30%),
+        linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
+      color: white;
+    }
 
+    .center {
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: #3a1044;
+      color: #ffd8e8;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .tag.pink {
+      background: rgba(255,63,134,0.14);
+      color: var(--pink);
+      border: 1px solid rgba(255,63,134,0.25);
+    }
+
+    h2 {
+      font-size: clamp(30px, 4.4vw, 50px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      margin-bottom: 18px;
+    }
+
+    .section-lead {
+      font-size: 18px;
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: #5b435e;
+      font-weight: 560;
+    }
+
+    .section-dark .section-lead {
+      color: #e8cfe9;
+    }
+
+    .story-block {
+      max-width: 820px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #f2dbe6;
+      border-radius: 28px;
+      padding: clamp(26px, 5vw, 48px);
+      box-shadow: 0 18px 55px rgba(83, 29, 76, .09);
+    }
+
+    .story-block p {
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .big-question {
+      margin: 28px 0;
+      background: #fff0f6;
+      border-left: 5px solid var(--pink);
+      padding: 22px;
+      border-radius: 16px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 950;
+      color: #39133f;
+    }
+
+    .reframe {
+      font-size: 22px;
+      line-height: 1.16;
+      font-weight: 950;
+      color: var(--pink);
+      margin-top: 22px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #f0d7e4;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 45px rgba(61, 18, 62, .07);
+    }
+
+    .card.dark {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      line-height: 1.14;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      color: #6e5471;
+      font-weight: 520;
+    }
+
+    .card.dark p {
+      color: #e2c8e6;
+    }
+
+    .x-icon {
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #ffe1ed;
+      color: var(--pink);
+      font-weight: 1000;
+      margin-bottom: 14px;
+    }
+
+    .pattern-list {
+      max-width: 760px;
+      margin: 34px auto 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pattern-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: center;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--pink);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 950;
+      box-shadow: var(--shadow-pink);
+    }
+
+    .pattern-item strong {
+      display: block;
+      color: white;
+      font-size: 17px;
+    }
+
+    .pattern-item span {
+      color: #dec4e0;
+      font-size: 14px;
+    }
+
+    .mechanism {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .mechanism .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mechanism .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 6px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--pink), var(--pink-light));
+    }
+
+    .quote-band {
+      background: #fff0f6;
+      border-top: 1px solid #f5d4e3;
+      border-bottom: 1px solid #f5d4e3;
+      padding: 46px 0;
+    }
+
+    .quote {
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      font-weight: 950;
+      color: #39133f;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote span {
+      color: var(--pink);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .product {
+      overflow: hidden;
+      background: white;
+      border: 1px solid #efd7e4;
+      border-radius: 28px;
+      box-shadow: 0 18px 60px rgba(54, 13, 56, .09);
+    }
+
+    .product-cover {
+      min-height: 300px;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(255,63,134,0.25), transparent 35%),
+        linear-gradient(135deg, #2c0832, #150219);
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .book {
+      width: 220px;
+      min-height: 270px;
+      background: linear-gradient(160deg, #fff8fb, #e9d9e9);
+      border-radius: 12px;
+      box-shadow: 18px 24px 45px rgba(0,0,0,0.35);
+      padding: 28px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-
       text-align: center;
+      color: #321038;
+      transform: rotate(-2deg);
     }
 
-    .mockup-badge {
-      padding: 7px 14px;
+    .book.dark-book {
+      background: linear-gradient(160deg, #43134b, #18031d);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .book small {
+      color: var(--pink);
+      font-weight: 950;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .book strong {
+      font-size: 26px;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .product-body {
+      padding: 30px;
+    }
+
+    .product-body h3 {
+      font-size: 28px;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      letter-spacing: -0.035em;
+    }
+
+    .product-body p {
+      margin-bottom: 16px;
+      color: #654967;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .bullets li {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #5c435e;
+      font-weight: 600;
+    }
+
+    .inside-preview {
+      max-width: 760px;
+      margin: 36px auto 0;
+      background: white;
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 20px 70px rgba(47, 10, 52, .12);
+      border: 1px solid #efd7e4;
+    }
+
+    .tablet {
+      aspect-ratio: 16/10;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.68)),
+        radial-gradient(circle at 50% 0%, #ffd7e7, #d7bfd9);
+      border-radius: 24px;
+      border: 12px solid #1d0622;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .tablet-page {
+      max-width: 380px;
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    }
+
+    .tablet-page h4 {
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #321038;
+    }
+
+    .tablet-page p {
+      color: #7c627f;
+      font-size: 14px;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .bonus {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.045));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .bonus-img {
+      min-height: 160px;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(255,63,134,0.35), transparent 28%),
+        linear-gradient(135deg, #491455, #210627);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 950;
+      text-align: center;
+      padding: 22px;
+    }
+
+    .bonus-body {
+      padding: 22px;
+    }
+
+    .bonus-label {
+      display: inline-flex;
+      color: white;
+      background: var(--pink);
+      padding: 5px 10px;
       border-radius: 999px;
-
-      background: rgba(255,255,255,.08);
-      color: var(--gold);
-
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 950;
+      margin-bottom: 10px;
       text-transform: uppercase;
     }
 
-    .mockup-title {
-      font-family: "Playfair Display", serif;
+    .bonus h3 {
+      font-size: 20px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .bonus p {
+      color: #e4c8e6;
+      font-size: 15px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .testimonial {
+      background: white;
+      border: 1px solid #efd7e4;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 40px rgba(68, 18, 68, .07);
+    }
+
+    .stars {
+      color: #ffb400;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-weight: 950;
+    }
+
+    .testimonial p {
+      color: #5c435e;
+      margin-bottom: 18px;
+      font-weight: 560;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), #64246c);
+    }
+
+    .person strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .person span {
+      font-size: 12px;
+      color: #0b9f67;
+      font-weight: 850;
+    }
+
+    .offer-wrap {
+      max-width: 560px;
+      margin: 36px auto 0;
+      background: linear-gradient(180deg, #3a1044, #17031c);
+      color: white;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow: 0 28px 90px rgba(30,0,35,.34);
+      overflow: hidden;
+    }
+
+    .offer-head {
+      padding: 28px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,63,134,0.25), transparent 45%),
+        rgba(255,255,255,0.04);
+    }
+
+    .offer-head h3 {
+      font-size: 30px;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .offer-body {
+      padding: 28px;
+    }
+
+    .stack-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stack-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      padding-bottom: 10px;
+      color: #f4dff3;
+      font-weight: 700;
+    }
+
+    .stack-row span:last-child {
+      color: var(--green);
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .price-box {
+      text-align: center;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 24px;
+      border-radius: 22px;
+      margin: 24px 0;
+    }
+
+    .old-price {
+      color: #c8a8c9;
+      text-decoration: line-through;
+      font-weight: 750;
+      margin-bottom: 4px;
+    }
+
+    .price {
       font-size: 48px;
       line-height: 1;
-      margin: 25px 0 15px;
+      font-weight: 1000;
+      letter-spacing: -0.05em;
+      color: white;
     }
 
-    .mockup-subtitle {
-      color: var(--muted);
-      max-width: 280px;
+    .saving {
+      display: inline-flex;
+      margin-top: 10px;
+      background: #0bad70;
+      color: white;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 950;
     }
 
-    .mockup-days {
-      margin-top: 35px;
-
-      font-size: 65px;
-      font-weight: 800;
-      line-height: 1;
-
-      color: var(--pink-light);
-    }
-
-
-    /* =====================================================
-       TRUST
-    ===================================================== */
-
-    .trust {
-      padding: 25px 0;
-
-      border-top: 1px solid rgba(255,255,255,.07);
-      border-bottom: 1px solid rgba(255,255,255,.07);
-
-      background: rgba(255,255,255,.025);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+    .mini-timer {
+      margin: 18px 0;
+      background: #100314;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 16px;
       text-align: center;
     }
 
-    .trust-item strong {
+    .mini-timer span {
       display: block;
-      font-size: 22px;
-    }
-
-    .trust-item span {
-      color: #a99cab;
+      color: #d7b9d8;
       font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
-
-    /* =====================================================
-       IDENTIFICATION
-    ===================================================== */
-
-    .problem {
-      background: #0e0a13;
+    .mini-timer strong {
+      font-size: 28px;
+      color: white;
+      font-variant-numeric: tabular-nums;
     }
 
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .problem h2 {
-      margin-bottom: 25px;
-    }
-
-    .problem p {
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-size: 17px;
-    }
-
-    .pain-list {
-      display: grid;
-      gap: 13px;
-    }
-
-    .pain {
-      padding: 17px 18px;
-
-      border-radius: 15px;
-
-      background: rgba(255,255,255,.045);
-      border: 1px solid rgba(255,255,255,.07);
-
-      color: #e9e0eb;
-    }
-
-    .pain::before {
-      content: "✓";
-      color: var(--pink-light);
-      font-weight: 800;
-      margin-right: 10px;
-    }
-
-
-    /* =====================================================
-       MECHANISM
-    ===================================================== */
-
-    .mechanism {
-      background:
-        radial-gradient(circle at 50% 50%, rgba(139,92,246,.14), transparent 45%);
+    .payments {
+      text-align: center;
+      color: #d9bedb;
+      font-size: 13px;
+      margin-top: 14px;
+      font-weight: 650;
     }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 18px;
+      margin-top: 34px;
     }
 
-    .step {
-      position: relative;
-
-      padding: 35px 28px;
-
-      border-radius: var(--radius);
-
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.025)
-      );
-
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .step-number {
-      font-size: 13px;
-      color: var(--pink-light);
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .step h3 {
-      font-size: 30px;
-      margin: 15px 0;
-    }
-
-    .step p {
-      color: var(--muted);
-    }
-
-
-    /* =====================================================
-       PRODUCTS
-    ===================================================== */
-
-    .products {
-      background: #0d0911;
-    }
-
-    .product-card {
+    .guarantee {
       display: grid;
       grid-template-columns: 180px 1fr;
       gap: 30px;
-
-      margin-bottom: 24px;
-      padding: 30px;
-
-      border-radius: var(--radius);
-
-      background: var(--card);
-
-      border: 1px solid rgba(255,255,255,.07);
-
-      box-shadow: 0 15px 50px rgba(0,0,0,.18);
-    }
-
-    .product-cover {
-      min-height: 220px;
-
-      border-radius: 15px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #54276c,
-          #25132f
-        );
-
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      padding: 20px;
+      background: white;
+      border: 1px solid #efd7e4;
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: 0 16px 55px rgba(54, 13, 56, .08);
+      max-width: 920px;
+      margin: 0 auto;
     }
 
-    .product-cover strong {
-      font-family: "Playfair Display", serif;
-      font-size: 23px;
-    }
-
-    .product-cover small {
-      margin-top: 15px;
-      color: var(--pink-light);
-    }
-
-    .product-content h3 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .product-content p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .benefits {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-    }
-
-    .benefits li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 900;
-      margin-right: 9px;
-    }
-
-
-    /* =====================================================
-       BONUSES
-    ===================================================== */
-
-    .bonuses {
+    .seal {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
       background:
-        radial-gradient(circle at 20% 50%, rgba(233,92,174,.09), transparent 30%);
-    }
-
-    .bonus-grid {
+        radial-gradient(circle, #52215a 0%, #2a0a31 58%, #17031c 100%);
+      color: white;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      place-items: center;
+      text-align: center;
+      border: 5px solid #f3d3e3;
+      box-shadow: var(--shadow-pink);
     }
 
-    .bonus {
-      padding: 26px;
-
-      border-radius: 18px;
-
-      background: rgba(255,255,255,.045);
-
-      border: 1px solid rgba(255,255,255,.07);
+    .seal strong {
+      display: block;
+      font-size: 54px;
+      line-height: .9;
     }
 
-    .bonus-number {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 800;
+    .seal span {
+      display: block;
+      font-size: 13px;
+      font-weight: 950;
       text-transform: uppercase;
     }
 
-    .bonus h3 {
-      font-size: 25px;
-      margin: 9px 0;
-    }
-
-    .bonus p {
-      color: var(--muted);
-    }
-
-
-    /* =====================================================
-       FUTURE
-    ===================================================== */
-
-    .future {
-      background: #0b080e;
-    }
-
-    .future-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .future-card {
-      padding: 30px;
-
-      border-radius: 20px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(139,92,246,.10),
-          rgba(233,92,174,.05)
-        );
-
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .future-card h3 {
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
-
-    .future-card p {
-      color: var(--muted);
-    }
-
-
-    /* =====================================================
-       OFFER
-    ===================================================== */
-
-    .offer {
-      background:
-        radial-gradient(circle at 50% 0%, rgba(233,92,174,.20), transparent 40%);
-    }
-
-    .offer-box {
-      max-width: 850px;
-      margin: auto;
-
-      padding: 50px 35px;
-
-      text-align: center;
-
-      border-radius: 30px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #281735,
-          #160d1d
-        );
-
-      border: 1px solid rgba(255,255,255,.12);
-
-      box-shadow: var(--shadow);
-    }
-
-    .offer-box h2 {
-      margin-bottom: 15px;
-    }
-
-    .offer-subtitle {
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .value {
-      margin-bottom: 5px;
-
-      color: #a99bab;
-      font-size: 16px;
-      text-decoration: line-through;
-    }
-
-    .price {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(48px, 8vw, 75px);
-
-      font-weight: 800;
-
-      color: var(--white);
-
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .price small {
-      font-family: "DM Sans", sans-serif;
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    .offer-list {
-      list-style: none;
-
-      max-width: 450px;
-
-      margin: 30px auto;
-
-      text-align: left;
-    }
-
-    .offer-list li {
-      margin: 9px 0;
-    }
-
-    .offer-list li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 900;
-      margin-right: 10px;
-    }
-
-
-    /* =====================================================
-       GUARANTEE
-    ===================================================== */
-
-    .guarantee {
-      text-align: center;
-      background: #100b15;
-    }
-
-    .guarantee-box {
-      max-width: 760px;
-      margin: auto;
-
-      padding: 45px 30px;
-
-      border: 1px solid rgba(98,213,154,.18);
-      border-radius: 25px;
-
-      background: rgba(98,213,154,.04);
-    }
-
-    .guarantee-icon {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
-
-    .guarantee h2 {
-      font-size: 40px;
-    }
-
-    .guarantee p {
-      color: var(--muted);
-      max-width: 600px;
-      margin: auto;
-    }
-
-
-    /* =====================================================
-       HOW IT WORKS
-    ===================================================== */
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .how {
-      text-align: center;
-      padding: 30px;
-    }
-
-    .how-number {
-      width: 55px;
-      height: 55px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      margin: 0 auto 18px;
-
-      border-radius: 50%;
-
-      background: rgba(233,92,174,.13);
-
-      color: var(--pink-light);
-
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    .how h3 {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-
-    .how p {
-      color: var(--muted);
-    }
-
-
-    /* =====================================================
-       FAQ
-    ===================================================== */
-
     .faq {
-      background: #0c090f;
+      max-width: 820px;
+      margin: 34px auto 0;
+      display: grid;
+      gap: 10px;
     }
 
-    .faq-list {
-      max-width: 850px;
-      margin: auto;
+    .faq-item {
+      background: white;
+      border: 1px solid #efd7e4;
+      border-radius: 16px;
+      overflow: hidden;
     }
 
-    details {
-      padding: 22px 0;
-
-      border-bottom: 1px solid rgba(255,255,255,.09);
-    }
-
-    summary {
+    .faq-q {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      text-align: left;
+      font-weight: 900;
+      color: #321038;
       cursor: pointer;
-
-      font-size: 18px;
-      font-weight: 700;
-
-      list-style: none;
-
-      padding-right: 30px;
-
-      position: relative;
+      font-size: 16px;
     }
 
-    summary::-webkit-details-marker {
-      display: none;
+    .faq-q span:last-child {
+      color: var(--pink);
+      font-size: 20px;
     }
 
-    summary::after {
-      content: "+";
-
-      position: absolute;
-      right: 0;
-      top: -4px;
-
-      font-size: 25px;
-      color: var(--pink-light);
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .25s ease;
+      color: #664a69;
+      padding: 0 20px;
     }
 
-    details[open] summary::after {
-      content: "−";
+    .faq-item.active .faq-a {
+      max-height: 260px;
+      padding: 0 20px 20px;
     }
-
-    details p {
-      color: var(--muted);
-      margin-top: 14px;
-      padding-right: 25px;
-    }
-
-
-    /* =====================================================
-       FINAL CTA
-    ===================================================== */
 
     .final-cta {
-      padding: 110px 0 150px;
-
       text-align: center;
-
-      background:
-        radial-gradient(circle at 50% 20%, rgba(233,92,174,.18), transparent 35%),
-        #0b080d;
-    }
-
-    .final-cta h2 {
       max-width: 850px;
-      margin: auto auto 20px;
+      margin: 0 auto;
     }
 
     .final-cta p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: var(--muted);
+      color: #e8cfe9;
       font-size: 18px;
+      margin-bottom: 18px;
     }
 
-
-    /* =====================================================
-       STICKY CTA MOBILE
-    ===================================================== */
-
-    .mobile-cta {
-      display: none;
+    .sticky-buy {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: rgba(20,3,24,0.96);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      color: white;
+      padding: 12px 0;
     }
 
+    .sticky-inner {
+      width: min(var(--max), calc(100% - 24px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
 
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+    .sticky-price strong {
+      display: block;
+      font-size: 16px;
+    }
 
-    footer {
-      padding: 35px 20px;
-
-      text-align: center;
-
-      border-top: 1px solid rgba(255,255,255,.07);
-
-      color: #817587;
-
+    .sticky-price span {
+      color: #d8bddb;
       font-size: 13px;
+      font-weight: 700;
     }
 
+    .sticky-buy .cta {
+      min-height: 48px;
+      padding: 0 24px;
+      font-size: 13px;
+      box-shadow: 0 0 20px rgba(255,63,134,.45);
+    }
 
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
-
-    @media (max-width: 900px) {
-
-      .hero-grid,
-      .problem-grid {
+    @media (max-width: 920px) {
+      .hero-inner,
+      .product-grid,
+      .guarantee {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        text-align: center;
-      }
-
-      .hero-subtitle {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-list {
-        text-align: left;
-        max-width: 450px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-visual {
-        max-width: 500px;
-        margin: auto;
-      }
-
+      .cards,
+      .bonus-grid,
+      .mechanism,
+      .stats-box,
       .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .how-grid {
-        grid-template-columns: 1fr;
+      .hero {
+        padding-bottom: 78px;
       }
     }
 
-
-    @media (max-width: 650px) {
+    @media (max-width: 640px) {
+      body {
+        padding-bottom: 92px;
+      }
 
       section {
-        padding: 65px 0;
+        padding: 56px 0;
       }
 
-      .hero {
-        padding: 50px 0 75px;
+      .hero-inner {
+        gap: 28px;
       }
 
-      .hero h1 {
-        font-size: 46px;
-        letter-spacing: -1px;
+      .split-visual {
+        min-height: 280px;
       }
 
-      .hero-subtitle {
-        font-size: 17px;
+      .visual-side {
+        min-height: 280px;
+        padding: 16px;
       }
 
-      .btn-large {
-        width: 100%;
+      .visual-title {
+        font-size: 15px;
       }
 
-      .mockup-inner {
-        min-height: 430px;
-      }
-
-      .mockup-title {
-        font-size: 38px;
-      }
-
-      .mockup-days {
-        font-size: 52px;
-      }
-
-      .product-card {
+      .cards,
+      .bonus-grid,
+      .mechanism,
+      .stats-box,
+      .steps,
+      .testimonials,
+      .mini-proof {
         grid-template-columns: 1fr;
       }
 
       .product-cover {
-        min-height: 190px;
+        min-height: 250px;
       }
 
-      .bonus-grid,
-      .future-grid {
-        grid-template-columns: 1fr;
+      .book {
+        width: 190px;
+        min-height: 240px;
       }
 
-      .offer-box {
-        padding: 40px 20px;
+      .guarantee {
+        text-align: center;
+        padding: 26px;
       }
 
-      .price {
-        font-size: 56px;
+      .seal {
+        margin: 0 auto;
       }
 
-      .mobile-cta {
-        display: block;
-
-        position: fixed;
-
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-        z-index: 100;
-
-        padding: 10px 12px;
-
-        background: rgba(15,9,20,.94);
-
-        backdrop-filter: blur(12px);
-
-        border-top: 1px solid rgba(255,255,255,.1);
+      .sticky-inner {
+        align-items: center;
       }
 
-      .mobile-cta .btn {
-        width: 100%;
-        min-height: 52px;
+      .sticky-price span {
+        display: none;
       }
 
-      footer {
-        padding-bottom: 90px;
+      .sticky-buy .cta {
+        padding: 0 18px;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =====================================================
-       TOP BAR
-  ====================================================== -->
-
-  <div class="top-bar">
-    ✦ OFERTA ESPECIAL · ACCESO DIGITAL INMEDIATO ✦
+  <!-- BARRA SUPERIOR -->
+  <div class="top-alert">
+    🔥 El precio especial termina en
+    <span class="countdown-pill" id="topCountdown">00:00:00</span>
   </div>
 
-
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
-
+  <!-- HERO -->
   <header class="hero">
-
-    <div class="container hero-grid">
-
+    <div class="container hero-inner">
       <div>
-
-        <span class="eyebrow">
-          COMBO MENTE & PROPÓSITO
-        </span>
+        <div class="eyebrow">Combo completo · Edición especial</div>
 
         <h1>
-          Recupera el control de tu vida
-          <span>y empieza a construir algo propio.</span>
+          Dejá de ser la mujer que puede con todo…
+          <span>menos con ella misma</span>
         </h1>
 
-        <p class="hero-subtitle">
-          Un recorrido práctico para dejar de vivir reaccionando a todo,
-          aprender a poner límites sin sentir culpa y descubrir cómo
-          convertir lo que ya sabes hacer en una oportunidad.
+        <p class="hero-sub">
+          Un recorrido simple para calmar tu cabeza, poner límites sin culpa y empezar a ordenar lo que ya sabés hacer para convertirlo en una fuente real de ingreso.
         </p>
 
-        <ul class="hero-list">
-
-          <li>
-            <span class="check">✓</span>
-            Aprende a responder en lugar de reaccionar.
-          </li>
-
-          <li>
-            <span class="check">✓</span>
-            Aprende a poner límites sin cargar con culpa.
-          </li>
-
-          <li>
-            <span class="check">✓</span>
-            Descubre el valor que ya existe en tus capacidades.
-          </li>
-
-          <li>
-            <span class="check">✓</span>
-            Avanza con un recorrido práctico de 40 días.
-          </li>
-
-        </ul>
-
-        <a href="#oferta" class="btn btn-large">
-          QUIERO EMPEZAR MI CAMBIO →
-        </a>
-
-        <div class="security">
-          <span>🔒 Pago seguro</span>
-          <span>⚡ Acceso digital</span>
-          <span>✓ Garantía de 7 días</span>
+        <div class="truth-line">
+          Porque no estás estancada por falta de capacidad.
+          <br>
+          <strong>Estás cansada de vivir en modo reacción.</strong>
         </div>
 
+        <div class="hero-bullets">
+          <div><span class="check">✓</span> Dejá de callarte hasta explotar.</div>
+          <div><span class="check">✓</span> Aprendé a poner límites sin sentirte mala persona.</div>
+          <div><span class="check">✓</span> Ordená tu mente antes de intentar ordenar tu vida.</div>
+          <div><span class="check">✓</span> Empezá a mirar lo que sabés hacer como algo que también puede sostenerte a vos.</div>
+        </div>
+
+        <a href="#checkout" class="cta">Quiero empezar mi cambio hoy</a>
+        <div class="microcopy">Acceso inmediato · Pago único · Garantía de 7 días</div>
       </div>
 
-
-      <div class="hero-visual">
-
-        <div class="mockup">
-
-          <div class="mockup-inner">
-
-            <span class="mockup-badge">
-              RECORRIDO DIGITAL
-            </span>
-
-            <div class="mockup-title">
-              Mente<br>
-              &<br>
-              Propósito
+      <div class="hero-card">
+        <div class="split-visual">
+          <div class="visual-side bad">
+            <div class="visual-icon">×</div>
+            <div>
+              <div class="visual-title">La misma mujer, repitiendo el mismo patrón</div>
+              <div class="visual-small">Aguanta, calla, explota, se culpa y vuelve a empezar.</div>
             </div>
-
-            <p class="mockup-subtitle">
-              Recupera la calma. Pon límites.
-              Descubre lo que puedes construir.
-            </p>
-
-            <div class="mockup-days">
-              40
-              <small style="font-size:18px;display:block;">
-                DÍAS
-              </small>
-            </div>
-
           </div>
 
+          <div class="visual-side good">
+            <div class="visual-icon">✓</div>
+            <div>
+              <div class="visual-title">La misma mujer, dos decisiones distintas</div>
+              <div class="visual-small">Calma su cabeza, pone límites y recupera dirección.</div>
+            </div>
+          </div>
         </div>
 
+        <div class="mini-proof">
+          <div><strong>2</strong><span>recorridos</span></div>
+          <div><strong>40</strong><span>días de guía</span></div>
+          <div><strong>+7</strong><span>bonos</span></div>
+          <div><strong>7 días</strong><span>garantía</span></div>
+        </div>
       </div>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       TRUST
-  ====================================================== -->
-
-  <div class="trust">
-
-    <div class="container trust-grid">
-
-      <div class="trust-item">
-        <strong>2</strong>
-        <span>productos principales</span>
+  <!-- RESUMEN -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-box">
+        <div><strong>2 recorridos</strong><span>un solo combo</span></div>
+        <div><strong>40 días</strong><span>para volver a vos</span></div>
+        <div><strong>Pago único</strong><span>sin suscripción</span></div>
+        <div><strong>De por vida</strong><span>acceso incluido</span></div>
       </div>
-
-      <div class="trust-item">
-        <strong>7</strong>
-        <span>bonos incluidos</span>
-      </div>
-
-      <div class="trust-item">
-        <strong>40</strong>
-        <span>días de recorrido</span>
-      </div>
-
-      <div class="trust-item">
-        <strong>7 días</strong>
-        <span>de garantía</span>
-      </div>
-
     </div>
-
   </div>
 
-
-  <!-- =====================================================
-       PROBLEM
-  ====================================================== -->
-
-  <section class="problem">
-
-    <div class="container problem-grid">
-
-      <div>
-
-        <span class="eyebrow">
-          SI TE IDENTIFICAS CON ESTO...
-        </span>
-
-        <h2>
-          Quizás no te falta capacidad.
-          <span class="highlight">
-            Te falta dirección.
-          </span>
-        </h2>
-
-        <p>
-          Tal vez eres la persona que resuelve todo para los demás,
-          pero al final del día sientes que tú sigues en el mismo lugar.
-        </p>
-
-        <p>
-          Y mientras intentas sostenerlo todo, tus propios planes,
-          ideas y posibilidades quedan para después.
-        </p>
-
-      </div>
-
-
-      <div class="pain-list">
-
-        <div class="pain">
-          Dices “sí” cuando realmente quieres decir “no”.
-        </div>
-
-        <div class="pain">
-          Te quedas pensando después en lo que deberías haber respondido.
-        </div>
-
-        <div class="pain">
-          Tienes habilidades, pero no sabes cómo aprovecharlas.
-        </div>
-
-        <div class="pain">
-          Empiezas proyectos y te cuesta mantenerlos.
-        </div>
-
-        <div class="pain">
-          Sientes que haces muchísimo, pero avanzas poco.
-        </div>
-
-        <div class="pain">
-          Quieres algo propio, pero no sabes por dónde comenzar.
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       MECHANISM
-  ====================================================== -->
-
-  <section class="mechanism">
-
-    <div class="container">
-
-      <div class="section-intro">
-
-        <span class="eyebrow">
-          EL MÉTODO
-        </span>
-
-        <h2>
-          Primero recuperas el control.
-          <span class="highlight">
-            Después empiezas a construir.
-          </span>
-        </h2>
-
-        <p>
-          Mente & Propósito une dos áreas que normalmente se trabajan
-          por separado: tu mundo interno y tu capacidad de crear algo propio.
-        </p>
-
-      </div>
-
-
-      <div class="steps">
-
-        <div class="step">
-
-          <span class="step-number">
-            PASO 01
-          </span>
-
-          <h3>
-            CALMA
-          </h3>
-
-          <p>
-            Aprende a reconocer tus reacciones y crear espacio
-            entre lo que sucede y la forma en que decides responder.
-          </p>
-
-        </div>
-
-
-        <div class="step">
-
-          <span class="step-number">
-            PASO 02
-          </span>
-
-          <h3>
-            CLARIDAD
-          </h3>
-
-          <p>
-            Empieza a mirar tus capacidades, experiencias y conocimientos
-            desde una perspectiva diferente.
-          </p>
-
-        </div>
-
-
-        <div class="step">
-
-          <span class="step-number">
-            PASO 03
-          </span>
-
-          <h3>
-            PROPÓSITO
-          </h3>
-
-          <p>
-            Convierte tus ideas en acciones y explora cómo crear valor
-            con aquello que ya sabes hacer.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       PRODUCTS
-  ====================================================== -->
-
-  <section class="products">
-
-    <div class="container">
-
-      <div class="section-intro">
-
-        <span class="eyebrow">
-          LO QUE RECIBES
-        </span>
-
-        <h2>
-          Dos recorridos.
-          <span class="highlight">
-            Una transformación.
-          </span>
-        </h2>
-
-      </div>
-
-
-      <!-- PRODUCT 1 -->
-
-      <div class="product-card">
-
-        <div class="product-cover">
-
-          <strong>
-            UNA MENTE<br>
-            VALE MÁS<br>
-            QUE UN MILLÓN
-          </strong>
-
-          <small>
-            PRODUCTO PRINCIPAL
-          </small>
-
-        </div>
-
-
-        <div class="product-content">
-
-          <h3>
-            Una Mente Vale Más que un Millón
-          </h3>
-
-          <p>
-            Un recorrido para empezar a identificar el valor que ya existe
-            en ti y aprender a mirar tus conocimientos y capacidades desde
-            una perspectiva de oportunidad.
-          </p>
-
-          <ul class="benefits">
-
-            <li>
-              Identifica capacidades que ya posees.
-            </li>
-
-            <li>
-              Cambia la manera de observar oportunidades.
-            </li>
-
-            <li>
-              Explora cómo convertir conocimiento en valor.
-            </li>
-
-            <li>
-              Empieza a cuestionar tus bloqueos frente al dinero.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- PRODUCT 2 -->
-
-      <div class="product-card">
-
-        <div class="product-cover">
-
-          <strong>
-            40 DÍAS<br>
-            DE VIAJE<br>
-            EN SILENCIO
-          </strong>
-
-          <small>
-            PRODUCTO PRINCIPAL
-          </small>
-
-        </div>
-
-
-        <div class="product-content">
-
-          <h3>
-            40 Días de Viaje en Silencio
-          </h3>
-
-          <p>
-            Un recorrido práctico de 40 días para detenerte,
-            observar tus patrones y comenzar a tomar decisiones
-            diferentes.
-          </p>
-
-          <ul class="benefits">
-
-            <li>
-              40 días de recorrido.
-            </li>
-
-            <li>
-              40 tareas prácticas.
-            </li>
-
-            <li>
-              Espacios de reflexión.
-            </li>
-
-            <li>
-              Trabajo sobre calma, límites y claridad.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       BONUSES
-  ====================================================== -->
-
-  <section class="bonuses">
-
-    <div class="container">
-
-      <div class="section-intro">
-
-        <span class="eyebrow">
-          BONOS INCLUIDOS
-        </span>
-
-        <h2>
-          Y además,
-          <span class="highlight">
-            7 herramientas prácticas.
-          </span>
-        </h2>
-
-        <p>
-          Cada recurso está pensado para ayudarte con una fricción
-          concreta durante el proceso.
-        </p>
-
-      </div>
-
-
-      <div class="bonus-grid">
-
-
-        <div class="bonus">
-
-          <span class="bonus-number">
-            BONO #1
-          </span>
-
-          <h3>
-            Las 21 Frases para Frenar una Discusión
-          </h3>
-
-          <p>
-            Para esos momentos en los que necesitas responder diferente
-            pero no sabes exactamente qué decir.
-          </p>
-
-        </div>
-
-
-        <div class="bonus">
-
-          <span class="bonus-number">
-            BONO #2
-          </span>
-
-          <h3>
-            Cuaderno de los 40 Días
-          </h3>
-
-          <p>
-            Un espacio para acompañar el recorrido y registrar
-            tus reflexiones y avances.
-          </p>
-
-        </div>
-
-
-        <div class="bonus">
-
-          <span class="bonus-number">
-            BONO #3
-          </span>
-
-          <h3>
-            Cómo Ponerle Precio a lo que Ya Sabes Hacer
-          </h3>
-
-          <p>
-            Para comenzar a pensar tus conocimientos y habilidades
-            desde el valor que pueden generar.
-          </p>
-
-        </div>
-
-
-        <div class="bonus">
-
-          <span class="bonus-number">
-            BONO #4
-          </span>
-
-          <h3>
-            El Método del Orden
-          </h3>
-
-          <p>
-            Para organizar ideas y dejar de intentar construir
-            diez cosas al mismo tiempo.
-          </p>
-
-        </div>
-
-
-        <div class="bonus">
-
-          <span class="bonus-number">
-            BONO #5
-          </span>
-
-          <h3>
-            40 Oraciones para los Días Difíciles
-          </h3>
-
-          <p>
-            Un recurso para acompañarte en los momentos en los que
-            necesitas volver a ti.
-          </p>
-
-        </div>
-
-
-        <div class="bonus">
-
-          <span class="bonus-number">
-            BONO #6
-          </span>
-
-          <h3>
-            El Guion Anti-Culpa
-          </h3>
-
-          <p>
-            Una herramienta para aprender a sostener tus límites
-            sin quedarte atrapada en la culpa.
-          </p>
-
-        </div>
-
-
-        <div class="bonus" style="grid-column: 1 / -1;">
-
-          <span class="bonus-number">
-            BONO #7
-          </span>
-
-          <h3>
-            Diccionario del Dinero
-          </h3>
-
-          <p>
-            Un recurso para comenzar a cambiar la manera en que
-            entiendes y relacionas tus decisiones con el dinero.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       FUTURE
-  ====================================================== -->
-
-  <section class="future">
-
-    <div class="container">
-
-      <div class="section-intro">
-
-        <span class="eyebrow">
-          EL CAMBIO
-        </span>
-
-        <h2>
-          Imagina cómo podría sentirse
-          <span class="highlight">
-            tu próxima etapa.
-          </span>
-        </h2>
-
-      </div>
-
-
-      <div class="future-grid">
-
-
-        <div class="future-card">
-
-          <h3>
-            Responder en lugar de reaccionar.
-          </h3>
-
-          <p>
-            Tener un momento para pensar antes de decir algo
-            que después desearías no haber dicho.
-          </p>
-
-        </div>
-
-
-        <div class="future-card">
-
-          <h3>
-            Decir “no” sin sentirte una mala persona.
-          </h3>
-
-          <p>
-            Tus límites pueden ser claros sin tener que convertir
-            cada decisión en una explicación interminable.
-          </p>
-
-        </div>
-
-
-        <div class="future-card">
-
-          <h3>
-            Ver valor donde antes veías solamente habilidades.
-          </h3>
-
-          <p>
-            Empezar a preguntarte qué podrías construir con
-            aquello que ya sabes hacer.
-          </p>
-
-        </div>
-
-
-        <div class="future-card">
-
-          <h3>
-            Dejar de postergar lo que también es para ti.
-          </h3>
-
-          <p>
-            Crear espacio para tus propios proyectos,
-            ideas y posibilidades.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       OFFER
-  ====================================================== -->
-
-  <section class="offer" id="oferta">
-
-    <div class="container">
-
-      <div class="offer-box">
-
-        <span class="eyebrow">
-          COMBO COMPLETO
-        </span>
-
-        <h2>
-          Todo lo que necesitas
-          <span class="highlight">
-            para comenzar.
-          </span>
-        </h2>
-
-        <p class="offer-subtitle">
-          2 productos principales + 7 bonos + acceso digital.
-        </p>
-
-
-        <div class="value">
-          Valor total: [COMPLETAR]
-        </div>
-
-        <div class="price">
-          $19.999
-          <small>ARS</small>
-        </div>
-
-
-        <ul class="offer-list">
-
-          <li>
-            Una Mente Vale Más que un Millón
-          </li>
-
-          <li>
-            40 Días de Viaje en Silencio
-          </li>
-
-          <li>
-            7 bonos complementarios
-          </li>
-
-          <li>
-            Acceso digital
-          </li>
-
-          <li>
-            Garantía de 7 días
-          </li>
-
-        </ul>
-
-
-        <!--
-          IMPORTANTE:
-          Reemplaza "#" por tu verdadero enlace
-          de checkout de Hotmart.
-        -->
-
-        <a
-          href="#"
-          class="btn btn-large checkout-btn"
-        >
-          QUIERO EL COMBO COMPLETO →
-        </a>
-
-        <div class="security">
-          <span>🔒 Compra segura</span>
-          <span>⚡ Acceso digital</span>
-          <span>✓ Garantía 7 días</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       GUARANTEE
-  ====================================================== -->
-
-  <section class="guarantee">
-
-    <div class="container">
-
-      <div class="guarantee-box">
-
-        <div class="guarantee-icon">
-          🛡️
-        </div>
-
-        <h2>
-          Tienes 7 días para decidir.
-        </h2>
-
-        <p>
-          Explora el material, comienza el recorrido y comprueba
-          si Mente & Propósito es adecuado para ti.
-          Si decides que no lo es, podrás solicitar el reembolso
-          dentro del período establecido.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       HOW IT WORKS
-  ====================================================== -->
-
+  <!-- IDENTIFICACIÓN -->
   <section>
-
     <div class="container">
+      <div class="story-block">
+        <div class="tag pink">Esto es para vos si...</div>
+        <h2>Esto no empezó ayer.</h2>
 
-      <div class="section-intro">
+        <p>Capaz hace tiempo te pasa.</p>
 
-        <span class="eyebrow">
-          ES MUY SIMPLE
-        </span>
+        <p>Decís que sí cuando querés decir que no.</p>
 
-        <h2>
-          Empieza en
-          <span class="highlight">
-            tres pasos.
-          </span>
-        </h2>
+        <p>Te tragás cosas para no discutir.</p>
 
+        <p>Resolviste problemas de todos, pero los tuyos quedan para después.</p>
+
+        <p>Tenés ideas, capacidad y ganas… pero cuando llega el momento de avanzar, algo te frena.</p>
+
+        <p>Y lo peor es que desde afuera quizá parecés funcional.</p>
+
+        <p>Respondés. Organizás. Cumplís. Ayudás. Sostenés.</p>
+
+        <p>Pero por dentro sabés la verdad:</p>
+
+        <div class="big-question">
+          Estás cansada de vivir reaccionando.
+        </div>
+
+        <p>
+          ¿Cuánto más vas a esperar para empezar a tratar tu propia vida como algo importante?
+        </p>
+
+        <div class="reframe">
+          No es falta de fuerza. Es exceso de aguante.
+        </div>
+
+        <br>
+        <a href="#checkout" class="cta">Sí, me siento identificada</a>
       </div>
-
-
-      <div class="how-grid">
-
-
-        <div class="how">
-
-          <div class="how-number">
-            1
-          </div>
-
-          <h3>
-            Compra
-          </h3>
-
-          <p>
-            Completa el proceso de pago de forma segura.
-          </p>
-
-        </div>
-
-
-        <div class="how">
-
-          <div class="how-number">
-            2
-          </div>
-
-          <h3>
-            Recibe
-          </h3>
-
-          <p>
-            Recibirás las instrucciones correspondientes
-            para acceder al material digital.
-          </p>
-
-        </div>
-
-
-        <div class="how">
-
-          <div class="how-number">
-            3
-          </div>
-
-          <h3>
-            Comienza
-          </h3>
-
-          <p>
-            Empieza tu recorrido y avanza a tu propio ritmo.
-          </p>
-
-        </div>
-
-
-      </div>
-
     </div>
-
   </section>
 
-
-  <!-- =====================================================
-       FAQ
-  ====================================================== -->
-
-  <section class="faq">
-
-    <div class="container">
-
-      <div class="section-intro">
-
-        <span class="eyebrow">
-          PREGUNTAS FRECUENTES
-        </span>
-
-        <h2>
-          Antes de comenzar,
-          <span class="highlight">
-            probablemente quieras saber esto.
-          </span>
-        </h2>
-
-      </div>
-
-
-      <div class="faq-list">
-
-
-        <details>
-
-          <summary>
-            ¿Necesito experiencia previa?
-          </summary>
-
-          <p>
-            No. El recorrido está pensado para comenzar
-            desde tu situación actual.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿Necesito saber qué quiero hacer para generar ingresos?
-          </summary>
-
-          <p>
-            No. Una parte de la propuesta consiste precisamente
-            en ayudarte a observar tus conocimientos y capacidades
-            desde otra perspectiva.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿Tengo que completar los 40 días seguidos?
-          </summary>
-
-          <p>
-            El material está organizado como un recorrido de 40 días,
-            pero puedes avanzar a tu propio ritmo.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿Es un curso?
-          </summary>
-
-          <p>
-            Es una experiencia digital basada en materiales y
-            recorridos prácticos.
-            <strong>[COMPLETAR CON EL FORMATO REAL]</strong>
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿Cuándo recibo el acceso?
-          </summary>
-
-          <p>
-            <strong>[COMPLETAR CON EL TIEMPO REAL DE ENTREGA]</strong>
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿Puedo hacerlo aunque tenga poco tiempo?
-          </summary>
-
-          <p>
-            Sí. El recorrido está pensado para avanzar progresivamente
-            y a tu propio ritmo.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿Qué pasa si cambio de opinión?
-          </summary>
-
-          <p>
-            Cuentas con una garantía de 7 días,
-            según las condiciones de la oferta.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            ¿El resultado está garantizado?
-          </summary>
-
-          <p>
-            No. Los resultados personales y económicos dependen
-            de múltiples factores y de la aplicación individual
-            del material.
-          </p>
-
-        </details>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       FINAL CTA
-  ====================================================== -->
-
-  <section class="final-cta">
-
-    <div class="container">
-
-      <span class="eyebrow">
-        TU PRÓXIMA ETAPA
-      </span>
-
-      <h2>
-        No necesitas tener toda tu vida resuelta.
-        <span class="highlight">
-          Solo necesitas comenzar.
-        </span>
-      </h2>
-
-      <p>
-        Empieza por tu mente.
-        Continúa con tus límites.
-        Y descubre qué puedes construir con todo lo que ya sabes.
+  <!-- SÍNTOMAS -->
+  <section style="padding-top: 0;">
+    <div class="container center">
+      <div class="tag pink">El patrón invisible</div>
+      <h2>¿Te sentís identificada con alguna de estas?</h2>
+      <p class="section-lead">
+        No son problemas separados. Son señales de que venís sosteniendo demasiado sin volver a vos.
       </p>
 
-      <a href="#oferta" class="btn btn-large">
-        QUIERO COMENZAR AHORA →
-      </a>
+      <div class="cards">
+        <div class="card">
+          <div class="x-icon">×</div>
+          <h3>Aguantás en silencio y después explotás</h3>
+          <p>Te tragás todo hasta que un día contestás mal, llorás o sentís culpa por haber reaccionado.</p>
+        </div>
 
+        <div class="card">
+          <div class="x-icon">×</div>
+          <h3>Hacés todo y no lo cuenta nadie</h3>
+          <p>Organizás, resolvés, sostenés y coordinás. Pero si pedís reconocimiento, parece que exagerás.</p>
+        </div>
+
+        <div class="card">
+          <div class="x-icon">×</div>
+          <h3>Resolviste problemas de todos, pero no los tuyos</h3>
+          <p>Das consejos, acompañás, ordenás vidas ajenas… pero tus propios planes siguen esperando.</p>
+        </div>
+
+        <div class="card">
+          <div class="x-icon">×</div>
+          <h3>Empezaste mil cosas y no terminaste ninguna</h3>
+          <p>No porque no puedas. Sino porque tu energía se va antes de llegar a vos.</p>
+        </div>
+      </div>
     </div>
-
   </section>
 
+  <!-- CONTRADICCIÓN -->
+  <section class="section-dark">
+    <div class="container center">
+      <div class="tag">Ahí está el punto</div>
+      <h2>No necesitás otro consejo suelto.</h2>
+      <p class="section-lead">
+        Necesitás dejar de repetir el mismo patrón.
+      </p>
 
-  <!-- =====================================================
-       MOBILE STICKY CTA
-  ====================================================== -->
+      <div class="pattern-list">
+        <div class="pattern-item">
+          <div class="num">1</div>
+          <div>
+            <strong>Primero te saturás</strong>
+            <span>Tu cabeza no para. Todo parece urgente. Todo pesa.</span>
+          </div>
+        </div>
 
-  <div class="mobile-cta">
+        <div class="pattern-item">
+          <div class="num">2</div>
+          <div>
+            <strong>Después aguantás</strong>
+            <span>Callás para no discutir. Cedés para no incomodar.</span>
+          </div>
+        </div>
 
-    <a href="#oferta" class="btn">
-      QUIERO EL COMBO · $19.999 ARS
-    </a>
+        <div class="pattern-item">
+          <div class="num">3</div>
+          <div>
+            <strong>Después explotás o te apagás</strong>
+            <span>Y encima te sentís culpable por reaccionar.</span>
+          </div>
+        </div>
 
+        <div class="pattern-item">
+          <div class="num">4</div>
+          <div>
+            <strong>Después volvés al mismo lugar</strong>
+            <span>Prometiste cambiar, pero otra urgencia te volvió a correr de vos.</span>
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+      <p class="section-lead">
+        No es falta de ganas. No es falta de inteligencia. No es falta de fuerza.
+        <br><br>
+        <strong style="color:#ff6aa3;">Es que venís intentando construir dirección desde una cabeza en guerra.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- MECANISMO -->
+  <section>
+    <div class="container center">
+      <div class="tag pink">El mecanismo</div>
+      <h2>El recorrido Calma → Límites → Dirección</h2>
+      <p class="section-lead">
+        El combo funciona porque no intenta arreglar todo al mismo tiempo. Trabaja en el orden en que realmente se rompe el patrón.
+      </p>
+
+      <div class="mechanism">
+        <div class="card">
+          <h3>1. Primero calma</h3>
+          <p>Porque no podés tomar buenas decisiones desde el enojo, la ansiedad o el cansancio. Antes de avanzar, necesitás bajar el ruido interno.</p>
+        </div>
+
+        <div class="card">
+          <h3>2. Después límites</h3>
+          <p>Porque si tu energía está disponible para todo el mundo menos para vos, cualquier plan propio se cae.</p>
+        </div>
+
+        <div class="card">
+          <h3>3. Después dirección</h3>
+          <p>Cuando dejás de vivir apagando incendios ajenos, empezás a ver con más claridad qué sabés, qué podés ofrecer y cómo ordenarlo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE MEMORABLE -->
+  <div class="quote-band">
+    <div class="container">
+      <div class="quote">
+        No estás rota. <span>Estás cansada de sostener una vida donde todos tienen lugar menos vos.</span>
+      </div>
+    </div>
   </div>
 
+  <!-- BLOQUE EMOCIONAL -->
+  <section class="section-dark">
+    <div class="container center">
+      <div class="tag">La parte que casi nadie dice</div>
+      <h2>Sostenés a todos. Pero cuando necesitás algo, sentís que molestás.</h2>
+      <p class="section-lead">
+        Sos la que escucha. La que resuelve. La que se adapta. La que entiende. La que no quiere generar problemas.
+      </p>
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
+      <div class="story-block" style="text-align:left;">
+        <p>Y un día te das cuenta de algo incómodo:</p>
 
-  <footer>
+        <div class="big-question">
+          Todos cuentan con vos, pero vos no sabés si podés contar con todos.
+        </div>
 
-    <p>
-      © 2026 Mente & Propósito. Todos los derechos reservados.
-    </p>
+        <p>Entonces empezás a achicarte.</p>
+        <p>Pedís menos. Callás más. Te convencés de que “no es para tanto”. Dejás tus planes para después.</p>
+        <p>Pero cada vez que hacés eso, pasa algo:</p>
 
-    <p style="margin-top:8px;">
-      [AGREGAR POLÍTICA DE PRIVACIDAD] ·
-      [AGREGAR TÉRMINOS Y CONDICIONES]
-    </p>
+        <div class="reframe">
+          Tu vida se vuelve más chiquita. No de golpe. De a poquito.
+        </div>
 
-  </footer>
+        <br>
+        <p>Una decisión evitada. Una conversación pendiente. Una idea postergada. Una oportunidad que dejaste pasar porque no te sentías lista.</p>
 
+        <div class="big-question">
+          No estás esperando el momento perfecto. Estás esperando sentirte con permiso.
+        </div>
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
+        <a href="#checkout" class="cta">Quiero dejar de hacerme pequeña</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMACIÓN -->
+  <section>
+    <div class="container center">
+      <div class="tag pink">Lo que cambia</div>
+      <h2>Lo que empieza a cambiar cuando dejás de vivir en automático</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>01. Dejás de responder desde el enojo</h3>
+          <p>No porque ahora todo te resbale. Sino porque empezás a detectar ese segundo donde antes explotabas, te callabas o cedías.</p>
+        </div>
+
+        <div class="card">
+          <h3>02. Ponés límites sin sentirte mala persona</h3>
+          <p>Con frases simples. Con decisiones pequeñas. Con menos culpa después de elegirte.</p>
+        </div>
+
+        <div class="card">
+          <h3>03. Dejás de confundir paz con aguantar</h3>
+          <p>Porque muchas veces no estabas siendo tranquila. Estabas evitando conflictos para no incomodar a nadie.</p>
+        </div>
+
+        <div class="card">
+          <h3>04. Mirás lo que sabés como algo valioso</h3>
+          <p>Capaz ya ayudás, explicás, ordenás o acompañás. Pero nunca lo miraste como algo que podía convertirse en una oferta.</p>
+        </div>
+      </div>
+
+      <br><br>
+      <a href="#checkout" class="cta">Quiero empezar hoy</a>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="section-dark">
+    <div class="container center">
+      <div class="tag">Todo incluido</div>
+      <h2>Todo lo que incluye el Combo Mente & Propósito</h2>
+      <p class="section-lead">
+        No es un material para acumular en una carpeta. Es un recorrido para empezar a cortar el patrón desde la raíz.
+      </p>
+
+      <div class="product-grid">
+        <article class="product">
+          <div class="product-cover">
+            <div class="book">
+              <small>Entrega 1</small>
+              <strong>Una mente vale más que un millón</strong>
+            </div>
+          </div>
+
+          <div class="product-body">
+            <h3>Para empezar a salir del ruido interno</h3>
+            <p>Porque cuando tu cabeza está llena de culpa, enojo, comparación, miedo y pendientes, cualquier decisión parece enorme.</p>
+
+            <ul class="bullets">
+              <li><span class="check">✓</span> Por qué te cuesta poner límites aunque estés cansada.</li>
+              <li><span class="check">✓</span> Por qué terminás diciendo que sí cuando querías decir que no.</li>
+              <li><span class="check">✓</span> Por qué postergás tus propias ideas.</li>
+              <li><span class="check">✓</span> Cómo empezar a ordenar tu mente antes de intentar ordenar tu vida.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-cover">
+            <div class="book dark-book">
+              <small>Entrega 2</small>
+              <strong>40 días de viaje en silencio</strong>
+            </div>
+          </div>
+
+          <div class="product-body">
+            <h3>Un recorrido diario para volver a escucharte</h3>
+            <p>Una cosa es entender lo que te pasa. Otra muy distinta es sostener un cambio cuando aparece la culpa, la ansiedad o el miedo.</p>
+
+            <ul class="bullets">
+              <li><span class="check">✓</span> Una lectura por día.</li>
+              <li><span class="check">✓</span> Una tarea concreta.</li>
+              <li><span class="check">✓</span> Una pausa para mirarte sin escaparte.</li>
+              <li><span class="check">✓</span> Un recorrido simple para sostener una decisión distinta.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVIEW -->
+  <section>
+    <div class="container center">
+      <div class="tag pink">Por dentro</div>
+      <h2>Mirá cómo se ve por dentro</h2>
+      <p class="section-lead">
+        Simple, directo y pensado para avanzar sin sentir que sumaste otra obligación más a tu vida.
+      </p>
+
+      <div class="inside-preview">
+        <div class="tablet">
+          <div class="tablet-page">
+            <h4>Cuando el silencio dice más</h4>
+            <p>
+              Una guía diaria para bajar el ruido, mirar lo que venís evitando y empezar a elegir distinto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONOS -->
+  <section class="section-dark">
+    <div class="container center">
+      <div class="tag">Bonos incluidos</div>
+      <h2>Pero no termina ahí.</h2>
+      <p class="section-lead">
+        También recibís estos recursos para resolver las dudas que suelen aparecer justo cuando querés cambiar.
+      </p>
+
+      <div class="bonus-grid">
+        <div class="bonus">
+          <div class="bonus-img">21 frases que frenan una discusión</div>
+          <div class="bonus-body">
+            <div class="bonus-label">Bono 1</div>
+            <h3>Las 21 frases que frenan una discusión</h3>
+            <p>Para no quedarte muda, no explotar y no terminar pidiendo perdón por tener un límite.</p>
+          </div>
+        </div>
+
+        <div class="bonus">
+          <div class="bonus-img">Cuaderno de los 40 días</div>
+          <div class="bonus-body">
+            <div class="bonus-label">Bono 2</div>
+            <h3>El cuaderno de los 40 días</h3>
+            <p>Para bajar a papel lo que sentís, lo que entendés y lo que decidís hacer distinto.</p>
+          </div>
+        </div>
+
+        <div class="bonus">
+          <div class="bonus-img">Cómo poner precio</div>
+          <div class="bonus-body">
+            <div class="bonus-label">Bono 3</div>
+            <h3>Cómo poner precio a lo que sabés hacer</h3>
+            <p>Para dejar de regalar algo que a otra persona le resuelve un problema.</p>
+          </div>
+        </div>
+
+        <div class="bonus">
+          <div class="bonus-img">Método del Orden</div>
+          <div class="bonus-body">
+            <div class="bonus-label">Bono 4</div>
+            <h3>El Método del Orden</h3>
+            <p>Para convertir ideas sueltas en una estructura simple: qué ofrecés, a quién ayudás y qué problema resolvés.</p>
+          </div>
+        </div>
+
+        <div class="bonus">
+          <div class="bonus-img">40 oraciones</div>
+          <div class="bonus-body">
+            <div class="bonus-label">Bono 5</div>
+            <h3>40 oraciones para los días que no podés más</h3>
+            <p>Para tener una pausa y un punto de apoyo cuando estás por volver a abandonarte.</p>
+          </div>
+        </div>
+
+        <div class="bonus">
+          <div class="bonus-img">Diccionario del dinero</div>
+          <div class="bonus-body">
+            <div class="bonus-label">Bono 6</div>
+            <h3>Diccionario del Dinero</h3>
+            <p>Para empezar a mirar el dinero sin miedo, culpa ni rechazo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section>
+    <div class="container center">
+      <div class="tag pink">Resultados reales</div>
+      <h2>Lo que dicen quienes ya lo hicieron</h2>
+      <p class="section-lead">
+        Usá acá testimonios reales. No inventes resultados. Si tenés capturas, mejor.
+      </p>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “EDITAR: Pegá acá un testimonio real sobre cómo el material ayudó a ordenar la mente, poner límites o tomar una decisión concreta.”
+          </p>
+          <div class="person">
+            <div class="avatar"></div>
+            <div>
+              <strong>Nombre real</strong>
+              <span>Compra verificada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “EDITAR: Pegá acá otro testimonio real. Idealmente uno que responda la objeción: ‘empiezo todo y no sostengo nada’.”
+          </p>
+          <div class="person">
+            <div class="avatar"></div>
+            <div>
+              <strong>Nombre real</strong>
+              <span>Compra verificada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “EDITAR: Testimonio real relacionado con límites, calma o dejar de sentirse culpable por elegirse.”
+          </p>
+          <div class="person">
+            <div class="avatar"></div>
+            <div>
+              <strong>Nombre real</strong>
+              <span>Compra verificada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “EDITAR: Testimonio real relacionado con claridad, propósito o empezar a ordenar una idea para monetizarla.”
+          </p>
+          <div class="person">
+            <div class="avatar"></div>
+            <div>
+              <strong>Nombre real</strong>
+              <span>Compra verificada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="section-dark" id="checkout">
+    <div class="container center">
+      <div class="tag">Oferta especial</div>
+      <h2>Llevate el combo completo hoy</h2>
+      <p class="section-lead">
+        Todo lo que necesitás para empezar a ordenar tu mente, recuperar tu voz y mirar lo que sabés hacer con más dirección.
+      </p>
+
+      <div class="offer-wrap">
+        <div class="offer-head">
+          <h3>Combo Mente & Propósito</h3>
+          <p>2 recorridos principales + bonos + acceso de por vida</p>
+        </div>
+
+        <div class="offer-body">
+          <div class="stack-list">
+            <div class="stack-row"><div>Una mente vale más que un millón</div><span>Incluido</span></div>
+            <div class="stack-row"><div>40 días de viaje en silencio</div><span>Incluido</span></div>
+            <div class="stack-row"><div>Las 21 frases que frenan una discusión</div><span>Gratis</span></div>
+            <div class="stack-row"><div>El cuaderno de los 40 días</div><span>Gratis</span></div>
+            <div class="stack-row"><div>Cómo poner precio a lo que sabés hacer</div><span>Gratis</span></div>
+            <div class="stack-row"><div>El Método del Orden</div><span>Gratis</span></div>
+            <div class="stack-row"><div>40 oraciones para los días difíciles</div><span>Gratis</span></div>
+            <div class="stack-row"><div>Diccionario del Dinero</div><span>Gratis</span></div>
+            <div class="stack-row"><div>Garantía de 7 días</div><span>Incluida</span></div>
+          </div>
+
+          <div class="price-box">
+            <div class="old-price">Antes: EDITAR precio anterior</div>
+            <div>Hoy accedés por:</div>
+            <div class="price">EDITAR</div>
+            <div class="saving">Pago único · Sin suscripción</div>
+          </div>
+
+          <div class="mini-timer">
+            <span>Este precio se mantiene por:</span>
+            <strong id="offerCountdown">00:00:00</strong>
+          </div>
+
+          <!-- Reemplazar href por link real de checkout -->
+          <a href="EDITAR-LINK-CHECKOUT" class="cta" style="width:100%;">
+            Quiero el combo completo ahora
+          </a>
+
+          <div class="payments">
+            Acceso inmediato · Pago seguro · Garantía de 7 días
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO LO RECIBÍS -->
+  <section>
+    <div class="container center">
+      <div class="tag pink">Simple y rápido</div>
+      <h2>Cómo lo recibís, en 3 pasos</h2>
+
+      <div class="steps">
+        <div class="card">
+          <h3>1. Comprás</h3>
+          <p>Tocás el botón, completás tus datos y elegís tu medio de pago.</p>
+        </div>
+
+        <div class="card">
+          <h3>2. Lo recibís por mail</h3>
+          <p>En minutos te llega el acceso al combo completo con todos los materiales incluidos.</p>
+        </div>
+
+        <div class="card">
+          <h3>3. Empezás hoy mismo</h3>
+          <p>Abrís el material, elegís por dónde comenzar y avanzás a tu ritmo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍA -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="guarantee">
+        <div class="seal">
+          <div>
+            <strong>7</strong>
+            <span>días de garantía</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="tag pink">Riesgo cero</div>
+          <h2>Probalo 7 días sin cargar con otra duda más</h2>
+          <p>
+            Entrás al combo. Lo revisás. Leés las primeras partes. Ves si el recorrido te habla de verdad.
+          </p>
+          <br>
+          <p>
+            Y si sentís que no es para vos, escribís dentro de los primeros 7 días y se devuelve el dinero.
+          </p>
+          <br>
+          <p>
+            Sin vueltas raras. Sin hacerte sentir culpable. Sin obligarte a justificar de más.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container center">
+      <div class="tag pink">Dudas frecuentes</div>
+      <h2>Preguntas frecuentes</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q">¿Qué incluye exactamente el combo? <span>⌄</span></button>
+          <div class="faq-a">
+            Incluye los dos recorridos principales, todos los bonos detallados en la página, acceso de por vida y garantía de 7 días.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Es material físico o digital? <span>⌄</span></button>
+          <div class="faq-a">
+            Es material digital. Lo recibís por mail después de la compra y podés acceder desde celular, computadora o tablet.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Tengo que hacerlo todo en 40 días exactos? <span>⌄</span></button>
+          <div class="faq-a">
+            No. El recorrido está pensado para acompañarte durante 40 días, pero podés avanzar a tu ritmo. No es una carrera ni otra cosa para exigirte perfecto.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Y si compro y no tengo tiempo? <span>⌄</span></button>
+          <div class="faq-a">
+            No necesitás horas por día. La idea no es sumarte otra obligación más, sino darte un espacio simple para ordenar lo que venís cargando.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Me va a ayudar a ganar dinero rápido? <span>⌄</span></button>
+          <div class="faq-a">
+            No es una promesa de dinero rápido. Es un recorrido para ordenar tu mente, tus límites y la forma en que mirás lo que sabés hacer. La parte de ingresos empieza por claridad.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Esto es para mí si no tengo un negocio? <span>⌄</span></button>
+          <div class="faq-a">
+            Sí. Es para mujeres que sienten que tienen capacidad, ideas o experiencia, pero todavía no lograron ordenarlas en una dirección propia.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Esto reemplaza terapia o acompañamiento profesional? <span>⌄</span></button>
+          <div class="faq-a">
+            No. Este combo es una herramienta de reflexión, orden y acción personal. No reemplaza terapia, tratamiento psicológico ni acompañamiento médico o profesional.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">¿Hasta cuándo está esta oferta? <span>⌄</span></button>
+          <div class="faq-a">
+            El precio especial está disponible hasta EDITAR FECHA REAL o mientras siga activa esta promoción.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section-dark">
+    <div class="container final-cta">
+      <div class="tag">Último paso</div>
+      <h2>Si llegaste hasta acá, probablemente ya lo sabés.</h2>
+
+      <p>No necesitás que alguien te explique otra vez que tenés que elegirte.</p>
+      <p>Eso ya lo escuchaste.</p>
+
+      <div class="big-question" style="background:rgba(255,255,255,0.08); color:white; border-left-color:#ff3f86;">
+        ¿Cuánto tiempo más vas a seguir esperando el momento perfecto para empezar a hacerlo?
+      </div>
+
+      <p>
+        Porque el momento perfecto casi nunca llega.
+        <br>
+        Lo que llega es otro problema. Otra urgencia. Otra persona que necesita algo. Otra excusa razonable para dejarte para después.
+      </p>
+
+      <p>
+        Este combo es una forma simple de cortar ese patrón.
+        <br>
+        No para cambiar toda tu vida en un día.
+        <br>
+        Para empezar.
+      </p>
+
+      <br>
+      <a href="#checkout" class="cta">Quiero el Combo Mente & Propósito ahora</a>
+      <div class="microcopy">Acceso inmediato · Pago único · Garantía de 7 días</div>
+    </div>
+  </section>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-buy">
+    <div class="sticky-inner">
+      <div class="sticky-price">
+        <strong>Combo Mente & Propósito</strong>
+        <span>Precio especial activo · Acceso inmediato</span>
+      </div>
+
+      <a href="#checkout" class="cta">Lo quiero</a>
+    </div>
+  </div>
 
   <script>
-
     /*
-      =====================================================
-      CONFIGURACIÓN DEL CHECKOUT
-      =====================================================
+      EDITAR URGENCIA:
+      Podés usar una fecha fija:
+      const deadline = new Date("2026-09-01T23:59:59").getTime();
 
-      Reemplaza esta URL:
-
-      https://TU-CHECKOUT-AQUI.com
-
-      por tu enlace real de Hotmart.
+      O usar urgencia evergreen de 13 horas desde que entra:
     */
 
-    const CHECKOUT_URL = "https://TU-CHECKOUT-AQUI.com";
+    const evergreenHours = 13;
+    const storageKey = "cmp_deadline";
 
+    let deadline = localStorage.getItem(storageKey);
 
-    /*
-      Todos los botones de compra utilizan el mismo checkout.
-    */
+    if (!deadline) {
+      deadline = Date.now() + evergreenHours * 60 * 60 * 1000;
+      localStorage.setItem(storageKey, deadline);
+    } else {
+      deadline = Number(deadline);
+    }
 
-    document.querySelectorAll(".checkout-btn").forEach(button => {
+    function pad(n) {
+      return String(n).padStart(2, "0");
+    }
 
-      button.addEventListener("click", function(event) {
+    function updateCountdown() {
+      const now = Date.now();
+      let diff = deadline - now;
 
-        event.preventDefault();
-
-        if (
-          CHECKOUT_URL === "https://TU-CHECKOUT-AQUI.com"
-        ) {
-
-          alert(
-            "Debes configurar primero el enlace de checkout de Hotmart en el archivo index.html."
-          );
-
-          return;
-        }
-
-        window.location.href = CHECKOUT_URL;
-
-      });
-
-    });
-
-
-    /*
-      Animación suave para elementos al entrar en pantalla.
-    */
-
-    const observer = new IntersectionObserver(
-      entries => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.08
+      if (diff <= 0) {
+        diff = 0;
       }
-    );
 
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document
-      .querySelectorAll(
-        ".step, .product-card, .bonus, .future-card, .how, .guarantee-box"
-      )
-      .forEach(element => {
+      const formatted = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 
-        element.style.opacity = "0";
-        element.style.transform = "translateY(20px)";
-        element.style.transition = "opacity .6s ease, transform .6s ease";
+      const topCountdown = document.getElementById("topCountdown");
+      const offerCountdown = document.getElementById("offerCountdown");
 
-        observer.observe(element);
+      if (topCountdown) topCountdown.textContent = formatted;
+      if (offerCountdown) offerCountdown.textContent = formatted;
+    }
 
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // FAQ accordion
+    document.querySelectorAll(".faq-item").forEach(item => {
+      const button = item.querySelector(".faq-q");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
       });
-
+    });
   </script>
-
 
 </body>
 </html>
