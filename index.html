@@ -271,6 +271,17 @@
         -webkit-mask-image: none;
         mask-image: none;
       }
+      .press-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+      }
+      .press-marquee {
+        overflow: visible;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
     }
     /* HERO IMAGE */
     .hero-visual {
@@ -397,7 +408,7 @@
     }
     /* PRESS / CITAS REALES */
     .press {
-      padding: 46px 0;
+      padding: 32px 0;
       background: var(--cream-2);
       border-bottom: 1px solid var(--line);
     }
@@ -408,16 +419,30 @@
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
-    .press-grid {
+    /* Franja móvil tipo "ticker" — ocupa una sola línea y se desplaza sola */
+    .press-marquee {
+      width: 100%;
+      max-width: 100vw;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .press-track {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap;
       align-items: center;
-      gap: 20px 56px;
-      background: none;
-      border: none;
+      gap: 56px;
+      width: max-content;
+      animation: pressMarquee 26s linear infinite;
+    }
+    .press-marquee:hover .press-track {
+      animation-play-state: paused;
+    }
+    @keyframes pressMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
     .press-item {
       display: inline-flex;
@@ -426,6 +451,8 @@
       background: none;
       opacity: .8;
       transition: opacity .3s ease;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .press-item:hover {
       opacity: 1;
@@ -493,16 +520,9 @@
       .press-label {
         padding: 0 10px;
       }
-      .press-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-        gap: 26px 10px;
-      }
-      .press-item {
-        justify-content: center;
-        width: 100%;
+      .press-track {
+        gap: 34px;
+        animation-duration: 20s;
       }
       .press-outlet.outlet-infobae { font-size: 19px; }
       .press-outlet.outlet-lanacion { font-size: 15px; letter-spacing: .005em; }
@@ -510,8 +530,8 @@
       .press-outlet.outlet-forbes { font-size: 20px; }
     }
     @media(max-width: 380px) {
-      .press-grid {
-        gap: 22px 6px;
+      .press-track {
+        gap: 26px;
       }
       .press-outlet.outlet-infobae { font-size: 17px; }
       .press-outlet.outlet-lanacion { font-size: 13px; }
@@ -582,9 +602,8 @@
       border-right: 1px solid var(--line);
     }
     .pain-number {
-      color: var(--gold);
-      font-size: 9px;
-      letter-spacing: .2em;
+      font-size: 26px;
+      line-height: 1;
     }
     .pain-card h3 {
       margin-top: 18px;
@@ -1588,6 +1607,92 @@
       .btn {
         width: 100%;
       }
+      /* CENTRAR TODO EL CONTENIDO EN MOBILE */
+      .eyebrow {
+        justify-content: center;
+        text-align: center;
+      }
+      .heading {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .heading p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .pain-card {
+        text-align: center;
+      }
+      .pain-card p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mechanism-title {
+        text-align: center;
+      }
+      .mechanism-card {
+        text-align: center;
+      }
+      .mechanism-card p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .transformation-copy {
+        text-align: center;
+        justify-content: center;
+      }
+      .check-list {
+        justify-items: center;
+      }
+      .check-list div {
+        grid-template-columns: auto;
+        display: inline-flex;
+        text-align: left;
+        gap: 8px;
+        max-width: 320px;
+      }
+      .method-title {
+        text-align: center;
+      }
+      .method-intro p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .method-card {
+        text-align: center;
+      }
+      .method-card ul {
+        justify-items: center;
+      }
+      .bonus {
+        text-align: center;
+      }
+      .bonus p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .testimonials-title {
+        text-align: center;
+      }
+      .testimonial-content {
+        text-align: center;
+      }
+      .mini-testimonial {
+        text-align: center;
+      }
+      .offer-title {
+        text-align: center;
+      }
+      .offer-description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .offer-card {
+        text-align: center;
+      }
     }
     @media(max-width: 420px) {
       .hero-title {
@@ -1732,27 +1837,42 @@
   <section class="press">
     <div class="container">
       <div class="press-label">Un tema que crece a nivel mundial — cubierto en</div>
-      <div class="press-grid">
-        <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
-          <span class="press-topic">Carga mental</span>
-          <span class="press-outlet outlet-infobae">infobae</span>
-          <span class="press-headline">"Las mamás asumen el 70% de la 'carga mental' para las tareas domésticas, según un estudio"</span>
-        </a>
-        <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener">
-          <span class="press-topic">Carga mental</span>
-          <span class="press-outlet outlet-lanacion">La Nación</span>
-          <span class="press-headline">"Qué es la carga mental y por qué el estrés también tiene sesgo de género"</span>
-        </a>
-        <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener">
-          <span class="press-topic">Límites sin culpa</span>
-          <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
-          <span class="press-headline">"6 Ways to Set Boundaries Without Guilt"</span>
-        </a>
-        <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener">
-          <span class="press-topic">Monetizar tu capacidad</span>
-          <span class="press-outlet outlet-forbes">Forbes</span>
-          <span class="press-headline">"Cómo monetizar los talentos únicos que podrían hacerte rico"</span>
-        </a>
+      <div class="press-marquee">
+        <div class="press-track">
+          <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
+            <span class="press-topic">Carga mental</span>
+            <span class="press-outlet outlet-infobae">infobae</span>
+            <span class="press-headline">"Las mamás asumen el 70% de la 'carga mental' para las tareas domésticas, según un estudio"</span>
+          </a>
+          <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener">
+            <span class="press-topic">Carga mental</span>
+            <span class="press-outlet outlet-lanacion">La Nación</span>
+            <span class="press-headline">"Qué es la carga mental y por qué el estrés también tiene sesgo de género"</span>
+          </a>
+          <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener">
+            <span class="press-topic">Límites sin culpa</span>
+            <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
+            <span class="press-headline">"6 Ways to Set Boundaries Without Guilt"</span>
+          </a>
+          <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener">
+            <span class="press-topic">Monetizar tu capacidad</span>
+            <span class="press-outlet outlet-forbes">Forbes</span>
+            <span class="press-headline">"Cómo monetizar los talentos únicos que podrían hacerte rico"</span>
+          </a>
+          <!-- Duplicado (aria-hidden) para que el loop de la franja sea continuo -->
+          <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-infobae">infobae</span>
+          </a>
+          <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-lanacion">La Nación</span>
+          </a>
+          <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
+          </a>
+          <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-forbes">Forbes</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1800,8 +1920,8 @@
       </div>
       <div class="pain-grid">
         <article class="pain-card reveal">
-          <div class="pain-number">
-            01
+          <div class="pain-number" aria-hidden="true">
+            🌀
           </div>
           <h3>
             Tu cabeza no se apaga.
@@ -1812,8 +1932,8 @@
           </p>
         </article>
         <article class="pain-card reveal">
-          <div class="pain-number">
-            02
+          <div class="pain-number" aria-hidden="true">
+            😔
           </div>
           <h3>
             Dices que sí cuando quieres decir no.
@@ -1824,8 +1944,8 @@
           </p>
         </article>
         <article class="pain-card reveal">
-          <div class="pain-number">
-            03
+          <div class="pain-number" aria-hidden="true">
+            💡
           </div>
           <h3>
             Sabes hacer mucho, pero no lo aprovechas.
@@ -1836,8 +1956,8 @@
           </p>
         </article>
         <article class="pain-card reveal">
-          <div class="pain-number">
-            04
+          <div class="pain-number" aria-hidden="true">
+            🔄
           </div>
           <h3>
             Empezaste mil veces y no sostuviste ninguna.
