@@ -12,20 +12,20 @@
   >
   <style>
     :root {
-      --cream: #F8F4EE;
-      --cream-2: #F0E8DF;
+      --cream: #FBF7F6;
+      --cream-2: #F6E7EC;
       --white: #FFFFFF;
-      --pink: #D9B8B8;
-      --pink-soft: #EBD9D7;
-      --lavender: #D8D1DD;
-      --lavender-soft: #ECE7EF;
-      --wine: #352833;
-      --wine-2: #493844;
-      --brown: #75676A;
-      --gold: #B59A6B;
-      --cta: #B83F68;
-      --cta-dark: #963254;
-      --line: rgba(53,40,51,.13);
+      --pink: #FF7FAE;
+      --pink-soft: #FBD6E4;
+      --lavender: #C9A6E0;
+      --lavender-soft: #F1E4F5;
+      --wine: #200F1D;
+      --wine-2: #3B1930;
+      --brown: #7A6470;
+      --gold: #D4AF6A;
+      --cta: #E8195F;
+      --cta-dark: #C10F4C;
+      --line: rgba(32,15,29,.13);
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Manrope", Arial, sans-serif;
       --shadow:
@@ -145,107 +145,118 @@
     }
     /* HERO */
     .hero {
-      padding: 75px 0 90px;
+      padding: 90px 0 70px;
+      text-align: center;
       background:
         radial-gradient(
-          circle at 5% 10%,
-          rgba(217,184,184,.34),
-          transparent 30%
+          circle at 20% 0%,
+          rgba(232,25,95,.16),
+          transparent 45%
         ),
         radial-gradient(
-          circle at 95% 20%,
-          rgba(216,209,221,.45),
-          transparent 30%
+          circle at 85% 15%,
+          rgba(201,166,224,.22),
+          transparent 40%
         ),
         var(--cream);
+      color: var(--wine);
     }
     .hero-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 70px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
     }
+    .hero .eyebrow {
+      justify-content: center;
+      color: var(--cta);
+    }
     .hero-copy {
-      max-width: 610px;
+      max-width: 780px;
     }
     .hero-title {
       font-family: var(--serif);
-      font-size: clamp(62px, 7.5vw, 105px);
-      line-height: .82;
-      letter-spacing: -.045em;
+      font-size: clamp(46px, 6.4vw, 78px);
+      line-height: .96;
+      letter-spacing: -.03em;
       font-weight: 500;
     }
     .hero-title .accent {
-      color: var(--pink);
+      color: var(--cta);
     }
     .hero-steps {
-      margin-top: 34px;
+      margin-top: 26px;
       display: grid;
-      gap: 8px;
+      gap: 6px;
       font-family: var(--serif);
-      font-size: 25px;
-      line-height: 1.05;
-    }
-    .hero-steps div:nth-child(2) {
-      padding-left: 20px;
-    }
-    .hero-steps div:nth-child(3) {
-      padding-left: 40px;
+      font-size: 21px;
+      line-height: 1.15;
+      color: var(--brown);
     }
     .hero-steps span {
-      color: var(--pink);
-    }
-    .hero-subtitle {
-      margin-top: 34px;
-      max-width: 540px;
-      color: var(--brown);
-      font-size: 16px;
-      line-height: 1.85;
-    }
-    .hero-actions {
-      margin-top: 38px;
-    }
-    .hero-note {
-      margin-top: 13px;
-      color: var(--brown);
-      font-size: 9px;
+      color: var(--cta);
     }
     /* HERO CHIPS */
     .hero-chips {
-      margin-top: 26px;
+      margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 9px;
     }
     .hero-chip {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 100px;
       background: var(--pink-soft);
+      border: 1px solid rgba(232,25,95,.12);
       color: var(--wine);
       font-size: 10px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: .01em;
       white-space: nowrap;
+      opacity: 0;
+      animation: chipIn .6s ease forwards, chipGlow 2.6s ease-in-out infinite;
     }
-    .hero-chip:nth-child(2) {
+    .hero-chips .hero-chip:nth-child(2) {
       background: var(--lavender-soft);
     }
-    .hero-chip:nth-child(4) {
+    .hero-chips .hero-chip:nth-child(4) {
       background: var(--lavender-soft);
+    }
+    .hero-chips .hero-chip:nth-child(1) { animation-delay: .05s, 1.2s; }
+    .hero-chips .hero-chip:nth-child(2) { animation-delay: .15s, 1.4s; }
+    .hero-chips .hero-chip:nth-child(3) { animation-delay: .25s, 1.6s; }
+    .hero-chips .hero-chip:nth-child(4) { animation-delay: .35s, 1.8s; }
+    .hero-chips .hero-chip:nth-child(5) { animation-delay: .45s, 2.0s; }
+    @keyframes chipIn {
+      from { opacity: 0; transform: translateY(10px) scale(.92); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes chipGlow {
+      0%, 100% { box-shadow: 0 0 0 rgba(232,25,95,0); }
+      50% { box-shadow: 0 0 14px rgba(232,25,95,.28); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-chip {
+        opacity: 1;
+        animation: none;
+      }
     }
     /* HERO IMAGE */
     .hero-visual {
       position: relative;
+      max-width: 460px;
+      margin: 44px auto 0;
     }
     .hero-image {
       position: relative;
       aspect-ratio: 4 / 5;
       overflow: hidden;
+      border-radius: 6px;
       background: var(--cream-2);
-      box-shadow: var(--shadow);
+      box-shadow: 0 35px 80px rgba(53,40,51,.2);
     }
     .hero-image img {
       height: 100%;
@@ -258,8 +269,8 @@
       background:
         linear-gradient(
           to top,
-          rgba(0,0,0,.28),
-          transparent 35%
+          rgba(0,0,0,.4),
+          transparent 40%
         );
     }
     .image-label {
@@ -277,20 +288,48 @@
     }
     .hero-badge {
       position: absolute;
-      right: -40px;
-      bottom: 45px;
-      width: 125px;
-      height: 125px;
+      right: -18px;
+      top: -18px;
+      width: 108px;
+      height: 108px;
       display: grid;
       place-items: center;
-      padding: 20px;
+      padding: 16px;
       border-radius: 50%;
-      background: var(--wine);
+      background: var(--cta);
       color: white;
       text-align: center;
       font-family: var(--serif);
-      font-size: 19px;
-      line-height: 1;
+      font-size: 16px;
+      line-height: 1.05;
+      box-shadow: 0 15px 35px rgba(232,25,95,.4);
+    }
+    .hero-subtitle {
+      margin: 34px auto 0;
+      max-width: 560px;
+      color: var(--brown);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .hero-rating {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--brown);
+      font-size: 12px;
+    }
+    .hero-rating .stars {
+      color: var(--gold);
+    }
+    .hero-actions {
+      margin-top: 30px;
+    }
+    .hero-note {
+      margin-top: 14px;
+      color: var(--brown);
+      font-size: 9px;
     }
     /* PROOF */
     .proof {
@@ -328,6 +367,67 @@
       letter-spacing: 4px;
       font-size: 14px;
     }
+    /* PRESS / CITAS REALES */
+    .press {
+      padding: 46px 0;
+      background: var(--cream-2);
+      border-bottom: 1px solid var(--line);
+    }
+    .press-label {
+      text-align: center;
+      color: var(--brown);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .press-item {
+      display: block;
+      padding: 26px 24px;
+      text-align: left;
+      background: var(--cream-2);
+      transition: background .3s ease;
+    }
+    .press-item:hover {
+      background: var(--cream);
+    }
+    .press-topic {
+      display: block;
+      color: var(--cta);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .press-outlet {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--wine);
+    }
+    .press-headline {
+      display: block;
+      margin-top: 8px;
+      color: var(--brown);
+      font-size: 10px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    @media(max-width: 650px) {
+      .press-grid {
+        grid-template-columns: 1fr;
+      }
+    }
     /* MANIFESTO */
     .manifesto {
       padding: 160px 0;
@@ -344,7 +444,7 @@
       letter-spacing: -.035em;
     }
     .manifesto h2 em {
-      color: var(--pink);
+      color: var(--cta);
       font-style: normal;
     }
     .manifesto p {
@@ -368,7 +468,7 @@
       letter-spacing: -.035em;
     }
     .heading h2 em {
-      color: var(--pink);
+      color: var(--cta);
       font-style: normal;
     }
     .heading p {
@@ -501,7 +601,7 @@
       font-weight: 500;
     }
     .transformation-copy h2 em {
-      color: var(--pink);
+      color: var(--cta);
       font-style: normal;
     }
     .check-list {
@@ -538,7 +638,7 @@
       letter-spacing: -.045em;
     }
     .method-title em {
-      color: var(--pink);
+      color: var(--cta);
       font-style: normal;
     }
     .method-intro p {
@@ -609,7 +709,7 @@
       font-weight: 500;
     }
     .product h2 em {
-      color: var(--pink);
+      color: var(--cta);
       font-style: normal;
     }
     .product-intro {
@@ -818,7 +918,7 @@
       letter-spacing: -.04em;
     }
     .offer-title em {
-      color: var(--pink);
+      color: var(--cta);
       font-style: normal;
     }
     .offer-description {
@@ -1278,9 +1378,6 @@
       .mechanism-card {
         border-right: none;
       }
-      .hero-visual {
-        max-width: 650px;
-      }
       .offer-grid {
         gap: 55px;
       }
@@ -1290,16 +1387,20 @@
         width: calc(100% - 30px);
       }
       .hero {
-        padding: 55px 0 70px;
+        padding: 55px 0 60px;
       }
       .hero-title {
-        font-size: 58px;
+        font-size: 40px;
       }
       .hero-steps {
-        font-size: 22px;
+        font-size: 18px;
       }
       .hero-subtitle {
         font-size: 14px;
+      }
+      .hero-visual {
+        max-width: 300px;
+        margin-top: 32px;
       }
       .hero-chips {
         margin-top: 20px;
@@ -1313,11 +1414,11 @@
         font-size: 9px;
       }
       .hero-badge {
-        right: 10px;
-        bottom: 20px;
-        width: 100px;
-        height: 100px;
-        font-size: 15px;
+        top: -12px;
+        right: -8px;
+        width: 78px;
+        height: 78px;
+        font-size: 11px;
       }
       .proof-grid {
         grid-template-columns: repeat(2,1fr);
@@ -1397,10 +1498,10 @@
     }
     @media(max-width: 420px) {
       .hero-title {
-        font-size: 51px;
+        font-size: 34px;
       }
       .hero-steps {
-        font-size: 20px;
+        font-size: 16px;
       }
       .heading h2 {
         font-size: 50px;
@@ -1417,7 +1518,7 @@
 <body>
   <!-- TOP BAR -->
   <div class="topbar">
-    🔒 ACCESO INMEDIATO · US$16 hoy (antes US$82) · Esta oferta se actualiza en <span id="topbar-timer">15:00</span>
+    ✦ EL PRECIO DE HOY TERMINA EN <span id="topbar-timer">15:00</span>
   </div>
   <!-- HERO -->
   <section class="hero">
@@ -1427,12 +1528,8 @@
           Método de Volver a Elegirte
         </div>
         <h1 class="hero-title">
-          Dejá de regalar
-          <br>
-          tu tiempo,
-          <br>
+          Dejá de regalar tu tiempo,
           tu energía y todo
-          <br>
           lo que <span class="accent">sabés hacer.</span>
         </h1>
         <div class="hero-steps">
@@ -1454,19 +1551,6 @@
           <span class="hero-chip">🛡 Poner límites sin culpa</span>
           <span class="hero-chip">🎯 Construir algo propio</span>
         </div>
-        <p class="hero-subtitle">
-          Recuperá la claridad para tomar decisiones diferentes,
-          aprendé a poner límites sin culpa y empezá a construir
-          algo propio con la capacidad que ya tenés.
-        </p>
-        <div class="hero-actions">
-          <a href="#oferta" class="btn">
-            Quiero volver a elegirme →
-          </a>
-        </div>
-        <p class="hero-note">
-          Acceso inmediato · Pago único · Garantía de 15 días
-        </p>
       </div>
       <!-- IMAGEN HERO ORIGINAL -->
       <div class="hero-visual">
@@ -1488,6 +1572,23 @@
           volver a ti
         </div>
       </div>
+      <p class="hero-subtitle">
+        Recuperá la claridad para tomar decisiones diferentes,
+        aprendé a poner límites sin culpa y empezá a construir
+        algo propio con la capacidad que ya tenés.
+      </p>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4,9 · 5.287 personas ya lo eligieron</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#oferta" class="btn">
+          Quiero volver a elegirme →
+        </a>
+      </div>
+      <p class="hero-note">
+        Acceso inmediato · Pago único · Garantía de 15 días
+      </p>
     </div>
   </section>
   <!-- SOCIAL PROOF -->
@@ -1524,6 +1625,34 @@
         <div class="proof-label">
           minutos al día
         </div>
+      </div>
+    </div>
+  </section>
+  <!-- PRENSA / CITAS REALES SOBRE EL TEMA -->
+  <section class="press">
+    <div class="container">
+      <div class="press-label">Un tema que crece a nivel mundial — cubierto en</div>
+      <div class="press-grid">
+        <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
+          <span class="press-topic">Carga mental</span>
+          <span class="press-outlet">infobae</span>
+          <span class="press-headline">"Las mamás asumen el 70% de la 'carga mental' para las tareas domésticas, según un estudio"</span>
+        </a>
+        <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener">
+          <span class="press-topic">Carga mental</span>
+          <span class="press-outlet">LA NACION</span>
+          <span class="press-headline">"Qué es la carga mental y por qué el estrés también tiene sesgo de género"</span>
+        </a>
+        <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener">
+          <span class="press-topic">Límites sin culpa</span>
+          <span class="press-outlet">Psychology Today</span>
+          <span class="press-headline">"6 Ways to Set Boundaries Without Guilt"</span>
+        </a>
+        <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener">
+          <span class="press-topic">Monetizar tu capacidad</span>
+          <span class="press-outlet">Forbes</span>
+          <span class="press-headline">"Cómo monetizar los talentos únicos que podrían hacerte rico"</span>
+        </a>
       </div>
     </div>
   </section>
