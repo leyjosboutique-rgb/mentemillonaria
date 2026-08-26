@@ -823,18 +823,92 @@
     }
     .mechanism-how-steps {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
     .mechanism-how-step {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--sans);
       font-size: 15px;
+      font-weight: 500;
       line-height: 1.5;
       color: var(--wine);
     }
     .mechanism-how-num {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 30px;
+      height: 30px;
+      padding: 0 6px;
+      border-radius: 50%;
+      background: var(--cream-2);
       font-family: var(--serif);
+      font-size: 13px;
       font-weight: 700;
       color: var(--cta);
-      margin-right: 6px;
+      margin-right: 0;
+    }
+    .mechanism-pacing {
+      margin-top: 26px;
+      padding: 26px 24px;
+      background: var(--cream-2);
+      border-radius: 10px;
+      border-top: none;
+    }
+    .mechanism-pacing-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: normal;
+      text-transform: none;
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+    .mechanism-pacing-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+    .mechanism-pacing-list li {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--wine);
+      padding-left: 24px;
+      position: relative;
+    }
+    .mechanism-pacing-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+      font-style: normal;
+    }
+    .mechanism-result {
+      margin-top: 22px;
+      padding: 18px 20px;
+      background: var(--cta);
+      color: #fff;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .mechanism-result span {
+      color: var(--gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: .08em;
+      margin-right: 4px;
     }
     .mechanism-grid {
       margin-top: 0;
@@ -1166,7 +1240,7 @@
     .testimonial-content blockquote {
       margin-top: 20px;
       font-family: var(--serif);
-      font-size: clamp(34px,4vw,53px);
+      font-size: clamp(19px,3vw,53px);
       line-height: 1.03;
     }
     .testimonial-author {
@@ -1601,16 +1675,34 @@
     .sticky-bar-cta {
       width: 100%;
       max-width: 420px;
+      flex-direction: column;
+      gap: 2px;
+      min-height: 54px;
+      padding: 10px 26px;
+    }
+    .sticky-bar-cta-main {
+      line-height: 1.2;
+    }
+    .sticky-bar-cta-price {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: normal;
+      text-transform: none;
+      opacity: .85;
+    }
+    .sticky-bar-cta-price del {
+      opacity: .7;
+      margin-right: 4px;
     }
     body.has-sticky-bar {
-      padding-bottom: 82px;
+      padding-bottom: 96px;
     }
     @media(max-width: 650px) {
       .sticky-bar {
         padding: 10px 14px;
       }
       body.has-sticky-bar {
-        padding-bottom: 72px;
+        padding-bottom: 88px;
       }
     }
     /* TIMER URGENTE */
@@ -2272,6 +2364,20 @@
             <span class="mechanism-how-num">4.</span>
             Y finalmente empezás a tomar decisiones diferentes.
           </div>
+        </div>
+        <div class="mechanism-pacing">
+          <div class="mechanism-pacing-label">Así se te va a notar en las próximas semanas</div>
+          <ul class="mechanism-pacing-list">
+            <li>Vas a poder decir que no, sin dar tantas explicaciones.</li>
+            <li>Vas a poner un límite y no vas a pedir perdón después.</li>
+            <li>Vas a empezar a ver oportunidades donde antes solo veías problemas.</li>
+            <li>Vas a poder decir un precio en voz alta sin sentir que estás pidiendo un favor.</li>
+            <li>Vas a sostener algo hasta el final, en vez de abandonarlo a mitad de camino.</li>
+          </ul>
+        </div>
+        <div class="mechanism-result">
+          <span>El resultado:</span> primero calmás la reacción, después construís el hábito.
+          Y eso es lo que te devuelve la libertad de elegir.
         </div>
       </div>
       <div class="inline-proof reveal">
@@ -3003,7 +3109,10 @@
   </footer>
   <!-- BARRA STICKY DE PRECIO -->
   <div class="sticky-bar" id="sticky-bar">
-    <a href="#oferta" class="btn sticky-bar-cta">Quiero volver a elegirme →</a>
+    <a href="#oferta" class="btn sticky-bar-cta">
+      <span class="sticky-bar-cta-main">Quiero volver a elegirme →</span>
+      <span class="sticky-bar-cta-price"><del>US$47</del> Hoy US$15</span>
+    </a>
   </div>
   <!-- NOTIFICACIÓN DE COMPRA -->
   <div class="purchase-toast" id="purchase-toast">
