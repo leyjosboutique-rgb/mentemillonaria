@@ -131,7 +131,7 @@
     /* TOPBAR */
     .topbar {
       padding: 11px 15px;
-      background: var(--wine);
+      background: var(--cta);
       color: white;
       text-align: center;
       font-size: 9px;
@@ -144,8 +144,11 @@
     }
     .topbar span {
       display: inline-block;
-      color: #FF3FA0;
-      font-weight: 700;
+      color: var(--wine);
+      background: #fff;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 800;
       animation: timerBlink 1s infinite;
       letter-spacing: normal;
     }
@@ -161,10 +164,10 @@
     }
     @keyframes topbarGlow {
       0%, 100% {
-        box-shadow: inset 0 0 0 rgba(230,0,126,0);
+        box-shadow: inset 0 0 0 rgba(255,255,255,0);
       }
       50% {
-        box-shadow: inset 0 -22px 20px -18px rgba(230,0,126,.45);
+        box-shadow: inset 0 0 24px rgba(255,255,255,.5);
       }
     }
     /* HERO */
@@ -729,28 +732,31 @@
     /* MECHANISM */
     .mechanism {
       padding: 90px 0;
-      background: var(--wine);
-      color: white;
+      background: var(--cream-2);
+      color: var(--wine);
     }
     .mechanism .eyebrow {
-      color: var(--pink-soft);
+      color: var(--cta);
     }
     .mechanism-title {
       max-width: 900px;
       font-family: var(--serif);
-      font-size: clamp(55px, 7vw, 90px);
-      line-height: .88;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: .96;
       font-weight: 500;
-      letter-spacing: -.04em;
+      letter-spacing: -.03em;
     }
     .mechanism-title em {
-      color: var(--pink);
+      color: var(--cta);
     }
     .mechanism-visual {
       margin-top: 70px;
       overflow: hidden;
       border-radius: 4px;
-      box-shadow: 0 40px 90px rgba(0,0,0,.35);
+      min-height: 120px;
+      background: #fff;
+      color: var(--wine);
+      box-shadow: 0 40px 90px rgba(53,40,51,.18);
     }
     .mechanism-visual img {
       width: 100%;
@@ -1042,33 +1048,37 @@
     /* TESTIMONIALS */
     .testimonials {
       padding: 90px 0;
-      background: var(--wine);
-      color: white;
+      background: var(--cream-2);
+      color: var(--wine);
     }
     .testimonials .eyebrow {
-      color: var(--pink-soft);
+      color: var(--cta);
     }
     .testimonials-title {
       max-width: 850px;
       font-family: var(--serif);
-      font-size: clamp(55px, 7vw, 90px);
-      line-height: .87;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: .96;
       font-weight: 500;
     }
     .testimonials-title em {
-      color: var(--pink);
+      color: var(--cta);
     }
     .featured-testimonial {
       margin-top: 100px;
       display: grid;
       grid-template-columns: .8fr 1.2fr;
       min-height: 520px;
-      border-top: 1px solid rgba(255,255,255,.15);
-      border-bottom: 1px solid rgba(255,255,255,.15);
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(53,40,51,.14);
+      border-top: none;
+      border-bottom: none;
     }
     .testimonial-photo {
       overflow: hidden;
-      background: var(--wine-2);
+      background: var(--cream);
     }
     .testimonial-photo img {
       height: 100%;
@@ -1088,25 +1098,29 @@
     }
     .testimonial-author {
       margin-top: 35px;
-      color: var(--pink);
+      color: var(--cta);
       font-size: 9px;
       letter-spacing: .15em;
       text-transform: uppercase;
     }
     .testimonial-objection {
       margin-top: 15px;
-      color: rgba(255,255,255,.48);
+      color: var(--brown);
       font-size: 10px;
     }
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      margin-top: 1px;
+      margin-top: 30px;
+      gap: 20px;
     }
     .mini-testimonial {
       min-height: 330px;
       padding: 40px;
-      border-right: 1px solid rgba(255,255,255,.15);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px rgba(53,40,51,.1);
+      border-right: none;
     }
     .mini-testimonial:last-child {
       border-right: none;
@@ -1119,7 +1133,7 @@
     }
     .mini-testimonial .author {
       margin-top: 25px;
-      color: var(--pink);
+      color: var(--cta);
       font-size: 8px;
       letter-spacing: .15em;
       text-transform: uppercase;
@@ -1195,8 +1209,9 @@
       gap: 11px;
     }
     .offer-list div {
-      font-size: 10px;
-      color: var(--brown);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--wine);
     }
     .offer-list div::before {
       content: "✦";
@@ -1208,14 +1223,15 @@
       padding-top: 25px;
       border-top: 1px solid var(--line);
       display: grid;
-      gap: 10px;
+      gap: 14px;
     }
     .value-stack-row {
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      font-size: 10px;
-      color: var(--brown);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--wine);
     }
     .value-stack-row span:first-child {
       max-width: 78%;
@@ -1225,7 +1241,8 @@
       padding-top: 14px;
       border-top: 1px solid var(--line);
       color: var(--wine);
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 800;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
@@ -1366,51 +1383,38 @@
     /* FINAL */
     .final {
       padding: 170px 20px;
-      background: var(--wine);
-      color: white;
+      background: var(--cream-2);
+      color: var(--wine);
       text-align: center;
     }
     .final .eyebrow {
       justify-content: center;
-      color: var(--pink-soft);
+      color: var(--cta);
     }
     .final h2 {
       max-width: 900px;
       margin: auto;
       font-family: var(--serif);
-      font-size: clamp(60px,8vw,105px);
-      line-height: .84;
+      font-size: clamp(48px,7vw,84px);
+      line-height: .9;
       font-weight: 500;
-      letter-spacing: -.045em;
+      letter-spacing: -.035em;
     }
     .final h2 em {
-      color: var(--pink);
+      color: var(--cta);
     }
     .final p {
       max-width: 580px;
       margin: 30px auto;
-      color: rgba(255,255,255,.58);
-      font-size: 13px;
-    }
-    .final .btn {
-      background: var(--cream);
-      color: var(--wine);
-      animation: finalPulse 2.5s infinite;
-    }
-    @keyframes finalPulse {
-      0%,100% {
-        box-shadow: 0 15px 35px rgba(255,255,255,.10);
-      }
-      50% {
-        box-shadow: 0 15px 45px rgba(255,255,255,.25);
-      }
+      color: var(--brown);
+      font-size: 14px;
     }
     footer {
       padding: 30px 20px;
-      background: var(--wine);
-      color: rgba(255,255,255,.4);
+      background: var(--cream-2);
+      color: var(--brown);
       text-align: center;
-      font-size: 8px;
+      font-size: 9px;
       letter-spacing: .15em;
       text-transform: uppercase;
     }
@@ -1469,11 +1473,12 @@
       justify-content: space-between;
       gap: 16px;
       padding: 14px 22px;
-      background: var(--wine);
-      color: white;
+      background: #fff;
+      color: var(--wine);
       transform: translateY(110%);
       transition: transform .4s ease;
-      box-shadow: 0 -10px 30px rgba(0,0,0,.18);
+      box-shadow: 0 -10px 30px rgba(53,40,51,.18);
+      border-top: 1px solid var(--line);
     }
     .sticky-bar.is-visible {
       transform: translateY(0);
@@ -1485,13 +1490,14 @@
       line-height: 1.2;
     }
     .sticky-bar-old {
-      color: rgba(255,255,255,.5);
+      color: var(--brown);
       font-size: 11px;
       text-decoration: line-through;
     }
     .sticky-bar-new {
       font-family: var(--serif);
       font-size: 26px;
+      color: var(--wine);
     }
     .sticky-bar .btn {
       min-height: 46px;
@@ -1656,9 +1662,6 @@
         padding: 7px 12px;
         font-size: 9px;
       }
-      .value-stack-row {
-        font-size: 9px;
-      }
       .hero-badge {
         top: -12px;
         right: -8px;
@@ -1705,7 +1708,6 @@
       .mechanism-card p,
       .bonus p,
       .testimonial-objection,
-      .offer-list div,
       details p,
       .purchase-toast-meta {
         font-size: 14px !important;
