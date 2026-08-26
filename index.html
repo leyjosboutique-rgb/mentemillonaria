@@ -768,6 +768,19 @@
     .method-card:last-child {
       background: var(--pink-soft);
     }
+    .method-card-image {
+      float: right;
+      width: 108px;
+      margin: -14px -14px 14px 22px;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 18px 34px rgba(53,40,51,.22);
+    }
+    .method-card-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
     .method-card-label {
       font-size: 9px;
       letter-spacing: .2em;
@@ -779,22 +792,25 @@
       font-size: 52px;
       line-height: .9;
       font-weight: 500;
+      clear: both;
     }
     .method-card p {
       max-width: 460px;
       margin-top: 25px;
       color: var(--brown);
       font-size: 12px;
+      line-height: 1.8;
     }
     .method-card ul {
       margin-top: 25px;
       display: grid;
-      gap: 8px;
+      gap: 11px;
     }
     .method-card li {
       list-style: none;
       color: var(--brown);
       font-size: 11px;
+      line-height: 1.6;
     }
     .method-card li::before {
       content: "✦";
@@ -2070,57 +2086,83 @@
     <div class="container">
       <div class="method-intro">
         <h2 class="method-title">
-          40 días para
-          <em>volver a ti.</em>
+          Dos guías.
+          <br><br>
+          El mismo motivo por el que
+          <em>todavía no empezaste.</em>
         </h2>
         <p>
-          Un proceso diseñado para avanzar incluso si tienes poco tiempo.
+          No es que te falte información.
           <br><br>
-          No necesitas pasar horas estudiando.
-          La propuesta está pensada para trabajar en pequeños movimientos.
+          Es que cada vez que estás por poner un límite,
+          aparece la culpa. Y cada vez que estás por cobrar
+          lo que valés, aparece esa voz que te pregunta
+          "¿quién sos vos para eso?".
+          Estas dos guías no te dan más tareas.
+          Te sacan esas dos voces de encima.
         </p>
       </div>
       <div class="method-grid">
         <article class="method-card reveal">
+          <div class="method-card-image">
+            <img
+              loading="lazy"
+              src="images/ebook-viaje-silencio.webp"
+              alt="40 días de viaje en silencio"
+            >
+          </div>
           <div class="method-card-label">
-            Parte I · Recuperar
+            Parte I · Silencio
           </div>
           <h3>
-            Volver
+            40 días de
             <br>
-            a elegirte.
+            viaje en silencio.
           </h3>
           <p>
-            Trabaja sobre claridad, reacción emocional,
-            límites y culpa para empezar a recuperar
-            espacio mental y personal.
+            No es un diario más para llenar por las noches.
+            Es la diferencia entre explotar y elegir callarte
+            a tiempo. Un capítulo por día, durante 40 días,
+            para aprender algo que nadie te enseñó: que no
+            responder también es una respuesta.
           </p>
           <ul>
-            <li>Claridad</li>
-            <li>Reacciones</li>
-            <li>Límites</li>
-            <li>Culpa</li>
+            <li>Un capítulo, una tarea y una oración por día, durante 40 días</li>
+            <li>Cómo calmarte antes de responder, para no decir lo que después lamentás</li>
+            <li>Cómo poner un límite sin pelear y sin pedir perdón después</li>
+            <li>Qué hacer con la culpa cuando decidís priorizarte</li>
+            <li>El poder del silencio: cuándo no contestar es la mejor respuesta</li>
           </ul>
         </article>
         <article class="method-card reveal">
+          <div class="method-card-image">
+            <img
+              loading="lazy"
+              src="images/ebook-mente-millon.webp"
+              alt="Una mente vale más que un millón"
+            >
+          </div>
           <div class="method-card-label">
-            Parte II · Construir
+            Parte II · Mentalidad
           </div>
           <h3>
-            Construir
+            Una mente
             <br>
-            con lo que ya tienes.
+            vale más que un millón.
           </h3>
           <p>
-            Explora tus capacidades, experiencia y conocimientos
-            para identificar posibilidades que puedas transformar
-            en algo propio.
+            No es un curso de emprendimiento.
+            Es el quiebre de dejar de pensar que necesitás
+            tener más para empezar, cuando lo único que
+            te falta es creerte que lo que ya sabés hacer
+            vale algo.
           </p>
           <ul>
-            <li>Tus capacidades</li>
-            <li>Lo que sabes resolver</li>
-            <li>Oportunidades</li>
-            <li>Primeras ideas para generar ingresos</li>
+            <li>Las historias y la forma de pensar de personas que empezaron de cero</li>
+            <li>Cómo ver una oportunidad donde los demás solo ven un problema</li>
+            <li>Por qué te pagan por resolver, no por poner horas</li>
+            <li>Cómo ponerle precio a lo que ya sabés hacer, sin sentir culpa</li>
+            <li>Por qué la gente compra un deseo, no un producto</li>
           </ul>
         </article>
       </div>
