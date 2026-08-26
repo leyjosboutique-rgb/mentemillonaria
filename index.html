@@ -15,16 +15,16 @@
       --cream: #FBF7F6;
       --cream-2: #F6E7EC;
       --white: #FFFFFF;
-      --pink: #FF7FAE;
-      --pink-soft: #FBD6E4;
-      --lavender: #C9A6E0;
-      --lavender-soft: #F1E4F5;
-      --wine: #200F1D;
-      --wine-2: #3B1930;
-      --brown: #7A6470;
-      --gold: #D4AF6A;
-      --cta: #E8195F;
-      --cta-dark: #C10F4C;
+      --pink: #E28FA6;
+      --pink-soft: #F3D9DF;
+      --lavender: #C4A98F;
+      --lavender-soft: #F0E6D8;
+      --wine: #2B1A1E;
+      --wine-2: #4A2A30;
+      --brown: #8A6E63;
+      --gold: #C79A5B;
+      --cta: #B23A5C;
+      --cta-dark: #8F2C48;
       --line: rgba(32,15,29,.13);
       --serif: "Fraunces", Georgia, serif;
       --sans: "Manrope", Arial, sans-serif;
@@ -150,7 +150,7 @@
       background:
         radial-gradient(
           circle at 20% 0%,
-          rgba(232,25,95,.16),
+          rgba(178,58,92,.16),
           transparent 45%
         ),
         radial-gradient(
@@ -195,15 +195,11 @@
     .hero-steps span {
       color: var(--cta);
     }
-    /* HERO CHIPS — franja continua estilo "ticker", flotando sobre el borde inferior de la foto */
+    /* HERO CHIPS — franja continua estilo "ticker", pegada debajo de la foto */
     .hero-chips-marquee {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 14px;
-      z-index: 3;
-      width: auto;
-      max-width: none;
+      margin-top: 16px;
+      width: 100%;
+      max-width: 100%;
       overflow: hidden;
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
       mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -231,7 +227,7 @@
       padding: 9px 16px;
       border-radius: 100px;
       background: var(--pink-soft);
-      border: 1px solid rgba(232,25,95,.12);
+      border: 1px solid rgba(178,58,92,.12);
       color: var(--wine);
       font-size: 10px;
       font-weight: 700;
@@ -256,8 +252,8 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
     @keyframes chipGlow {
-      0%, 100% { box-shadow: 0 0 0 rgba(232,25,95,0); }
-      50% { box-shadow: 0 0 14px rgba(232,25,95,.28); }
+      0%, 100% { box-shadow: 0 0 0 rgba(178,58,92,0); }
+      50% { box-shadow: 0 0 14px rgba(178,58,92,.28); }
     }
     @media (prefers-reduced-motion: reduce) {
       .hero-chip {
@@ -295,26 +291,16 @@
     }
     .hero-image {
       position: relative;
-      aspect-ratio: 4 / 5;
       overflow: hidden;
       border-radius: 6px;
       background: var(--cream-2);
       box-shadow: 0 35px 80px rgba(53,40,51,.2);
+      line-height: 0;
     }
     .hero-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.4),
-          transparent 40%
-        );
+      display: block;
+      width: 100%;
+      height: auto;
     }
     .image-label {
       position: absolute;
@@ -345,7 +331,7 @@
       font-family: var(--serif);
       font-size: 16px;
       line-height: 1.05;
-      box-shadow: 0 15px 35px rgba(232,25,95,.4);
+      box-shadow: 0 15px 35px rgba(178,58,92,.4);
     }
     .hero-subtitle {
       margin: 34px auto 0;
@@ -1522,10 +1508,7 @@
         margin-top: 32px;
       }
       .hero-chips-marquee {
-        margin-top: 0;
-        left: 6px;
-        right: 6px;
-        bottom: 8px;
+        margin-top: 12px;
       }
       .hero-chips {
         gap: 7px;
@@ -1742,12 +1725,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow">
-          Método de Volver a Elegirte
-        </div>
-      </div>
-      <!-- IMAGEN HERO (con headline incluido en el diseño de la imagen) -->
+      <!-- IMAGEN HERO (con headline y eyebrow incluidos en el diseño de la imagen) -->
       <div class="hero-visual">
         <div class="hero-image">
           <img
