@@ -104,16 +104,17 @@
         0 20px 45px rgba(184,63,104,.35);
     }
     .btn-secondary {
-      background: transparent;
-      color: var(--wine);
-      border: 1px solid var(--wine);
-      box-shadow: none;
-      animation: none;
+      background: var(--cta);
+      color: #fff;
+      border: none;
+      box-shadow: 0 15px 35px rgba(184,63,104,.25);
+      animation: ctaPulse 2.5s infinite;
     }
     .btn-secondary:hover {
-      background: var(--wine);
+      background: var(--cta-dark);
       color: #fff;
-      box-shadow: none;
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 20px 45px rgba(184,63,104,.35);
     }
     @keyframes ctaPulse {
       0%, 100% {
@@ -362,54 +363,139 @@
     }
     /* PROOF */
     .proof {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(255,255,255,.45);
+      padding: 60px 0;
+      background: var(--pink-soft);
+    }
+    .proof-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--cream);
+      border-radius: 22px;
+      padding: 40px 30px;
+      box-shadow: 0 30px 70px rgba(53,40,51,.12);
     }
     .proof-grid {
-      min-height: 105px;
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(4,1fr);
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 34px;
+    }
+    .proof-grid::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 6%;
+      bottom: 6%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    }
+    .proof-grid::after {
+      content: "♡";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      color: var(--gold);
+      font-size: 15px;
+      background: var(--cream);
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
     }
     .proof-item {
       text-align: center;
-      border-right: 1px solid var(--line);
+      position: relative;
     }
-    .proof-item:last-child {
-      border-right: none;
+    .proof-item::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -17px;
+      transform: translateX(-50%);
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .proof-item:nth-child(3)::after,
+    .proof-item:nth-child(4)::after {
+      display: none;
+    }
+    .proof-item:nth-child(1),
+    .proof-item:nth-child(2) {
+      position: relative;
+    }
+    .proof-item:nth-child(1)::before,
+    .proof-item:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      left: -20%;
+      right: -20%;
+      bottom: -17px;
+      height: 1px;
+      background: var(--line);
+    }
+    .proof-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+    }
+    .proof-icon svg {
+      width: 26px;
+      height: 26px;
     }
     .proof-number {
       font-family: var(--serif);
-      font-size: 32px;
+      font-size: 40px;
       line-height: 1;
+      color: var(--wine);
     }
     .proof-label {
-      margin-top: 6px;
-      color: var(--brown);
-      font-size: 8px;
-      letter-spacing: .14em;
+      margin-top: 10px;
+      color: var(--wine);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
       text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .proof-label .accent {
+      color: var(--cta);
     }
     .stars {
       color: var(--gold);
       letter-spacing: 4px;
-      font-size: 14px;
+      font-size: 16px;
     }
     /* PRESS / CITAS REALES */
     .press {
-      padding: 32px 0;
-      background: var(--cream-2);
-      border-bottom: 1px solid var(--line);
+      padding: 0 0 70px;
+      background: var(--pink-soft);
+    }
+    .press .container {
+      background: var(--lavender-soft);
+      border-radius: 22px;
+      padding: 44px 30px 36px;
+      max-width: 620px;
     }
     .press-label {
       text-align: center;
-      color: var(--brown);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: .01em;
+      text-transform: none;
+      margin-bottom: 26px;
+    }
+    .press-label .accent {
+      color: var(--cta);
+      font-style: italic;
     }
     /* Franja móvil tipo "ticker" — ocupa una sola línea y se desplaza sola */
     .press-marquee {
@@ -673,20 +759,25 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
-    .transformation-image {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-    .transformation-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .transformation-grid-solo {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
     }
     .transformation-copy {
       display: flex;
       align-items: center;
       padding: 80px;
+    }
+    .transformation-grid-solo .transformation-copy {
+      max-width: 640px;
+      padding: 100px 20px;
+    }
+    .transformation-grid-solo .check-list {
+      justify-items: center;
+    }
+    .transformation-grid-solo .check-list div {
+      text-align: left;
     }
     .transformation-copy h2 {
       font-family: var(--serif);
@@ -757,7 +848,7 @@
     }
     .method-card-image {
       float: right;
-      width: 140px;
+      width: 170px;
       margin: -14px -14px 14px 22px;
       overflow: hidden;
       border-radius: 8px;
@@ -863,7 +954,7 @@
       background: var(--cream-2);
     }
     .bonus:nth-child(5) {
-      background: #F3ECEC;
+      background: #F4E9D8;
     }
     .bonus-image {
       height: 180px;
@@ -1004,7 +1095,7 @@
       background:
         radial-gradient(
           circle at 95% 10%,
-          rgba(216,209,221,.55),
+          rgba(199,154,91,.22),
           transparent 30%
         ),
         var(--cream);
@@ -1270,7 +1361,7 @@
     }
     footer {
       padding: 30px 20px;
-      background: #241B22;
+      background: var(--wine);
       color: rgba(255,255,255,.4);
       text-align: center;
       font-size: 8px;
@@ -1530,17 +1621,8 @@
         height: 78px;
         font-size: 11px;
       }
-      .proof-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-      .proof-item {
-        min-height: 90px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .proof-item:nth-child(2) {
-        border-right: none;
+      .proof-card {
+        padding: 30px 18px;
       }
       .manifesto {
         padding: 100px 0;
@@ -1663,6 +1745,7 @@
       }
       .method-card-image {
         float: none;
+        width: 200px;
         margin: 0 auto 18px;
       }
       .method-card ul {
@@ -1785,37 +1868,53 @@
   </section>
   <!-- SOCIAL PROOF -->
   <section class="proof">
-    <div class="container proof-grid">
-      <div class="proof-item">
-        <div class="proof-number" data-count="5287" data-format="es">
-          0
-        </div>
-        <div class="proof-label">
-          personas ya lo eligieron
-        </div>
-      </div>
-      <div class="proof-item">
-        <div class="stars">
-          ★★★★★
-        </div>
-        <div class="proof-label">
-          4,9 / 5 valoración
-        </div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-number" data-count="40">
-          0
-        </div>
-        <div class="proof-label">
-          días de recorrido
-        </div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-number" data-count="15">
-          0
-        </div>
-        <div class="proof-label">
-          minutos al día
+    <div class="container">
+      <div class="proof-card">
+        <div class="proof-grid">
+          <div class="proof-item">
+            <div class="proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="19" cy="17" r="8" stroke="currentColor" stroke-width="2"/><path d="M8 39c1.5-9 8-13 11-13s9.5 4 11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M33 20c1.8-1.6 4-1.6 5.4 0 1.5 1.7 1.4 3.9-.3 5.7L33 31l-5-5.3c-1.7-1.8-1.8-4-.3-5.7 1.4-1.6 3.6-1.6 5.3 0z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="proof-number" data-count="5287" data-format="es">
+              0
+            </div>
+            <div class="proof-label">
+              PERSONAS <span class="accent">YA LO ELIGIERON</span>
+            </div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 8l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L24 31.6l-9.3 4.9 1.8-10.3-7.5-7.3 10.4-1.5L24 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="stars">
+              ★★★★★
+            </div>
+            <div class="proof-label">
+              <span class="accent">4,9 / 5</span> VALORACIÓN
+            </div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="11" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 19h32" stroke="currentColor" stroke-width="2"/><path d="M16 7v8M32 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="27" r="2" fill="currentColor"/><circle cx="24" cy="27" r="2" fill="currentColor"/><circle cx="31" cy="27" r="2" fill="currentColor"/></svg>
+            </div>
+            <div class="proof-number" data-count="40">
+              0
+            </div>
+            <div class="proof-label">
+              DÍAS DE <span class="accent">RECORRIDO</span>
+            </div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><path d="M24 15v9l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="proof-number" data-count="15">
+              0
+            </div>
+            <div class="proof-label">
+              MINUTOS <span class="accent">AL DÍA</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1823,7 +1922,7 @@
   <!-- PRENSA / CITAS REALES SOBRE EL TEMA -->
   <section class="press">
     <div class="container">
-      <div class="press-label">Un tema que crece a nivel mundial — cubierto en</div>
+      <div class="press-label">Un tema que crece <span class="accent">a nivel mundial</span> — cubierto en</div>
       <div class="press-marquee">
         <div class="press-track">
           <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
@@ -1988,14 +2087,7 @@
   </section>
   <!-- TRANSFORMATION -->
   <section class="transformation">
-    <div class="transformation-grid">
-      <div class="transformation-image reveal">
-        <img
-          loading="lazy"
-          src="images/transformation.jpg"
-          alt="Mujer construyendo una nueva etapa"
-        >
-      </div>
+    <div class="transformation-grid transformation-grid-solo">
       <div class="transformation-copy">
         <div>
           <div class="eyebrow">
@@ -2037,20 +2129,21 @@
     <div class="container">
       <div class="method-intro">
         <h2 class="method-title">
-          Dos guías.
+          No es que no sepas qué hacer.
           <br><br>
-          El mismo motivo por el que
-          <em>todavía no empezaste.</em>
+          Es que hay dos voces que te frenan
+          <em>antes de que empieces.</em>
         </h2>
         <p>
-          No es que te falte información.
+          Una te dice que pongas un límite y después te hace
+          sentir culpa por haberlo puesto. La otra te dice que
+          cobres lo que valés y después te pregunta quién te
+          creés que sos.
           <br><br>
-          Es que cada vez que estás por poner un límite,
-          aparece la culpa. Y cada vez que estás por cobrar
-          lo que valés, aparece esa voz que te pregunta
-          "¿quién sos vos para eso?".
-          Estas dos guías no te dan más tareas.
-          Te sacan esas dos voces de encima.
+          No son dos problemas distintos. Es la misma voz,
+          disfrazada dos veces. Estas dos guías no te suman
+          tareas a la lista: te sacan esas dos voces de encima,
+          una por una.
         </p>
       </div>
       <div class="method-grid">
@@ -2068,7 +2161,9 @@
           <p>
             No es un diario más para llenar por las noches.
             Es la diferencia entre explotar y elegir callarte
-            a tiempo. Un capítulo por día, durante 40 días,
+            a tiempo. Cada vez que tragás lo que sentís para
+            no generar un conflicto, esa bronca no desaparece:
+            se acumula. Un capítulo por día, durante 40 días,
             para aprender algo que nadie te enseñó: que no
             responder también es una respuesta.
           </p>
@@ -2096,7 +2191,8 @@
             Es el quiebre de dejar de pensar que necesitás
             tener más para empezar, cuando lo único que
             te falta es creerte que lo que ya sabés hacer
-            vale algo.
+            vale algo. Seguís esperando sentirte "lista"
+            para cobrar por eso. Esa espera no se termina sola.
           </p>
           <ul>
             <li>Las historias y la forma de pensar de personas que empezaron de cero</li>
