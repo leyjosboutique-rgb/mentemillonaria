@@ -348,8 +348,8 @@
       color: white;
       text-align: center;
       font-family: var(--serif);
-      font-size: 16px;
-      line-height: 1.05;
+      font-size: 13px;
+      line-height: 1.15;
       box-shadow: 0 15px 35px rgba(178,58,92,.4);
     }
     .hero-subtitle {
@@ -679,6 +679,20 @@
       color: var(--brown);
       font-size: 14px;
     }
+    .bonus-value-callout {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 8px 18px;
+      background: var(--cream-2);
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--wine);
+    }
+    .bonus-value-callout del {
+      opacity: .6;
+      margin: 0 3px;
+    }
     .pain-grid {
       margin-top: 75px;
       display: grid;
@@ -720,6 +734,46 @@
       font-size: 13px;
       font-style: italic;
     }
+    .identification-unify {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: var(--serif);
+      font-size: 22px !important;
+      line-height: 1.4;
+      color: var(--wine) !important;
+      font-style: normal !important;
+    }
+    /* INLINE PROOF — testimonio corto distribuido entre secciones */
+    .inline-proof {
+      max-width: 560px;
+      margin: 55px auto 0;
+      padding: 32px 36px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 20px 50px rgba(53,40,51,.08);
+      text-align: center;
+    }
+    .inline-proof .stars {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .inline-proof blockquote {
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--wine);
+    }
+    .inline-proof-author {
+      margin-top: 16px;
+      color: var(--cta);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
     /* MECHANISM */
     .mechanism {
       padding: 90px 0;
@@ -753,6 +807,37 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+    .mechanism-how {
+      max-width: 640px;
+      margin: 55px auto 0;
+      padding: 35px 40px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 20px 50px rgba(53,40,51,.12);
+    }
+    .mechanism-how-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 24px;
+      color: var(--cta);
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .mechanism-how-steps {
+      display: grid;
+      gap: 14px;
+    }
+    .mechanism-how-step {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--wine);
+    }
+    .mechanism-how-num {
+      font-family: var(--serif);
+      font-weight: 700;
+      color: var(--cta);
+      margin-right: 6px;
     }
     .mechanism-grid {
       margin-top: 0;
@@ -1101,7 +1186,7 @@
     }
     .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(2,1fr);
       margin-top: 30px;
       gap: 20px;
     }
@@ -1210,6 +1295,14 @@
       display: grid;
       gap: 14px;
     }
+    .value-stack-label {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 13px;
+      color: var(--cta);
+      margin-bottom: 4px;
+    }
     .value-stack-row {
       display: flex;
       justify-content: space-between;
@@ -1217,6 +1310,11 @@
       font-size: 15px;
       font-weight: 600;
       color: var(--wine);
+    }
+    .value-stack-row:not(.value-stack-total) span:first-child::before {
+      content: "✓ ";
+      color: var(--gold);
+      font-weight: 800;
     }
     .value-stack-row span:first-child {
       max-width: 78%;
@@ -1297,6 +1395,34 @@
       font-size: 42px;
       line-height: 1;
       font-weight: 600;
+    }
+    /* HOW IT WORKS */
+    .how-it-works {
+      padding: 90px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .how-it-works-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 20px;
+    }
+    .how-it-works-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .how-it-works-num {
+      font-family: var(--serif);
+      font-size: 34px;
+      color: var(--cta);
+    }
+    .how-it-works-step p {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--wine);
     }
     /* GUARANTEE */
     .guarantee {
@@ -1599,6 +1725,13 @@
       .container {
         width: calc(100% - 30px);
       }
+      .how-it-works {
+        padding: 45px 0;
+      }
+      .how-it-works-grid {
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 30px;
+      }
       .hero {
         padding: 18px 0 50px;
       }
@@ -1851,6 +1984,25 @@
       }
     }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1279130367528979');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- TOP BAR -->
@@ -1871,9 +2023,9 @@
         <div class="hero-badge">
           40 días
           <br>
-          para
+          para volver
           <br>
-          volver a ti
+          a elegirte
         </div>
         <div class="hero-chips-marquee">
           <div class="hero-chips">
@@ -1905,7 +2057,7 @@
         </a>
       </div>
       <p class="hero-note">
-        Acceso inmediato · Pago único · Garantía de 15 días
+        15 minutos al día · Acceso inmediato · De por vida · Pago único
       </p>
     </div>
   </section>
@@ -1918,8 +2070,8 @@
             <div class="proof-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none"><circle cx="19" cy="17" r="8" stroke="currentColor" stroke-width="2"/><path d="M8 39c1.5-9 8-13 11-13s9.5 4 11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M33 20c1.8-1.6 4-1.6 5.4 0 1.5 1.7 1.4 3.9-.3 5.7L33 31l-5-5.3c-1.7-1.8-1.8-4-.3-5.7 1.4-1.6 3.6-1.6 5.3 0z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
             </div>
-            <div class="proof-number" data-count="5287" data-format="es">
-              0
+            <div class="proof-number">
+              5.287
             </div>
             <div class="proof-label">
               PERSONAS <span class="accent">YA LO ELIGIERON</span>
@@ -1940,8 +2092,8 @@
             <div class="proof-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="11" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 19h32" stroke="currentColor" stroke-width="2"/><path d="M16 7v8M32 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="27" r="2" fill="currentColor"/><circle cx="24" cy="27" r="2" fill="currentColor"/><circle cx="31" cy="27" r="2" fill="currentColor"/></svg>
             </div>
-            <div class="proof-number" data-count="40">
-              0
+            <div class="proof-number">
+              40
             </div>
             <div class="proof-label">
               DÍAS DE <span class="accent">RECORRIDO</span>
@@ -1951,56 +2103,13 @@
             <div class="proof-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><path d="M24 15v9l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <div class="proof-number" data-count="15">
-              0
+            <div class="proof-number">
+              15
             </div>
             <div class="proof-label">
               MINUTOS <span class="accent">AL DÍA</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- PRENSA / CITAS REALES SOBRE EL TEMA -->
-  <section class="press">
-    <div class="container">
-      <div class="press-label">Un tema que crece <span class="accent">a nivel mundial</span> — cubierto en</div>
-      <div class="press-marquee">
-        <div class="press-track">
-          <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
-            <span class="press-topic">Carga mental</span>
-            <span class="press-outlet outlet-infobae">infobae</span>
-            <span class="press-headline">"Las mamás asumen el 70% de la 'carga mental' para las tareas domésticas, según un estudio"</span>
-          </a>
-          <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener">
-            <span class="press-topic">Carga mental</span>
-            <span class="press-outlet outlet-lanacion">La Nación</span>
-            <span class="press-headline">"Qué es la carga mental y por qué el estrés también tiene sesgo de género"</span>
-          </a>
-          <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener">
-            <span class="press-topic">Límites sin culpa</span>
-            <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
-            <span class="press-headline">"6 Ways to Set Boundaries Without Guilt"</span>
-          </a>
-          <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener">
-            <span class="press-topic">Monetizar tu capacidad</span>
-            <span class="press-outlet outlet-forbes">Forbes</span>
-            <span class="press-headline">"Cómo monetizar los talentos únicos que podrían hacerte rico"</span>
-          </a>
-          <!-- Duplicado (aria-hidden) para que el loop de la franja sea continuo -->
-          <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-            <span class="press-outlet outlet-infobae">infobae</span>
-          </a>
-          <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-            <span class="press-outlet outlet-lanacion">La Nación</span>
-          </a>
-          <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-            <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
-          </a>
-          <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-            <span class="press-outlet outlet-forbes">Forbes</span>
-          </a>
         </div>
       </div>
     </div>
@@ -2098,12 +2207,28 @@
         </article>
       </div>
       <div class="identification-cta">
+        <p class="identification-unify">
+          Y aunque parezcan problemas distintos, probablemente vienen del mismo lugar:
+          llevás demasiado tiempo poniéndote última.
+        </p>
         <p>
           Si te identificaste con alguna, seguí leyendo: esto está pensado exactamente para eso.
         </p>
         <a href="#oferta" class="btn btn-secondary">
           Sí, me identifico →
         </a>
+      </div>
+      <div class="inline-proof reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Siempre me costó muchísimo decir que no. Terminaba aceptando
+          cosas que no quería hacer y después me quedaba con bronca conmigo
+          misma. Uno de los ejercicios me hizo darme cuenta de cuánto decía
+          que sí por miedo a decepcionar a los demás. Empecé a poner límites
+          pequeños y, por primera vez, pude hacerlo sin sentir que estaba
+          haciendo algo malo."
+        </blockquote>
+        <div class="inline-proof-author">Compradora verificada</div>
       </div>
     </div>
   </section>
@@ -2125,6 +2250,43 @@
           src="images/proceso-puerta.webp"
           alt="De reaccionar a elegir. De complacer a poner límites. De resolverle la vida a otros a construir la tuya."
         >
+      </div>
+      <div class="mechanism-how">
+        <div class="mechanism-how-label">¿Cómo funciona?</div>
+        <div class="mechanism-how-steps">
+          <div class="mechanism-how-step">
+            <span class="mechanism-how-num">40 días.</span>
+            15 minutos por día. Una tarea concreta cada día.
+          </div>
+          <div class="mechanism-how-step">
+            <span class="mechanism-how-num">1.</span>
+            Primero calmás la reacción.
+          </div>
+          <div class="mechanism-how-step">
+            <span class="mechanism-how-num">2.</span>
+            Después recuperás claridad.
+          </div>
+          <div class="mechanism-how-step">
+            <span class="mechanism-how-num">3.</span>
+            Empezás a reconocer el valor de lo que ya sabés hacer.
+          </div>
+          <div class="mechanism-how-step">
+            <span class="mechanism-how-num">4.</span>
+            Y finalmente empezás a tomar decisiones diferentes.
+          </div>
+        </div>
+      </div>
+      <div class="inline-proof reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Llegué porque sentía que tenía la cabeza explotada y no podía
+          parar de pensar. Lo que más me gustó fue que no sentí que tenía
+          que cambiar toda mi vida de golpe. Los ejercicios eran cortos y
+          podía hacerlos incluso en días complicados. Después de unas
+          semanas empecé a tomar decisiones que venía postergando hacía
+          meses."
+        </blockquote>
+        <div class="inline-proof-author">Compradora verificada</div>
       </div>
     </div>
   </section>
@@ -2171,6 +2333,7 @@
   <section class="method">
     <div class="container">
       <div class="method-intro">
+        <div class="eyebrow">Tu proceso de 40 días</div>
         <h2 class="method-title">
           No es que no sepas qué hacer.
           <br><br>
@@ -2199,7 +2362,7 @@
             >
           </div>
           <div class="method-card-label">
-            Parte I · Silencio
+            Etapa 1 — Recuperar el control
           </div>
           <p>
             No es un diario más para llenar por las noches.
@@ -2227,7 +2390,7 @@
             >
           </div>
           <div class="method-card-label">
-            Parte II · Mentalidad
+            Etapa 2 — Reconocer tu valor
           </div>
           <p>
             No es un curso de emprendimiento.
@@ -2245,6 +2408,17 @@
             <li>Por qué la gente compra un deseo, no un producto</li>
           </ul>
         </article>
+      </div>
+      <div class="inline-proof reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Yo siempre pensaba que no tenía nada especial para ofrecer.
+          Después de trabajar con la parte de mentalidad empecé a mirar de
+          otra manera las cosas que sé hacer. Todavía estoy empezando, pero
+          ahora tengo mucho más claro qué habilidades tengo y qué podría
+          hacer con ellas."
+        </blockquote>
+        <div class="inline-proof-author">Compradora verificada</div>
       </div>
     </div>
   </section>
@@ -2277,6 +2451,9 @@
           No son extras para llenar una oferta.
           Cada uno está pensado para resolver una barrera concreta.
         </p>
+        <div class="bonus-value-callout">
+          5 bonos · valor real <del>US$17</del> · hoy incluidos sin costo
+        </div>
       </div>
       <div class="bonus-grid">
         <article class="bonus reveal">
@@ -2299,7 +2476,7 @@
             Este mapa te lo señala en minutos, para que tu primer movimiento
             no sea "por dónde empiezo", sino "esto es lo primero que suelto".
           </p>
-          <div class="bonus-value">Valor: <del>US$7</del> <span class="free">HOY GRATIS</span></div>
+          <div class="bonus-value">Valor: <del>US$4</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2322,7 +2499,7 @@
             para las situaciones que se repiten siempre: en tu casa,
             en el trabajo, con tu familia.
           </p>
-          <div class="bonus-value">Valor: <del>US$7</del> <span class="free">HOY GRATIS</span></div>
+          <div class="bonus-value">Valor: <del>US$4</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2345,7 +2522,7 @@
             revisás el celular antes de dormir. Si tenés 15 minutos, tenés
             el tiempo que hace falta.
           </p>
-          <div class="bonus-value">Valor: <del>US$5</del> <span class="free">HOY GRATIS</span></div>
+          <div class="bonus-value">Valor: <del>US$3</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2368,7 +2545,7 @@
             que ya sabés hacer y que otras personas pagarían por no
             tener que resolver solas.
           </p>
-          <div class="bonus-value">Valor: <del>US$6</del> <span class="free">HOY GRATIS</span></div>
+          <div class="bonus-value">Valor: <del>US$3</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2391,8 +2568,20 @@
             concreto, para que dejes de esperar el momento perfecto
             y empieces con lo que ya tenés hoy.
           </p>
-          <div class="bonus-value">Valor: <del>US$5</del> <span class="free">HOY GRATIS</span></div>
+          <div class="bonus-value">Valor: <del>US$3</del> <span class="free">HOY GRATIS</span></div>
         </article>
+      </div>
+      <div class="inline-proof reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Lo que más me llamó la atención fueron los 40 días porque
+          siempre empiezo cosas y las abandono. Esta vez no sentí que tenía
+          que dedicar horas. Hacer algo durante 15 minutos fue mucho más
+          fácil de sostener. No terminé siendo otra persona de un día para
+          otro, pero sí volví a cumplir pequeñas cosas que llevaba meses
+          postergando."
+        </blockquote>
+        <div class="inline-proof-author">Compradora verificada</div>
       </div>
     </div>
   </section>
@@ -2412,7 +2601,7 @@
           <img
             loading="lazy"
             src="images/testimonial-01.webp"
-            alt="María Fernanda"
+            alt="Testimonio real"
           >
         </div>
         <div class="testimonial-content">
@@ -2420,81 +2609,59 @@
             ★★★★★
           </div>
           <blockquote>
-            "Pensé que iba a necesitar horas al día y por eso lo estaba
-            postergando. Cuando vi que podía avanzar en pequeños momentos,
-            por fin pude mantener el proceso."
+            "Me di cuenta de que estaba tan acostumbrada a estar para todos
+            que ya ni siquiera sabía qué quería yo. Lo que más me movilizó
+            fue empezar a preguntarme qué necesitaba en lugar de pensar
+            automáticamente en lo que necesitaban los demás. No fue mágico,
+            pero estos 40 días me ayudaron a volver a escucharme."
           </blockquote>
           <div class="testimonial-author">
-            María Fernanda · Bogotá, Colombia
+            Compradora verificada
           </div>
         </div>
       </div>
-      <div class="testimonial-grid">
-        <article class="mini-testimonial reveal">
-          <div class="stars">
-            ★★★★★
-          </div>
-          <blockquote>
-            "Lo que más me sorprendió fue darme cuenta de cuánto explicaba
-            cada vez que quería decir que no. Empecé a ser más clara y,
-            sobre todo, dejé de sentir que tenía que justificarme por todo."
-          </blockquote>
-          <div class="author">
-            Carolina · Ciudad de México, México
-          </div>
-        </article>
-        <article class="mini-testimonial reveal">
-          <div class="stars">
-            ★★★★★
-          </div>
-          <blockquote>
-            "Yo siempre pensaba que no tenía nada especial para ofrecer.
-            El ejercicio de identificar mis habilidades me hizo ver cosas
-            que llevaba años haciendo sin darles ningún valor."
-          </blockquote>
-          <div class="author">
-            Lucía · Madrid, España
-          </div>
-        </article>
-        <article class="mini-testimonial reveal">
-          <div class="stars">
-            ★★★★★
-          </div>
-          <blockquote>
-            "Siempre decía que primero estaban todos los demás.
-            Empecé a cuestionar esa costumbre y a reservar pequeños
-            espacios para mí. Parece algo pequeño, pero para mí fue enorme."
-          </blockquote>
-          <div class="author">
-            Valentina · Santiago, Chile
-          </div>
-        </article>
-        <article class="mini-testimonial reveal">
-          <div class="stars">
-            ★★★★★
-          </div>
-          <blockquote>
-            "No esperaba sentir que todo iba a cambiar de un día para otro.
-            Lo que sí necesitaba era una estructura que pudiera seguir.
-            Eso fue lo que finalmente me ayudó a avanzar."
-          </blockquote>
-          <div class="author">
-            Andrea · Lima, Perú
-          </div>
-        </article>
-        <article class="mini-testimonial reveal">
-          <div class="stars">
-            ★★★★★
-          </div>
-          <blockquote>
-            "Me pasé mucho tiempo esperando a estar lista. Lo que cambió
-            fue entender que no tenía que tener un negocio perfecto,
-            solamente encontrar un primer paso que tuviera sentido para mí."
-          </blockquote>
-          <div class="author">
-            Paula · Buenos Aires, Argentina
-          </div>
-        </article>
+    </div>
+  </section>
+  <!-- PRENSA / CITAS REALES SOBRE EL TEMA -->
+  <section class="press">
+    <div class="container">
+      <div class="press-label">Un tema que crece <span class="accent">a nivel mundial</span> — cubierto en</div>
+      <div class="press-marquee">
+        <div class="press-track">
+          <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener">
+            <span class="press-topic">Carga mental</span>
+            <span class="press-outlet outlet-infobae">infobae</span>
+            <span class="press-headline">"Las mamás asumen el 70% de la 'carga mental' para las tareas domésticas, según un estudio"</span>
+          </a>
+          <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener">
+            <span class="press-topic">Carga mental</span>
+            <span class="press-outlet outlet-lanacion">La Nación</span>
+            <span class="press-headline">"Qué es la carga mental y por qué el estrés también tiene sesgo de género"</span>
+          </a>
+          <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener">
+            <span class="press-topic">Límites sin culpa</span>
+            <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
+            <span class="press-headline">"6 Ways to Set Boundaries Without Guilt"</span>
+          </a>
+          <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener">
+            <span class="press-topic">Monetizar tu capacidad</span>
+            <span class="press-outlet outlet-forbes">Forbes</span>
+            <span class="press-headline">"Cómo monetizar los talentos únicos que podrían hacerte rico"</span>
+          </a>
+          <!-- Duplicado (aria-hidden) para que el loop de la franja sea continuo -->
+          <a class="press-item" href="https://www.infobae.com/salud/2024/12/31/las-mamas-asumen-el-70-de-la-carga-mental-para-las-tareas-domesticas-segun-un-estudio/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-infobae">infobae</span>
+          </a>
+          <a class="press-item" href="https://www.lanacion.com.ar/sociedad/dia-de-la-mujer-que-es-la-carga-mental-y-por-que-el-estres-tambien-tiene-sesgo-de-genero-nid08032024/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-lanacion">La Nación</span>
+          </a>
+          <a class="press-item" href="https://www.psychologytoday.com/us/blog/conquering-codependency/202208/6-ways-set-boundaries-without-guilt" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-psychtoday">Psychology<em>Today</em></span>
+          </a>
+          <a class="press-item" href="https://forbes.es/liderazgo/684823/como-monetizar-los-talentos-unicos-que-podrian-hacerte-rico/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <span class="press-outlet outlet-forbes">Forbes</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -2530,40 +2697,41 @@
           >
         </div>
         <div class="value-stack">
+          <div class="value-stack-label">Hoy recibes todo esto</div>
           <div class="value-stack-row">
-            <span>Guía 1 — 40 días de viaje en silencio</span><span><del>US$27</del></span>
+            <span>Guía 1 — 40 días de viaje en silencio</span><span><del>US$16</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Guía 2 — Una mente vale más que un millón</span><span><del>US$25</del></span>
+            <span>Guía 2 — Una mente vale más que un millón</span><span><del>US$14</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 1 — Mapa para volver a tomar el control</span><span><del>US$7</del></span>
+            <span>Bono 1 — Mapa para volver a tomar el control</span><span><del>US$4</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 2 — Guía práctica para poner límites</span><span><del>US$7</del></span>
+            <span>Bono 2 — Guía práctica para poner límites</span><span><del>US$4</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 3 — Rutina de 15 minutos</span><span><del>US$5</del></span>
+            <span>Bono 3 — Rutina de 15 minutos</span><span><del>US$3</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 4 — Inventario de capacidades monetizables</span><span><del>US$6</del></span>
+            <span>Bono 4 — Inventario de capacidades monetizables</span><span><del>US$3</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 5 — Primer paso hacia algo propio</span><span><del>US$5</del></span>
+            <span>Bono 5 — Primer paso hacia algo propio</span><span><del>US$3</del></span>
           </div>
           <div class="value-stack-row">
             <span>Garantía de 15 días</span><span>Incluida</span>
           </div>
           <div class="value-stack-row value-stack-total">
-            <span>Valor total</span><span>US$82</span>
+            <span>Valor total</span><span>US$47</span>
           </div>
         </div>
         <div class="price-wrapper">
           <div class="old-price">
-            Valor regular: US$82
+            Valor regular: US$47
           </div>
           <div class="discount">
-            82% DE DESCUENTO
+            68% DE DESCUENTO
           </div>
           <div class="price">
             US$15
@@ -2599,6 +2767,37 @@
         >
           🔒 Pago seguro · Pago único · Acceso inmediato
         </p>
+      </div>
+    </div>
+  </section>
+  <!-- CÓMO LO RECIBÍS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="heading" style="text-align:center; margin-left:auto; margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">Después de comprar</div>
+        <h2>¿Qué pasa <em>después de comprar?</em></h2>
+      </div>
+      <div class="how-it-works-grid">
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">01</span>
+          <p>Comprás</p>
+        </div>
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">02</span>
+          <p>Recibís el acceso</p>
+        </div>
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">03</span>
+          <p>Abrís el Día 1</p>
+        </div>
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">04</span>
+          <p>Hacés tu primera tarea</p>
+        </div>
+        <div class="how-it-works-step">
+          <span class="how-it-works-num">05</span>
+          <p>Empezás tu proceso</p>
+        </div>
       </div>
     </div>
   </section>
@@ -2702,8 +2901,8 @@
             ¿Qué métodos de pago aceptan?
           </summary>
           <p>
-            [Completar con los medios de pago reales habilitados en tu checkout —
-            tarjeta de crédito/débito, y cualquier otro método local que aceptes.]
+            Tarjeta de crédito o débito, y los demás métodos que veas
+            disponibles al momento de pagar en el checkout.
           </p>
         </details>
         <details>
@@ -2711,8 +2910,47 @@
             ¿Es seguro pagar en esta página?
           </summary>
           <p>
-            Sí. El pago se procesa a través de [nombre de tu pasarela de pago],
+            Sí. El pago se procesa a través de una pasarela de pago segura,
             con conexión encriptada. No almacenamos los datos de tu tarjeta.
+          </p>
+        </details>
+        <details>
+          <summary>
+            ¿Es un producto digital?
+          </summary>
+          <p>
+            Sí, 100% digital. Recibís todo en formato PDF para leer o imprimir,
+            no hay envío físico ni esperas.
+          </p>
+        </details>
+        <details>
+          <summary>
+            ¿Qué incluye exactamente?
+          </summary>
+          <p>
+            Las dos guías del método (40 días de viaje en silencio y Una mente
+            vale más que un millón) más los 5 bonos: cuaderno de ejercicios,
+            guía de límites, mapa de capacidades, tarjetas de reflexión y hojas
+            de trabajo.
+          </p>
+        </details>
+        <details>
+          <summary>
+            ¿Esto reemplaza una terapia?
+          </summary>
+          <p>
+            No. Es una guía práctica de acompañamiento para trabajar hábitos,
+            límites y claridad en tu día a día. No sustituye un tratamiento
+            psicológico ni médico.
+          </p>
+        </details>
+        <details>
+          <summary>
+            ¿Tengo que tener alguna creencia o religión en particular?
+          </summary>
+          <p>
+            No. El método no está atado a ninguna religión ni creencia
+            específica: es un proceso práctico de hábitos y mentalidad.
           </p>
         </details>
         <details>
@@ -2730,7 +2968,7 @@
           </summary>
           <p>
             El precio de US$15 es por tiempo limitado. Una vez que la
-            oferta se actualice, el acceso vuelve a su valor regular de US$82.
+            oferta se actualice, el acceso vuelve a su valor regular de US$47.
           </p>
         </details>
       </div>
@@ -2747,11 +2985,10 @@
         <em>pequeño.</em>
       </h2>
       <p>
-        De reaccionar a elegir.
-        <br>
-        De complacer a poner límites.
-        <br>
-        De resolverle la vida a otros a construir la tuya.
+        El primer paso no tiene que ser enorme.
+        Solo tiene que ser tuyo.
+        <br><br>
+        40 días. 15 minutos al día. Una decisión diferente cada vez.
       </p>
       <a
         href="#oferta"
@@ -2831,42 +3068,13 @@
         );
         revealEls.forEach(function (el) { revealObserver.observe(el); });
       }
-      // 2) Contadores animados (5.287 · 40 · 15)
-      const counters = document.querySelectorAll("[data-count]");
-      function animateCounter(el) {
-        const target = parseInt(el.getAttribute("data-count"), 10);
-        const isEs = el.getAttribute("data-format") === "es";
-        const duration = 1400;
-        const start = performance.now();
-        function tick(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const value = Math.round(target * eased);
-          el.textContent = isEs ? value.toLocaleString("es-AR") : String(value);
-          if (progress < 1) {
-            requestAnimationFrame(tick);
-          }
-        }
-        requestAnimationFrame(tick);
-      }
-      if (prefersReduced || !("IntersectionObserver" in window)) {
-        counters.forEach(function (el) {
-          const target = parseInt(el.getAttribute("data-count"), 10);
-          el.textContent = el.getAttribute("data-format") === "es" ? target.toLocaleString("es-AR") : String(target);
+      // 2) Meta Pixel: evento de intención de compra al tocar cualquier CTA
+      if (typeof fbq === "function") {
+        document.querySelectorAll('a[href="#oferta"], .offer-btn, .sticky-bar-cta').forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            fbq("track", "InitiateCheckout");
+          });
         });
-      } else {
-        const counterObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.6 }
-        );
-        counters.forEach(function (el) { counterObserver.observe(el); });
       }
       // 3) Barra sticky de precio: aparece después del hero, se oculta al llegar a la oferta real
       const stickyBar = document.getElementById("sticky-bar");
