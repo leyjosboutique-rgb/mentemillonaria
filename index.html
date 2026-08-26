@@ -958,14 +958,15 @@
       background: #F4E9D8;
     }
     .bonus-image {
-      height: 180px;
       margin-bottom: 30px;
       overflow: hidden;
+      border-radius: 8px;
       background: rgba(255,255,255,.55);
     }
     .bonus-image img {
-      height: 100%;
-      object-fit: cover;
+      display: block;
+      width: 100%;
+      height: auto;
     }
     .bonus-number {
       font-size: 9px;
@@ -1653,9 +1654,6 @@
       .bonus {
         min-height: auto;
         padding: 35px;
-      }
-      .bonus-image {
-        height: 160px;
       }
       .featured-testimonial {
         grid-template-columns: 1fr;
@@ -2369,7 +2367,7 @@
         <div class="testimonial-photo">
           <img
             loading="lazy"
-            src="images/testimonial-01.jpg"
+            src="images/testimonial-01.webp"
             alt="María Fernanda"
           >
         </div>
