@@ -176,10 +176,11 @@
     }
     .hero-title {
       font-family: var(--serif);
-      font-size: clamp(46px, 6.4vw, 78px);
-      line-height: .96;
-      letter-spacing: -.03em;
-      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(38px, 5.4vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      font-weight: 400;
     }
     .hero-title .accent {
       color: var(--cta);
@@ -288,7 +289,7 @@
     .hero-visual {
       position: relative;
       max-width: 460px;
-      margin: 44px auto 0;
+      margin: 18px auto 0;
     }
     .hero-image {
       position: relative;
@@ -1006,6 +1007,15 @@
       letter-spacing: .08em;
       text-transform: uppercase;
     }
+    .bonus-value del {
+      text-decoration: line-through;
+      opacity: .6;
+      margin-right: 6px;
+    }
+    .bonus-value .free {
+      color: var(--cta);
+      font-weight: 800;
+    }
     /* TESTIMONIALS */
     .testimonials {
       padding: 150px 0;
@@ -1141,6 +1151,17 @@
       font-family: var(--serif);
       font-size: 43px;
       line-height: 1;
+    }
+    .offer-image {
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 18px 34px rgba(53,40,51,.18);
+    }
+    .offer-image img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
     .offer-list {
       margin-top: 30px;
@@ -1453,7 +1474,6 @@
       min-height: 46px;
       padding: 0 26px;
       font-size: 9px;
-      animation: none;
       flex-shrink: 0;
     }
     body.has-sticky-bar {
@@ -1627,14 +1647,37 @@
         padding: 30px 18px;
       }
       .manifesto {
-        padding: 100px 0;
+        padding: 65px 0;
       }
       .identification,
       .method,
       .bonuses,
       .testimonials,
       .faq {
-        padding: 100px 0;
+        padding: 65px 0;
+      }
+      .mechanism,
+      .transformation,
+      .product,
+      .offer {
+        padding: 70px 0;
+      }
+      .guarantee {
+        padding: 70px 0;
+      }
+      .proof {
+        padding: 40px 0;
+      }
+      .press {
+        padding: 0 0 40px;
+      }
+      .method-grid {
+        margin-top: 45px;
+        row-gap: 20px;
+      }
+      .method-grid,
+      .bonus-grid {
+        gap: 20px;
       }
       .pain-grid,
       .method-grid,
@@ -2255,7 +2298,7 @@
             Este mapa te lo señala en minutos, para que tu primer movimiento
             no sea "por dónde empiezo", sino "esto es lo primero que suelto".
           </p>
-          <div class="bonus-value">Valor: US$7</div>
+          <div class="bonus-value">Valor: <del>US$7</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2278,7 +2321,7 @@
             para las situaciones que se repiten siempre: en tu casa,
             en el trabajo, con tu familia.
           </p>
-          <div class="bonus-value">Valor: US$7</div>
+          <div class="bonus-value">Valor: <del>US$7</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2301,7 +2344,7 @@
             revisás el celular antes de dormir. Si tenés 15 minutos, tenés
             el tiempo que hace falta.
           </p>
-          <div class="bonus-value">Valor: US$5</div>
+          <div class="bonus-value">Valor: <del>US$5</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2324,7 +2367,7 @@
             que ya sabés hacer y que otras personas pagarían por no
             tener que resolver solas.
           </p>
-          <div class="bonus-value">Valor: US$6</div>
+          <div class="bonus-value">Valor: <del>US$6</del> <span class="free">HOY GRATIS</span></div>
         </article>
         <article class="bonus reveal">
           <div class="bonus-image">
@@ -2347,7 +2390,7 @@
             concreto, para que dejes de esperar el momento perfecto
             y empieces con lo que ya tenés hoy.
           </p>
-          <div class="bonus-value">Valor: US$5</div>
+          <div class="bonus-value">Valor: <del>US$5</del> <span class="free">HOY GRATIS</span></div>
         </article>
       </div>
     </div>
@@ -2382,9 +2425,6 @@
           </blockquote>
           <div class="testimonial-author">
             María Fernanda · Bogotá, Colombia
-          </div>
-          <div class="testimonial-objection">
-            "No tengo tiempo"
           </div>
         </div>
       </div>
@@ -2481,21 +2521,12 @@
         <h3 class="offer-name">
           Método de Volver a Elegirte
         </h3>
-        <p style="margin-top:8px;font-size:12px;color:var(--brown);line-height:1.6;">
-          Las 2 guías: <strong style="color:var(--wine);">40 días de viaje en silencio</strong>
-          + <strong style="color:var(--wine);">Una mente vale más que un millón</strong>
-        </p>
-        <div class="offer-list">
-          <div>Guía 1: 40 días de silencio</div>
-          <div>Guía 2: Una mente vale más</div>
-          <div>40 tareas + 40 oraciones</div>
-          <div>15 minutos al día</div>
-          <div>Acceso inmediato</div>
-          <div>Acceso de por vida</div>
-          <div>Trabajo sobre mentalidad</div>
-          <div>Trabajo sobre ingresos</div>
-          <div>5 bonos</div>
-          <div>Garantía de 15 días</div>
+        <div class="offer-image">
+          <img
+            loading="lazy"
+            src="images/offer-mockup.webp"
+            alt="Método de Volver a Elegirte: Una mente vale más que un millón + 40 días de viaje en silencio, incluye cuaderno de ejercicios, guía de límites, mapa de capacidades, tarjetas de reflexión y hojas de trabajo"
+          >
         </div>
         <div class="value-stack">
           <div class="value-stack-row">
@@ -2531,10 +2562,10 @@
             Valor regular: US$82
           </div>
           <div class="discount">
-            80% DE DESCUENTO
+            82% DE DESCUENTO
           </div>
           <div class="price">
-            US$16
+            US$15
           </div>
           <div class="payment">
             Pago único · Acceso inmediato
@@ -2685,7 +2716,7 @@
         </details>
         <details>
           <summary>
-            ¿El precio de US$16 es un pago único o me van a seguir cobrando?
+            ¿El precio de US$15 es un pago único o me van a seguir cobrando?
           </summary>
           <p>
             Es un pago único. No es una suscripción y no hay cargos
@@ -2694,10 +2725,10 @@
         </details>
         <details>
           <summary>
-            ¿Hasta cuándo dura esta oferta de US$16?
+            ¿Hasta cuándo dura esta oferta de US$15?
           </summary>
           <p>
-            El precio de US$16 es por tiempo limitado. Una vez que la
+            El precio de US$15 es por tiempo limitado. Una vez que la
             oferta se actualice, el acceso vuelve a su valor regular de US$82.
           </p>
         </details>
@@ -2738,7 +2769,7 @@
   <div class="sticky-bar" id="sticky-bar">
     <div class="sticky-bar-price">
       <span class="sticky-bar-old">Antes US$82</span>
-      <span class="sticky-bar-new">US$16</span>
+      <span class="sticky-bar-new">US$15</span>
     </div>
     <a href="#oferta" class="btn">Quiero volver a elegirme →</a>
   </div>
