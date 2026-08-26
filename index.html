@@ -674,12 +674,14 @@
       grid-template-columns: 1fr 1fr;
     }
     .transformation-image {
-      min-height: 680px;
+      aspect-ratio: 4 / 5;
       overflow: hidden;
     }
     .transformation-image img {
+      width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
     .transformation-copy {
       display: flex;
@@ -1559,7 +1561,7 @@
         border-right: none;
       }
       .transformation-image {
-        min-height: 450px;
+        aspect-ratio: 4 / 5;
       }
       .transformation-copy {
         padding: 65px 25px;
@@ -1725,6 +1727,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-title">
+          Hay una versión de vos
+          <br>
+          que dejaste <span class="accent">esperando.</span>
+        </h1>
+      </div>
       <!-- IMAGEN HERO (con headline y eyebrow incluidos en el diseño de la imagen) -->
       <div class="hero-visual">
         <div class="hero-image">
