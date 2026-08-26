@@ -23,8 +23,8 @@
       --wine-2: #4A2A30;
       --brown: #6B5147;
       --gold: #C79A5B;
-      --cta: #E23A6E;
-      --cta-dark: #C41F55;
+      --cta: #E6007E;
+      --cta-dark: #B80066;
       --line: rgba(32,15,29,.13);
       --serif: "Fraunces", Georgia, serif;
       --sans: "Manrope", Arial, sans-serif;
@@ -93,7 +93,7 @@
       letter-spacing: .14em;
       text-transform: uppercase;
       box-shadow:
-        0 15px 35px rgba(226,58,110,.25);
+        0 15px 35px rgba(230,0,126,.25);
       transition: .3s ease;
       animation: ctaPulse 2.5s infinite;
     }
@@ -101,31 +101,31 @@
       transform: translateY(-3px) scale(1.01);
       background: var(--cta-dark);
       box-shadow:
-        0 20px 45px rgba(226,58,110,.35);
+        0 20px 45px rgba(230,0,126,.35);
     }
     .btn-secondary {
       background: var(--cta);
       color: #fff;
       border: none;
-      box-shadow: 0 15px 35px rgba(226,58,110,.25);
+      box-shadow: 0 15px 35px rgba(230,0,126,.25);
       animation: ctaPulse 2.5s infinite;
     }
     .btn-secondary:hover {
       background: var(--cta-dark);
       color: #fff;
       transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 20px 45px rgba(226,58,110,.35);
+      box-shadow: 0 20px 45px rgba(230,0,126,.35);
     }
     @keyframes ctaPulse {
       0%, 100% {
         transform: scale(1);
         box-shadow:
-          0 15px 35px rgba(226,58,110,.3);
+          0 15px 35px rgba(230,0,126,.3);
       }
       50% {
         transform: scale(1.045);
         box-shadow:
-          0 18px 48px rgba(226,58,110,.55);
+          0 18px 48px rgba(230,0,126,.55);
       }
     }
     /* TOPBAR */
@@ -140,11 +140,32 @@
       position: sticky;
       top: 0;
       z-index: 50;
+      animation: topbarGlow 2s infinite;
     }
     .topbar span {
-      color: var(--pink);
+      display: inline-block;
+      color: #FF3FA0;
       font-weight: 700;
+      animation: timerBlink 1s infinite;
       letter-spacing: normal;
+    }
+    @keyframes timerBlink {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: .55;
+        transform: scale(1.08);
+      }
+    }
+    @keyframes topbarGlow {
+      0%, 100% {
+        box-shadow: inset 0 0 0 rgba(230,0,126,0);
+      }
+      50% {
+        box-shadow: inset 0 -22px 20px -18px rgba(230,0,126,.45);
+      }
     }
     /* HERO */
     .hero {
@@ -1249,7 +1270,7 @@
     .timer-box {
       margin-top: 22px;
       padding: 14px;
-      border: 1px solid rgba(226,58,110,.18);
+      border: 1px solid rgba(230,0,126,.18);
       background: #FCF4F7;
       text-align: center;
     }
