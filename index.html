@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <style>
@@ -26,7 +26,7 @@
       --cta: #E8195F;
       --cta-dark: #C10F4C;
       --line: rgba(32,15,29,.13);
-      --serif: "Cormorant Garamond", Georgia, serif;
+      --serif: "Fraunces", Georgia, serif;
       --sans: "Manrope", Arial, sans-serif;
       --shadow:
         0 30px 80px rgba(53,40,51,.12);
@@ -195,11 +195,15 @@
     .hero-steps span {
       color: var(--cta);
     }
-    /* HERO CHIPS — franja continua estilo "ticker" */
+    /* HERO CHIPS — franja continua estilo "ticker", flotando sobre el borde inferior de la foto */
     .hero-chips-marquee {
-      margin-top: 28px;
-      width: 100%;
-      max-width: 100vw;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 14px;
+      z-index: 3;
+      width: auto;
+      max-width: none;
       overflow: hidden;
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
       mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -555,7 +559,6 @@
     }
     .manifesto h2 em {
       color: var(--cta);
-      font-style: normal;
     }
     .manifesto p {
       max-width: 540px;
@@ -579,7 +582,6 @@
     }
     .heading h2 em {
       color: var(--cta);
-      font-style: normal;
     }
     .heading p {
       max-width: 600px;
@@ -647,7 +649,6 @@
     }
     .mechanism-title em {
       color: var(--pink);
-      font-style: normal;
     }
     .mechanism-visual {
       margin-top: 70px;
@@ -707,7 +708,6 @@
     }
     .transformation-copy h2 em {
       color: var(--cta);
-      font-style: normal;
     }
     .check-list {
       margin-top: 35px;
@@ -744,7 +744,6 @@
     }
     .method-title em {
       color: var(--cta);
-      font-style: normal;
     }
     .method-intro p {
       max-width: 530px;
@@ -830,7 +829,6 @@
     }
     .product h2 em {
       color: var(--cta);
-      font-style: normal;
     }
     .product-intro {
       max-width: 580px;
@@ -945,7 +943,6 @@
     }
     .testimonials-title em {
       color: var(--pink);
-      font-style: normal;
     }
     .featured-testimonial {
       margin-top: 100px;
@@ -1039,7 +1036,6 @@
     }
     .offer-title em {
       color: var(--cta);
-      font-style: normal;
     }
     .offer-description {
       max-width: 450px;
@@ -1264,7 +1260,6 @@
     }
     .final h2 em {
       color: var(--pink);
-      font-style: normal;
     }
     .final p {
       max-width: 580px;
@@ -1527,7 +1522,10 @@
         margin-top: 32px;
       }
       .hero-chips-marquee {
-        margin-top: 20px;
+        margin-top: 0;
+        left: 6px;
+        right: 6px;
+        bottom: 8px;
       }
       .hero-chips {
         gap: 7px;
@@ -1748,22 +1746,21 @@
         <div class="eyebrow">
           Método de Volver a Elegirte
         </div>
-        <h1 class="hero-title">
-          Dejá de regalar tu tiempo,
-          tu energía y todo
-          lo que <span class="accent">sabés hacer.</span>
-        </h1>
-        <div class="hero-steps">
-          <div>
-            De reaccionar a <span>elegir.</span>
-          </div>
-          <div>
-            De complacer a <span>poner límites.</span>
-          </div>
-          <div>
-            De resolverle la vida a otros a
-            <span>construir la tuya.</span>
-          </div>
+      </div>
+      <!-- IMAGEN HERO (con headline incluido en el diseño de la imagen) -->
+      <div class="hero-visual">
+        <div class="hero-image">
+          <img
+            src="images/hero-manifiesto.webp"
+            alt="Dejá de regalar tu tiempo, tu energía y todo lo que sabés hacer. Método de Volver a Elegirte."
+          >
+        </div>
+        <div class="hero-badge">
+          40 días
+          <br>
+          para
+          <br>
+          volver a ti
         </div>
         <div class="hero-chips-marquee">
           <div class="hero-chips">
@@ -1778,26 +1775,6 @@
             <span class="hero-chip" aria-hidden="true">🛡 Poner límites sin culpa</span>
             <span class="hero-chip" aria-hidden="true">🎯 Construir algo propio</span>
           </div>
-        </div>
-      </div>
-      <!-- IMAGEN HERO ORIGINAL -->
-      <div class="hero-visual">
-        <div class="hero-image">
-          <img
-            src="images/hero-antes-despues.jpg"
-            alt="Transformación personal"
-          >
-          <div class="image-label">
-            <span>Antes</span>
-            <span>Después</span>
-          </div>
-        </div>
-        <div class="hero-badge">
-          40 días
-          <br>
-          para
-          <br>
-          volver a ti
         </div>
       </div>
       <p class="hero-subtitle">
@@ -2202,15 +2179,16 @@
             BONO 01
           </div>
           <span class="bonus-objection">
-            Para cuando no sabés por dónde empezar
+            "No sé ni por dónde empezar."
           </span>
           <h3>
             Mapa para volver a tomar el control
           </h3>
           <p>
-            Una guía rápida para identificar qué está consumiendo
-            tu energía, qué puedes dejar de sostener y cuál debería
-            ser tu primer movimiento.
+            No necesitas un plan de 40 días en la cabeza para arrancar hoy.
+            Necesitas saber una sola cosa: qué te está drenando ahora mismo.
+            Este mapa te lo señala en minutos, para que tu primer movimiento
+            no sea "por dónde empiezo", sino "esto es lo primero que suelto".
           </p>
           <div class="bonus-value">Valor: US$7</div>
         </article>
@@ -2226,14 +2204,17 @@
             BONO 02
           </div>
           <span class="bonus-objection">
-            Para cuando te cuesta decir que no
+            "Si digo que no, quedo mal."
           </span>
           <h3>
             Guía práctica para poner límites
           </h3>
           <p>
-            Frases y situaciones cotidianas para aprender a expresar
-            tus límites con claridad sin entrar en explicaciones interminables.
+            No es que te falten ganas de decir que no. Es que no tenés
+            la frase a mano en el momento exacto, y terminás explicando
+            de más para que no se enojen. Acá tenés las frases ya armadas
+            para las situaciones que se repiten siempre: en tu casa,
+            en el trabajo, con tu familia.
           </p>
           <div class="bonus-value">Valor: US$7</div>
         </article>
@@ -2249,14 +2230,17 @@
             BONO 03
           </div>
           <span class="bonus-objection">
-            Ideal si tu problema es el tiempo, no las ganas
+            "No tengo tiempo para esto."
           </span>
           <h3>
             Rutina de 15 minutos
           </h3>
           <p>
-            Una estructura sencilla para avanzar incluso cuando tienes
-            trabajo, familia, responsabilidades y poco espacio mental.
+            No es falta de tiempo. Es que cada método que probaste antes
+            te pedía horas que no tenías, y por eso lo abandonaste a la
+            semana. Esta rutina entra en el mismo espacio en el que hoy
+            revisás el celular antes de dormir. Si tenés 15 minutos, tenés
+            el tiempo que hace falta.
           </p>
           <div class="bonus-value">Valor: US$5</div>
         </article>
@@ -2272,15 +2256,17 @@
             BONO 04
           </div>
           <span class="bonus-objection">
-            Para cuando todavía no creés que esto vale dinero
+            "Yo no tengo nada que valga para cobrar."
           </span>
           <h3>
             Inventario de capacidades monetizables
           </h3>
           <p>
-            Un ejercicio para dejar de pensar únicamente en títulos
-            o profesiones y empezar a detectar habilidades que otras
-            personas podrían valorar y pagar.
+            No es que no tengas nada. Es que lo que sabés hacer se te
+            volvió tan natural que dejaste de verlo como algo valioso.
+            Este ejercicio te muestra, en blanco sobre negro, todo lo
+            que ya sabés hacer y que otras personas pagarían por no
+            tener que resolver solas.
           </p>
           <div class="bonus-value">Valor: US$6</div>
         </article>
@@ -2296,14 +2282,17 @@
             BONO 05
           </div>
           <span class="bonus-objection">
-            Para cuando sentís que nunca vas a estar lista
+            "Voy a esperar a sentirme lista."
           </span>
           <h3>
             Primer paso hacia algo propio
           </h3>
           <p>
-            Una hoja de ruta para convertir una capacidad en una
-            primera idea concreta sin esperar a sentirte completamente preparada.
+            Esa espera no se termina sola. La confianza no aparece antes
+            de moverte: aparece después, como consecuencia de haber dado
+            un primer paso. Esta hoja de ruta te da ese paso, chico y
+            concreto, para que dejes de esperar el momento perfecto
+            y empieces con lo que ya tenés hoy.
           </p>
           <div class="bonus-value">Valor: US$5</div>
         </article>
@@ -2439,10 +2428,14 @@
         <h3 class="offer-name">
           Método de Volver a Elegirte
         </h3>
+        <p style="margin-top:8px;font-size:12px;color:var(--brown);line-height:1.6;">
+          Las 2 guías: <strong style="color:var(--wine);">40 días de viaje en silencio</strong>
+          + <strong style="color:var(--wine);">Una mente vale más que un millón</strong>
+        </p>
         <div class="offer-list">
-          <div>40 días</div>
-          <div>40 tareas</div>
-          <div>40 oraciones de enfoque</div>
+          <div>Guía 1: 40 días de silencio</div>
+          <div>Guía 2: Una mente vale más</div>
+          <div>40 tareas + 40 oraciones</div>
           <div>15 minutos al día</div>
           <div>Acceso inmediato</div>
           <div>Acceso de por vida</div>
@@ -2453,7 +2446,10 @@
         </div>
         <div class="value-stack">
           <div class="value-stack-row">
-            <span>Método de Volver a Elegirte (40 días)</span><span>US$52</span>
+            <span>Guía 1 — 40 días de viaje en silencio</span><span>US$27</span>
+          </div>
+          <div class="value-stack-row">
+            <span>Guía 2 — Una mente vale más que un millón</span><span>US$25</span>
           </div>
           <div class="value-stack-row">
             <span>Bono 1 — Mapa para volver a tomar el control</span><span>US$7</span>
