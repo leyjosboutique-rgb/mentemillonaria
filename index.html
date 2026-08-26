@@ -7,9 +7,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+  >
+  <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
   >
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+  </noscript>
   <style>
     :root {
       --cream: #FBF7F6;
@@ -80,6 +93,8 @@
     }
     /* CTA */
     .btn {
+      position: relative;
+      z-index: 0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -97,6 +112,17 @@
       transition: .3s ease;
       animation: ctaPulse 2.5s infinite;
     }
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      box-shadow: 0 18px 48px rgba(230,0,126,.55);
+      opacity: 0;
+      z-index: -1;
+      animation: ctaGlow 2.5s infinite;
+      pointer-events: none;
+    }
     .btn:hover {
       transform: translateY(-3px) scale(1.01);
       background: var(--cta-dark);
@@ -104,11 +130,24 @@
         0 20px 45px rgba(230,0,126,.35);
     }
     .btn-secondary {
+      position: relative;
+      z-index: 0;
       background: var(--cta);
       color: #fff;
       border: none;
       box-shadow: 0 15px 35px rgba(230,0,126,.25);
       animation: ctaPulse 2.5s infinite;
+    }
+    .btn-secondary::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      box-shadow: 0 18px 48px rgba(230,0,126,.55);
+      opacity: 0;
+      z-index: -1;
+      animation: ctaGlow 2.5s infinite;
+      pointer-events: none;
     }
     .btn-secondary:hover {
       background: var(--cta-dark);
@@ -119,13 +158,17 @@
     @keyframes ctaPulse {
       0%, 100% {
         transform: scale(1);
-        box-shadow:
-          0 15px 35px rgba(230,0,126,.3);
       }
       50% {
         transform: scale(1.045);
-        box-shadow:
-          0 18px 48px rgba(230,0,126,.55);
+      }
+    }
+    @keyframes ctaGlow {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
       }
     }
     /* TOPBAR */
@@ -140,6 +183,16 @@
       position: sticky;
       top: 0;
       z-index: 50;
+      overflow: hidden;
+    }
+    .topbar::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      box-shadow: inset 0 0 24px rgba(255,255,255,.5);
+      opacity: 0;
+      pointer-events: none;
       animation: topbarGlow 2s infinite;
     }
     .topbar span {
@@ -164,10 +217,10 @@
     }
     @keyframes topbarGlow {
       0%, 100% {
-        box-shadow: inset 0 0 0 rgba(255,255,255,0);
+        opacity: 0;
       }
       50% {
-        box-shadow: inset 0 0 24px rgba(255,255,255,.5);
+        opacity: 1;
       }
     }
     /* HERO */
@@ -2122,6 +2175,8 @@
           <img
             src="images/hero-manifiesto.webp"
             alt="Deja de regalar tu tiempo, tu energía y todo lo que sabes hacer. Método de Volver a Elegirte."
+            fetchpriority="high"
+            decoding="async"
           >
         </div>
         <div class="hero-badge">
@@ -2142,7 +2197,7 @@
         <span>4,9 · 5.287 personas ya lo eligieron</span>
       </div>
       <div class="hero-actions">
-        <a href="#oferta" class="btn">
+        <a href="https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10" class="btn">
           Quiero volver a elegirme →
         </a>
       </div>
@@ -2297,7 +2352,7 @@
         <p>
           Si te identificaste con alguna, sigue leyendo: esto está pensado exactamente para eso.
         </p>
-        <a href="#oferta" class="btn btn-secondary">
+        <a href="https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10" class="btn btn-secondary">
           Sí, me identifico →
         </a>
       </div>
@@ -2330,6 +2385,7 @@
       <div class="mechanism-visual reveal">
         <img
           loading="lazy"
+              decoding="async"
           src="images/proceso-puerta.webp"
           alt="De reaccionar a elegir. De complacer a poner límites. De resolverle la vida a otros a construir la tuya."
         >
@@ -2454,6 +2510,7 @@
           <div class="method-card-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/ebook-viaje-silencio.webp"
               alt="40 días de viaje en silencio"
             >
@@ -2482,6 +2539,7 @@
           <div class="method-card-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/ebook-mente-vale-millon.webp"
               alt="Una mente vale más que un millón"
             >
@@ -2526,6 +2584,7 @@
       <div class="product-image reveal">
         <img
           loading="lazy"
+              decoding="async"
           src="images/inside-product.webp"
           alt="Interior del método"
         >
@@ -2557,6 +2616,7 @@
           <div class="bonus-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/bonus-01.webp"
               alt=""
             >
@@ -2579,6 +2639,7 @@
           <div class="bonus-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/bonus-02.webp"
               alt=""
             >
@@ -2602,6 +2663,7 @@
           <div class="bonus-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/bonus-03.webp"
               alt=""
             >
@@ -2625,6 +2687,7 @@
           <div class="bonus-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/bonus-04.webp"
               alt=""
             >
@@ -2648,6 +2711,7 @@
           <div class="bonus-image">
             <img
               loading="lazy"
+              decoding="async"
               src="images/bonus-05.webp"
               alt=""
             >
@@ -2697,6 +2761,7 @@
         <div class="testimonial-photo">
           <img
             loading="lazy"
+              decoding="async"
             src="images/testimonial-01.webp"
             alt="Testimonio real"
           >
@@ -2789,6 +2854,7 @@
         <div class="offer-image">
           <img
             loading="lazy"
+              decoding="async"
             src="images/imagesoffer-mockup.webp"
             alt="Método de Volver a Elegirte: Una mente vale más que un millón + 40 días de viaje en silencio, incluye cuaderno de ejercicios, guía de límites, mapa de capacidades, tarjetas de reflexión y hojas de trabajo"
           >
@@ -2838,7 +2904,7 @@
           </div>
         </div>
         <a
-          href="#"
+          href="https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10"
           class="btn offer-btn"
         >
           Quiero volver a elegirme →
@@ -3088,7 +3154,7 @@
         40 días. 15 minutos al día. Una decisión diferente cada vez.
       </p>
       <a
-        href="#oferta"
+        href="https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10"
         class="btn"
       >
         Quiero volver a elegirme →
@@ -3102,7 +3168,7 @@
   </footer>
   <!-- BARRA STICKY DE PRECIO -->
   <div class="sticky-bar" id="sticky-bar">
-    <a href="#oferta" class="btn sticky-bar-cta">
+    <a href="https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10" class="btn sticky-bar-cta">
       <span class="sticky-bar-cta-main">Quiero volver a elegirme →</span>
       <span class="sticky-bar-cta-price"><del>US$47</del> Hoy US$15</span>
     </a>
@@ -3170,7 +3236,7 @@
       }
       // 2) Meta Pixel: evento de intención de compra al tocar cualquier CTA
       if (typeof fbq === "function") {
-        document.querySelectorAll('a[href="#oferta"], .offer-btn, .sticky-bar-cta').forEach(function (btn) {
+        document.querySelectorAll('a[href="https://pay.hotmart.com/V107329211A?off=su9uegzp&checkoutMode=10"], .offer-btn, .sticky-bar-cta').forEach(function (btn) {
           btn.addEventListener("click", function () {
             fbq("track", "InitiateCheckout");
           });
