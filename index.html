@@ -174,18 +174,7 @@
     .hero {
       padding: 28px 0 70px;
       text-align: center;
-      background:
-        radial-gradient(
-          circle at 20% 0%,
-          rgba(178,58,92,.16),
-          transparent 45%
-        ),
-        radial-gradient(
-          circle at 85% 15%,
-          rgba(201,166,224,.22),
-          transparent 40%
-        ),
-        var(--cream);
+      background: var(--cream);
       color: var(--wine);
     }
     .hero-grid {
@@ -314,7 +303,7 @@
     /* HERO IMAGE */
     .hero-visual {
       position: relative;
-      max-width: 400px;
+      max-width: 560px;
       margin: 8px auto 0;
     }
     .hero-image {
@@ -323,12 +312,14 @@
       border-radius: 6px;
       background: var(--cream-2);
       box-shadow: 0 35px 80px rgba(53,40,51,.2);
-      line-height: 0;
+      aspect-ratio: 4 / 3;
     }
     .hero-image img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
     .image-label {
       position: absolute;
@@ -1140,14 +1131,8 @@
     }
     /* OFFER */
     .offer {
-      padding: 100px 0;
-      background:
-        radial-gradient(
-          circle at 95% 10%,
-          rgba(199,154,91,.22),
-          transparent 30%
-        ),
-        var(--cream);
+      padding: 90px 0;
+      background: var(--cream);
     }
     .offer-grid {
       display: grid;
@@ -1235,6 +1220,14 @@
     }
     .value-stack-row span:first-child {
       max-width: 78%;
+    }
+    .value-stack-row del {
+      color: var(--brown);
+      opacity: .7;
+      text-decoration: line-through;
+    }
+    .value-stack-total del {
+      color: inherit;
     }
     .value-stack-total {
       margin-top: 6px;
@@ -1470,9 +1463,8 @@
       z-index: 55;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 22px;
+      justify-content: center;
+      padding: 12px 22px;
       background: #fff;
       color: var(--wine);
       transform: translateY(110%);
@@ -1483,27 +1475,9 @@
     .sticky-bar.is-visible {
       transform: translateY(0);
     }
-    .sticky-bar-price {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      line-height: 1.2;
-    }
-    .sticky-bar-old {
-      color: var(--brown);
-      font-size: 11px;
-      text-decoration: line-through;
-    }
-    .sticky-bar-new {
-      font-family: var(--serif);
-      font-size: 26px;
-      color: var(--wine);
-    }
-    .sticky-bar .btn {
-      min-height: 46px;
-      padding: 0 26px;
-      font-size: 9px;
-      flex-shrink: 0;
+    .sticky-bar-cta {
+      width: 100%;
+      max-width: 420px;
     }
     body.has-sticky-bar {
       padding-bottom: 82px;
@@ -1511,16 +1485,6 @@
     @media(max-width: 650px) {
       .sticky-bar {
         padding: 10px 14px;
-      }
-      .sticky-bar-price {
-        gap: 7px;
-      }
-      .sticky-bar-new {
-        font-size: 20px;
-      }
-      .sticky-bar .btn {
-        padding: 0 18px;
-        min-height: 42px;
       }
       body.has-sticky-bar {
         padding-bottom: 72px;
@@ -1538,7 +1502,7 @@
     .purchase-toast {
       position: fixed;
       left: 20px;
-      bottom: 20px;
+      bottom: 100px;
       z-index: 60;
       display: flex;
       align-items: flex-start;
@@ -1604,9 +1568,9 @@
     @media(max-width: 650px) {
       .purchase-toast {
         left: 12px;
-        right: 12px;
-        bottom: 12px;
-        max-width: none;
+        right: auto;
+        bottom: 88px;
+        max-width: 260px;
       }
     }
     /* MOBILE */
@@ -1648,8 +1612,11 @@
         font-size: 14px;
       }
       .hero-visual {
-        max-width: 320px;
+        max-width: 100%;
         margin: 10px auto 0;
+      }
+      .hero-image {
+        aspect-ratio: 4 / 3.4;
       }
       .hero-chips-marquee {
         margin-top: 12px;
@@ -2564,25 +2531,25 @@
         </div>
         <div class="value-stack">
           <div class="value-stack-row">
-            <span>Guía 1 — 40 días de viaje en silencio</span><span>US$27</span>
+            <span>Guía 1 — 40 días de viaje en silencio</span><span><del>US$27</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Guía 2 — Una mente vale más que un millón</span><span>US$25</span>
+            <span>Guía 2 — Una mente vale más que un millón</span><span><del>US$25</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 1 — Mapa para volver a tomar el control</span><span>US$7</span>
+            <span>Bono 1 — Mapa para volver a tomar el control</span><span><del>US$7</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 2 — Guía práctica para poner límites</span><span>US$7</span>
+            <span>Bono 2 — Guía práctica para poner límites</span><span><del>US$7</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 3 — Rutina de 15 minutos</span><span>US$5</span>
+            <span>Bono 3 — Rutina de 15 minutos</span><span><del>US$5</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 4 — Inventario de capacidades monetizables</span><span>US$6</span>
+            <span>Bono 4 — Inventario de capacidades monetizables</span><span><del>US$6</del></span>
           </div>
           <div class="value-stack-row">
-            <span>Bono 5 — Primer paso hacia algo propio</span><span>US$5</span>
+            <span>Bono 5 — Primer paso hacia algo propio</span><span><del>US$5</del></span>
           </div>
           <div class="value-stack-row">
             <span>Garantía de 15 días</span><span>Incluida</span>
@@ -2801,11 +2768,7 @@
   </footer>
   <!-- BARRA STICKY DE PRECIO -->
   <div class="sticky-bar" id="sticky-bar">
-    <div class="sticky-bar-price">
-      <span class="sticky-bar-old">Antes US$82</span>
-      <span class="sticky-bar-new">US$15</span>
-    </div>
-    <a href="#oferta" class="btn">Quiero volver a elegirme →</a>
+    <a href="#oferta" class="btn sticky-bar-cta">Quiero volver a elegirme →</a>
   </div>
   <!-- NOTIFICACIÓN DE COMPRA -->
   <div class="purchase-toast" id="purchase-toast">
