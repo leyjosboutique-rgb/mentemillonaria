@@ -1371,10 +1371,20 @@
     }
     .mini-testimonial .author {
       margin-top: 25px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       color: var(--lila);
       font-size: 8px;
       letter-spacing: .15em;
       text-transform: uppercase;
+    }
+    .mini-testimonial-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
     }
     /* OFFER */
     .offer {
@@ -1900,6 +1910,45 @@
       .offer-grid {
         gap: 55px;
       }
+      .featured-testimonial {
+        grid-template-columns: 1fr;
+      }
+      .testimonial-photo {
+        min-height: 400px;
+      }
+      .testimonial-content {
+        padding: 45px 25px;
+      }
+      .testimonial-content blockquote {
+        font-size: 19px;
+        line-height: 1.35;
+      }
+      .testimonial-grid {
+        display: flex;
+        grid-template-columns: unset;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 14px;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 4px 20px 10px;
+        scrollbar-width: none;
+      }
+      .testimonial-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .mini-testimonial {
+        flex: 0 0 84%;
+        scroll-snap-align: center;
+        border-right: none;
+        border-bottom: none;
+        min-height: auto;
+        padding: 30px 25px;
+      }
+      .testimonial-dots {
+        display: flex;
+      }
     }
     @media(max-width: 650px) {
       .container {
@@ -2015,45 +2064,6 @@
       .bonus {
         min-height: auto;
         padding: 35px;
-      }
-      .featured-testimonial {
-        grid-template-columns: 1fr;
-      }
-      .testimonial-photo {
-        min-height: 400px;
-      }
-      .testimonial-content {
-        padding: 45px 25px;
-      }
-      .testimonial-content blockquote {
-        font-size: 19px;
-        line-height: 1.35;
-      }
-      .testimonial-grid {
-        display: flex;
-        grid-template-columns: unset;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 14px;
-        margin-left: -20px;
-        margin-right: -20px;
-        padding: 4px 20px 10px;
-        scrollbar-width: none;
-      }
-      .testimonial-grid::-webkit-scrollbar {
-        display: none;
-      }
-      .mini-testimonial {
-        flex: 0 0 84%;
-        scroll-snap-align: center;
-        border-right: none;
-        border-bottom: none;
-        min-height: auto;
-        padding: 30px 25px;
-      }
-      .testimonial-dots {
-        display: flex;
       }
       .offer-card {
         padding: 35px 25px;
@@ -2735,26 +2745,16 @@ guía por guía, paso por paso.</p>
         Se siente por
         <em>dentro.</em>
 </h2>
-<div class="featured-testimonial reveal">
-<div class="testimonial-photo">
-<img alt="Testimonio real" decoding="async" loading="lazy" src="images/testimonial-01.webp"/>
-</div>
-<div class="testimonial-content">
-<div class="stars">
-            ★★★★★
-          </div>
-<blockquote>
-            "Me di cuenta de que estaba tan acostumbrada a estar para todos
-            que ya ni siquiera sabía qué quería yo. Lo que más me movilizó
-            fue empezar a preguntarme qué necesitaba en lugar de pensar
-            automáticamente en lo que necesitaban los demás. No fue mágico,
-            pero estos 40 días me ayudaron a volver a escucharme."
-          </blockquote>
-<div class="testimonial-author">
-            María Fernanda · Bogotá, Colombia
-          </div>
-</div>
-</div><div class="testimonial-grid">
+<div class="testimonial-grid">
+<article class="mini-testimonial reveal">
+<div class="stars">★★★★★</div>
+<blockquote>"Me di cuenta de que estaba tan acostumbrada a estar para todos
+          que ya ni siquiera sabía qué quería yo. Lo que más me movilizó
+          fue empezar a preguntarme qué necesitaba en lugar de pensar
+          automáticamente en lo que necesitaban los demás. No fue mágico,
+          pero estos 40 días me ayudaron a volver a escucharme."</blockquote>
+<div class="author"><img alt="María Fernanda" class="mini-testimonial-avatar" decoding="async" loading="lazy" src="images/testimonial-01.webp"/>María Fernanda · Bogotá, Colombia</div>
+</article>
 <article class="mini-testimonial reveal">
 <div class="stars">★★★★★</div>
 <blockquote>"Siempre me costó muchísimo decir que no. Terminaba aceptando
@@ -2796,7 +2796,7 @@ guía por guía, paso por paso.</p>
 </article>
 </div>
 <div class="testimonial-dots" aria-hidden="true">
-<span class="active"></span><span></span><span></span><span></span>
+<span class="active"></span><span></span><span></span><span></span><span></span>
 </div>
 </div>
 </section>
