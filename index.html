@@ -2200,6 +2200,75 @@
         text-align: center;
       }
     }
+    /* SECCIÓN "LO QUE VAS A RECORRER" */
+    .recorrido {
+      padding: 70px 0;
+      text-align: center;
+      background: var(--cream);
+    }
+    .recorrido-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-top: 14px;
+      color: var(--wine);
+    }
+    .recorrido-title em {
+      color: var(--pink);
+      font-style: italic;
+    }
+    .recorrido-subtitle {
+      max-width: 480px;
+      margin: 18px auto 0;
+      color: var(--brown);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .recorrido-subtitle strong {
+      color: var(--wine);
+    }
+    .recorrido-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px 14px;
+      margin: 35px auto 0;
+      background: var(--pink-soft);
+      border-radius: 24px;
+      padding: 20px 22px;
+      max-width: 620px;
+    }
+    .recorrido-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 96px;
+      font-size: 9px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--wine);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .recorrido-icon span {
+      font-size: 20px;
+    }
+    @media(max-width: 650px) {
+      .recorrido {
+        padding: 45px 0;
+      }
+      .recorrido-icons {
+        gap: 16px 10px;
+        padding: 18px 16px;
+      }
+      .recorrido-icon {
+        width: 80px;
+        font-size: 8px;
+      }
+    }
     /* VIDEO "LO QUE VAS A RECORRER" */
     .method-video-wrap {
       max-width: 300px;
@@ -2586,9 +2655,6 @@
 <p>Esto es exactamente lo que vas a recorrer en los 40 días,
 guía por guía, paso por paso.</p>
 </div>
-<div class="method-video-wrap">
-<video class="method-video" data-src="images/recorrido-video.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
-</div>
 <div class="method-grid">
 <article class="method-card reveal">
 <div class="method-card-image">
@@ -2639,6 +2705,22 @@ guía por guía, paso por paso.</p>
 </article>
 </div>
 
+</div>
+</section>
+<section class="recorrido">
+<div class="container">
+<div class="eyebrow" style="justify-content:center;">Lo que vas a recorrer</div>
+<h2 class="recorrido-title">Un paso. <em>Cada día.</em></h2>
+<div class="method-video-wrap">
+<video class="method-video" data-src="images/recorrido-video.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
+</div>
+<div class="recorrido-icons">
+<div class="recorrido-icon"><span>📋</span><p>Tareas diarias</p></div>
+<div class="recorrido-icon"><span>🙏</span><p>Oraciones de enfoque</p></div>
+<div class="recorrido-icon"><span>🎯</span><p>Claridad</p></div>
+<div class="recorrido-icon"><span>🛡</span><p>Límites</p></div>
+<div class="recorrido-icon"><span>📈</span><p>Mentalidad e ingresos</p></div>
+</div>
 </div>
 </section>
 <section class="product">
@@ -3292,36 +3374,38 @@ guía por guía, paso por paso.</p>
           });
         });
       }
-      // 3) Barra sticky de precio: aparece después del hero, se oculta al llegar a la oferta real
+      // 3) Barra sticky de precio: aparece cuando ya recorrió la mitad de la página, se oculta al llegar a la oferta real
       const stickyBar = document.getElementById("sticky-bar");
-      const heroSection = document.querySelector(".hero");
       const offerSection = document.getElementById("oferta");
-      if (stickyBar && heroSection && offerSection) {
-        let pastHero = false;
+      if (stickyBar) {
+        let pastHalf = false;
         let inOffer = false;
         function syncStickyBar() {
-          const shouldShow = pastHero && !inOffer;
+          const shouldShow = pastHalf && !inOffer;
           stickyBar.classList.toggle("is-visible", shouldShow);
           document.body.classList.toggle("has-sticky-bar", shouldShow);
         }
-        new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              pastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-              syncStickyBar();
-            });
-          },
-          { threshold: 0 }
-        ).observe(heroSection);
-        new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              inOffer = entry.isIntersecting;
-              syncStickyBar();
-            });
-          },
-          { threshold: 0.2 }
-        ).observe(offerSection);
+        function checkScrollHalf() {
+          const scrolled = window.scrollY || document.documentElement.scrollTop;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? scrolled / docHeight : 0;
+          pastHalf = progress >= 0.5;
+          syncStickyBar();
+        }
+        window.addEventListener("scroll", checkScrollHalf, { passive: true });
+        window.addEventListener("resize", checkScrollHalf);
+        checkScrollHalf();
+        if (offerSection) {
+          new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                inOffer = entry.isIntersecting;
+                syncStickyBar();
+              });
+            },
+            { threshold: 0.2 }
+          ).observe(offerSection);
+        }
       }
     })();
   </script>
