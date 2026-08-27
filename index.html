@@ -164,8 +164,8 @@
     }
     /* TOPBAR */
     .topbar {
-      padding: 11px 15px;
-      background: var(--cta);
+      padding: 12px 15px;
+      background: linear-gradient(90deg, #6E4F72, var(--lila) 50%, #6E4F72);
       color: white;
       text-align: center;
       font-size: 9px;
@@ -175,6 +175,7 @@
       top: 0;
       z-index: 50;
       overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.18);
     }
     .topbar::after {
       content: "";
@@ -189,12 +190,13 @@
     .topbar span {
       display: inline-block;
       color: var(--wine);
-      background: #fff;
-      padding: 2px 8px;
+      background: linear-gradient(135deg, var(--gold), #E3C88A);
+      padding: 3px 10px;
       border-radius: 20px;
       font-weight: 800;
       animation: timerBlink 1s infinite;
       letter-spacing: normal;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
     }
     @keyframes timerBlink {
       0%, 100% {
@@ -2198,6 +2200,23 @@
         text-align: center;
       }
     }
+    /* VIDEO "LO QUE VAS A RECORRER" */
+    .method-video-wrap {
+      max-width: 300px;
+      margin: 35px auto 45px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(53,40,51,.2);
+      background: var(--cream-2);
+    }
+    .method-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: var(--cream-2);
+    }
     @media(max-width: 420px) {
       .hero-title {
         font-size: 34px;
@@ -2566,6 +2585,9 @@
 </h2>
 <p>Esto es exactamente lo que vas a recorrer en los 40 días,
 guía por guía, paso por paso.</p>
+</div>
+<div class="method-video-wrap">
+<video class="method-video" data-src="images/recorrido-video.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
 </div>
 <div class="method-grid">
 <article class="method-card reveal">
@@ -3432,6 +3454,37 @@ guía por guía, paso por paso.</p>
       });
 
       startAuto();
+    })();
+  </script>
+  <script>
+    // LAZY-LOAD del video "lo que vas a recorrer": no descarga el mp4
+    // hasta que el usuario está por llegar a esa sección.
+    (function () {
+      var video = document.querySelector(".method-video");
+      if (!video || !("IntersectionObserver" in window)) return;
+
+      var loaded = false;
+      function loadVideo() {
+        if (loaded) return;
+        loaded = true;
+        var src = video.getAttribute("data-src");
+        if (src) {
+          video.src = src;
+          video.load();
+          video.play().catch(function () {});
+        }
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadVideo();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: "200px 0px" });
+
+      observer.observe(video);
     })();
   </script>
 </body>
