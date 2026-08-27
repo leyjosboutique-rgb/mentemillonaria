@@ -1894,11 +1894,9 @@
     @media(max-width: 650px) {
       .purchase-toast {
         left: 12px;
-        right: 12px;
-        top: 56px;
-        bottom: auto;
-        max-width: none;
-        transform: translateY(-140%);
+        right: auto;
+        bottom: 88px;
+        max-width: 260px;
       }
     }
     /* MOBILE */
@@ -2129,6 +2127,8 @@
       }
       .mechanism-title {
         text-align: center;
+        font-size: 34px;
+        line-height: 1.15;
       }
       .mechanism-card {
         text-align: center;
@@ -2201,6 +2201,25 @@
       .offer-card {
         text-align: center;
       }
+    }
+    /* OPTIMIZACIÓN DE CARGA: no renderiza secciones fuera de pantalla
+       hasta que el usuario esté por llegar a ellas (mejora el tiempo de
+       carga inicial, sobre todo en móvil). El hero y proof quedan afuera
+       para que se vean de inmediato. */
+    .manifesto,
+    .mechanism,
+    .method,
+    .recorrido,
+    .bonuses,
+    .testimonials,
+    .press,
+    .offer,
+    .how-it-works,
+    .guarantee,
+    .faq,
+    .final {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 900px;
     }
     /* SECCIÓN "LO QUE VAS A RECORRER" */
     .recorrido {
@@ -2317,7 +2336,7 @@
         font-size: 50px;
       }
       .mechanism-title {
-        font-size: 55px;
+        font-size: 30px;
       }
       .timer {
         font-size: 36px;
