@@ -165,7 +165,7 @@
     /* TOPBAR */
     .topbar {
       padding: 12px 15px;
-      background: linear-gradient(90deg, #B7141F, #E0202B 50%, #B7141F);
+      background: linear-gradient(90deg, var(--cta-dark), var(--cta) 50%, var(--cta-dark));
       color: white;
       text-align: center;
       font-size: 9px;
@@ -1894,9 +1894,11 @@
     @media(max-width: 650px) {
       .purchase-toast {
         left: 12px;
-        right: auto;
-        bottom: 88px;
-        max-width: 260px;
+        right: 12px;
+        top: 56px;
+        bottom: auto;
+        max-width: none;
+        transform: translateY(-140%);
       }
     }
     /* MOBILE */
@@ -2730,7 +2732,7 @@ guía por guía, paso por paso.</p>
 <div class="eyebrow" style="justify-content:center;">Lo que vas a recorrer</div>
 <h2 class="recorrido-title">Un paso. <em>Cada día.</em></h2>
 <div class="method-video-wrap">
-<video class="method-video" id="recorrido-video" data-src="images/recorrido-mp4.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
+<video class="method-video" id="recorrido-video" data-src="images/recorrido-con-audio.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
 <button class="method-video-sound" id="recorrido-sound-btn" aria-label="Activar sonido" type="button">🔇</button>
 </div>
 </div>
