@@ -2723,14 +2723,6 @@ guía por guía, paso por paso.</p>
 </div>
 </div>
 </section>
-<section class="product">
-<div class="container">
-<!-- Título, eyebrow y bajada ya incluidos en el diseño de la imagen -->
-<div class="product-image reveal">
-<img alt="Interior del método" decoding="async" loading="lazy" src="images/inside-product.webp"/>
-</div>
-</div>
-</section>
 <section class="bonuses">
 <div class="container">
 <div class="heading">
@@ -3552,11 +3544,19 @@ guía por guía, paso por paso.</p>
         if (loaded) return;
         loaded = true;
         var src = video.getAttribute("data-src");
-        if (src) {
-          video.src = src;
-          video.load();
-          video.play().catch(function () {});
+        if (!src) return;
+        video.muted = true;
+        video.playsInline = true;
+        video.autoplay = true;
+        video.src = src;
+        video.load();
+        function tryPlay() {
+          var p = video.play();
+          if (p && typeof p.catch === "function") p.catch(function () {});
         }
+        video.addEventListener("loadeddata", tryPlay, { once: true });
+        video.addEventListener("canplay", tryPlay, { once: true });
+        tryPlay();
       }
 
       var observer = new IntersectionObserver(function (entries) {
