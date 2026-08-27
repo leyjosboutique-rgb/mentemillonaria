@@ -165,7 +165,7 @@
     /* TOPBAR */
     .topbar {
       padding: 12px 15px;
-      background: linear-gradient(90deg, #6E4F72, var(--lila) 50%, #6E4F72);
+      background: linear-gradient(90deg, #B7141F, #E0202B 50%, #B7141F);
       color: white;
       text-align: center;
       font-size: 9px;
@@ -2271,6 +2271,7 @@
     }
     /* VIDEO "LO QUE VAS A RECORRER" */
     .method-video-wrap {
+      position: relative;
       max-width: 300px;
       margin: 35px auto 45px;
       border-radius: 14px;
@@ -2285,6 +2286,23 @@
       aspect-ratio: 9 / 16;
       object-fit: cover;
       background: var(--cream-2);
+    }
+    .method-video-sound {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 2;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(43,26,30,.55);
+      color: #fff;
+      font-size: 16px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(2px);
     }
     @media(max-width: 420px) {
       .hero-title {
@@ -2712,14 +2730,8 @@ guía por guía, paso por paso.</p>
 <div class="eyebrow" style="justify-content:center;">Lo que vas a recorrer</div>
 <h2 class="recorrido-title">Un paso. <em>Cada día.</em></h2>
 <div class="method-video-wrap">
-<video class="method-video" data-src="images/recorrido-mp4.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
-</div>
-<div class="recorrido-icons">
-<div class="recorrido-icon"><span>📋</span><p>Tareas diarias</p></div>
-<div class="recorrido-icon"><span>🙏</span><p>Oraciones de enfoque</p></div>
-<div class="recorrido-icon"><span>🎯</span><p>Claridad</p></div>
-<div class="recorrido-icon"><span>🛡</span><p>Límites</p></div>
-<div class="recorrido-icon"><span>📈</span><p>Mentalidad e ingresos</p></div>
+<video class="method-video" id="recorrido-video" data-src="images/recorrido-mp4.mp4" poster="images/recorrido-poster.jpg" muted loop playsinline preload="none" aria-label="Recorrido rápido de las páginas del método"></video>
+<button class="method-video-sound" id="recorrido-sound-btn" aria-label="Activar sonido" type="button">🔇</button>
 </div>
 </div>
 </section>
@@ -3569,6 +3581,21 @@ guía por guía, paso por paso.</p>
       }, { rootMargin: "200px 0px" });
 
       observer.observe(video);
+
+      // Botón de sonido: arranca mute (para permitir el autoplay) y la
+      // persona puede activarlo con un toque.
+      var soundBtn = document.getElementById("recorrido-sound-btn");
+      if (soundBtn) {
+        soundBtn.addEventListener("click", function () {
+          video.muted = !video.muted;
+          soundBtn.textContent = video.muted ? "🔇" : "🔊";
+          soundBtn.setAttribute("aria-label", video.muted ? "Activar sonido" : "Silenciar");
+          if (!video.muted) {
+            var p = video.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+          }
+        });
+      }
     })();
   </script>
 </body>
